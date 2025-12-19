@@ -3143,6 +3143,7 @@ GameObject:
   - component: {fileID: 1336679829}
   - component: {fileID: 1336679828}
   - component: {fileID: 1336679831}
+  - component: {fileID: 1336679832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3322,6 +3323,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   drawGizmo: 1
+--- !u!114 &1336679832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336679825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03e8972871ea4d6a86fa292fe1dc73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.25
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  refreshRateHz: 15
 --- !u!1001 &1361712638
 PrefabInstance:
   m_ObjectHideFlags: 0
