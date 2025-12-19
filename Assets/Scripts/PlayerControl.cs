@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,7 +24,7 @@ public class PlayerControl : MonoBehaviour
         
         rb.linearVelocity = moveVector * moveSpeed;
     }
-    
+
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
