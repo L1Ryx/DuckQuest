@@ -5,6 +5,11 @@ public class GameContext : MonoBehaviour
     [Header("State References")]
     public PlayerData PlayerData { get; private set; }
 
+    public ItemDatabase ItemDb => itemDatabase;
+    public InventoryModel Inventory { get; private set; }
+
+    [Header("Databases")] [SerializeField] private ItemDatabase itemDatabase;
+
     private void Awake()
     {
         if (Game.IsReady && Game.Ctx != this)
@@ -23,5 +28,6 @@ public class GameContext : MonoBehaviour
     private void InitializeRuntimeState()
     {
         PlayerData = new PlayerData();
+        Inventory = new InventoryModel(new InventoryData());
     }
 }
