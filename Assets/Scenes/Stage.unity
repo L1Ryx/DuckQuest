@@ -3143,7 +3143,8 @@ GameObject:
   - component: {fileID: 1336679829}
   - component: {fileID: 1336679828}
   - component: {fileID: 1336679831}
-  - component: {fileID: 1336679832}
+  - component: {fileID: 1336679834}
+  - component: {fileID: 1336679833}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3210,8 +3211,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1336679831}
-        m_TargetAssemblyTypeName: PlayerInteractor, Assembly-CSharp
+      - m_Target: {fileID: 1336679833}
+        m_TargetAssemblyTypeName: ClickInteractor, Assembly-CSharp
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -3323,7 +3324,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   drawGizmo: 1
---- !u!114 &1336679832
+--- !u!114 &1336679833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3332,14 +3333,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1336679825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03e8972871ea4d6a86fa292fe1dc73a, type: 3}
+  m_Script: {fileID: 11500000, guid: e7fa0e17b4414431a96d2d8018b79086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRadius: 1.25
+  targeter: {fileID: 1336679834}
+--- !u!114 &1336679834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336679825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94486bdc9cb24aaa99a624291827b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldCamera: {fileID: 519420031}
   interactableMask:
     serializedVersion: 2
     m_Bits: 64
-  refreshRateHz: 15
+  interactRadius: 1.25
+  drawDebug: 1
 --- !u!1001 &1361712638
 PrefabInstance:
   m_ObjectHideFlags: 0

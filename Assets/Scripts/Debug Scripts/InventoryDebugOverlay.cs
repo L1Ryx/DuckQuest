@@ -40,7 +40,10 @@ public class InventoryDebugOverlay : MonoBehaviour
             {
                 var def = db != null ? db.Get(e.itemId) : null;
                 string name = def != null && !string.IsNullOrEmpty(def.displayName) ? def.displayName : e.itemId;
-                int packSize = def != null ? def.packSize : 0;
+
+                int packSize = 0;
+                if (def is HardwormPackDefinition wormDef)
+                    packSize = wormDef.packSize;
 
                 sb.Append("  • ")
                     .Append(name)
@@ -48,12 +51,11 @@ public class InventoryDebugOverlay : MonoBehaviour
                     .Append(e.count);
 
                 if (packSize > 0)
-                {
                     sb.Append("  (pack=").Append(packSize).Append(')');
-                }
 
                 sb.AppendLine();
             }
+
         }
 
         text.text = sb.ToString();

@@ -1,17 +1,9 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Inventory/Hardworm Pack Definition")]
-public class HardwormPackDefinition : ScriptableObject
+public class HardwormPackDefinition : ItemDefinition
 {
-    [Header("Identity")]
-    [Tooltip("Stable unique ID used for save/load. Keep constant once created.")]
-    public string itemId;
-
     [Header("Gameplay")]
-    [Range(1, 5)]
+    [Range(1, 20)]
     public int packSize = 1;
-
-    [Header("Presentation")]
-    public string displayName;
-    public Sprite icon;
 }
