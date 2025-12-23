@@ -50,6 +50,9 @@ TagManager:
   - name: Items
     uniqueID: 3890755365
     locked: 0
+  - name: Stations
+    uniqueID: 2829251441
+    locked: 0
   - name: Player
     uniqueID: 2329534319
     locked: 0
