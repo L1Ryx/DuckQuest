@@ -53,6 +53,9 @@ TagManager:
   - name: Stations
     uniqueID: 2829251441
     locked: 0
+  - name: Obstacles
+    uniqueID: 3485359955
+    locked: 0
   - name: Player
     uniqueID: 2329534319
     locked: 0
