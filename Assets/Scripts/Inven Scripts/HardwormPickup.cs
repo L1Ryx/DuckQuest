@@ -28,7 +28,12 @@ public class HardwormPickup : MonoBehaviour, IInteractable
 
         if (packsGranted <= 0) packsGranted = 1;
 
-        Game.Ctx.Inventory.Add(packDef.itemId, packsGranted);
+        bool added = Game.Ctx.Inventory.TryAdd(packDef.itemId, packsGranted);
+        if (!added)
+        {
+            Debug.Log($"HardwormPickup '{name}': inventory full, cannot pick up '{packDef.itemId}'.");
+            return;
+        }
 
         if (onPickedUp != null) onPickedUp.Raise();
 
