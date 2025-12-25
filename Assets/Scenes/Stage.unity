@@ -3958,6 +3958,7 @@ GameObject:
   - component: {fileID: 1023407506}
   - component: {fileID: 1023407507}
   - component: {fileID: 1023407508}
+  - component: {fileID: 1023407509}
   m_Layer: 6
   m_Name: SlotB
   m_TagString: Untagged
@@ -4050,6 +4051,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptRoot: {fileID: 372274906}
+--- !u!114 &1023407509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023407505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed9d426e622745a28f1c08112b7c864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filledSpriteRenderer: {fileID: 1023407507}
+  emptySprite: {fileID: 0}
+  filledSprite: {fileID: 0}
 --- !u!1001 &1042780209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4123,6 +4139,7 @@ GameObject:
   - component: {fileID: 1051177689}
   - component: {fileID: 1051177690}
   - component: {fileID: 1051177691}
+  - component: {fileID: 1051177692}
   m_Layer: 6
   m_Name: SlotA
   m_TagString: Untagged
@@ -4215,6 +4232,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptRoot: {fileID: 1801833436}
+--- !u!114 &1051177692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051177688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed9d426e622745a28f1c08112b7c864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filledSpriteRenderer: {fileID: 1051177690}
+  emptySprite: {fileID: 0}
+  filledSprite: {fileID: 0}
 --- !u!1 &1070373770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,6 +4691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301222136}
+  - component: {fileID: 1301222137}
   m_Layer: 0
   m_Name: AdditionMachine
   m_TagString: Untagged
@@ -4684,6 +4717,20 @@ Transform:
   - {fileID: 1515650594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301222137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301222135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce127917dbee45a2b5480a64b95a810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotA: {fileID: 1051177692}
+  slotB: {fileID: 1023407509}
 --- !u!1 &1307213513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,6 +5671,7 @@ GameObject:
   - component: {fileID: 1515650594}
   - component: {fileID: 1515650595}
   - component: {fileID: 1515650596}
+  - component: {fileID: 1515650597}
   m_Layer: 6
   m_Name: OutputSlot
   m_TagString: Untagged
@@ -5716,6 +5764,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptRoot: {fileID: 1755713064}
+--- !u!114 &1515650597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515650593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52ed7cf9aa3c4d659e635a2e9c55bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machine: {fileID: 1301222137}
+  clearInputsAfterSuccess: 1
 --- !u!1 &1553965559
 GameObject:
   m_ObjectHideFlags: 8

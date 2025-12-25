@@ -33,6 +33,22 @@ public class ItemDatabase : ScriptableObject
         if (byId == null) Init();
         return byId.TryGetValue(itemId, out var def) ? def : null;
     }
+    
+    public HardwormPackDefinition GetHardwormByPackSize(int packSize)
+    {
+        if (packSize <= 0) return null;
+
+        // Linear scan is fine for prototype scale
+        foreach (var def in items)
+        {
+            if (def is HardwormPackDefinition hw && hw.packSize == packSize)
+                return hw;
+        }
+
+        return null;
+    }
+
+    
 
     public IReadOnlyList<ItemDefinition> AllItems => items;
 }
