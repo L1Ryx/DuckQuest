@@ -36,8 +36,17 @@ public class InventoryDebugOverlay : MonoBehaviour
         }
         else
         {
-            foreach (var e in inv.Data.entries)
+            var sel = Game.Ctx.InventorySelection;
+            sel?.EnsureValid();
+            int selectedIndex = sel != null ? sel.SelectedIndex : -1;
+
+            for (int i = 0; i < inv.Data.entries.Count; i++)
             {
+                var e = inv.Data.entries[i];
+
+                bool isSelected = (i == selectedIndex);
+                sb.Append(isSelected ? "> " : "  ");
+
                 var def = db != null ? db.Get(e.itemId) : null;
                 string name = def != null && !string.IsNullOrEmpty(def.displayName) ? def.displayName : e.itemId;
 
@@ -45,7 +54,7 @@ public class InventoryDebugOverlay : MonoBehaviour
                 if (def is HardwormPackDefinition wormDef)
                     packSize = wormDef.packSize;
 
-                sb.Append("  • ")
+                sb.Append("• ")
                     .Append(name)
                     .Append("  x")
                     .Append(e.count);
@@ -55,8 +64,8 @@ public class InventoryDebugOverlay : MonoBehaviour
 
                 sb.AppendLine();
             }
-
         }
+
 
         text.text = sb.ToString();
     }

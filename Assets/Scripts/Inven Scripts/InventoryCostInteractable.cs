@@ -10,6 +10,9 @@ public abstract class InventoryCostInteractable : MonoBehaviour, IInteractable
     [Header("Usage Rules")]
     [SerializeField] protected bool consumeOnSuccess = true;
     [SerializeField] protected bool oneTimeUse = false;
+    [Header("Post-Use Behavior")]
+    [SerializeField] protected bool moveToInteractedLayerOnUse = true;
+    [SerializeField] protected string interactedLayerName = "Interacted";
 
     [Header("Events (Optional)")]
     [SerializeField] protected UnityEvent onSuccess;
@@ -57,7 +60,34 @@ public abstract class InventoryCostInteractable : MonoBehaviour, IInteractable
 
         OnPaymentSucceeded(interactor);
         onSuccess?.Invoke();
+        
+        if (oneTimeUse && moveToInteractedLayerOnUse)
+        {
+            MoveHierarchyToLayer(interactedLayerName);
+        }
     }
+    
+    protected void MoveHierarchyToLayer(string layerName)
+    {
+        int layer = LayerMask.NameToLayer(layerName);
+        if (layer < 0)
+        {
+            Debug.LogWarning($"{name}: Layer '{layerName}' does not exist.");
+            return;
+        }
+
+        SetLayerRecursive(gameObject, layer);
+    }
+
+    private void SetLayerRecursive(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursive(child.gameObject, layer);
+        }
+    }
+
 
     /// <summary>
     /// Implement feature-specific success behavior here.
