@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 006
   displayName: Bomb
+  description: It'll clear the way.
   icon: {fileID: -5144238022852969543, guid: 845a1b67b7c0b485fa7b78a64363656d, type: 3}
   fuseSeconds: 1.5

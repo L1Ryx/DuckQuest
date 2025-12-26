@@ -10,8 +10,15 @@ public class MouseInteractTargeter2D : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool drawDebug = false;
 
+    // Click target (only valid when in range)
     private IInteractable currentTarget;
+
+    // Hovered object (regardless of range)
     private IProximityHighlightable currentHighlight;
+    private IHoverInfoUI currentHoverUI;
+
+    // Track range state for hovered object
+    private bool currentHoverInRange;
 
     private void Awake()
     {
@@ -32,56 +39,86 @@ public class MouseInteractTargeter2D : MonoBehaviour
             return;
 
         // Convert mouse position to world
-        Vector3 mouseScreen = Input.mousePosition;
-        Vector3 mouseWorld3 = worldCamera.ScreenToWorldPoint(mouseScreen);
+        Vector3 mouseWorld3 = worldCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mouseWorld = new Vector2(mouseWorld3.x, mouseWorld3.y);
 
-        // Find collider under cursor
+        // Find collider under cursor (hover is NOT range-gated)
         Collider2D hit = Physics2D.OverlapPoint(mouseWorld, interactableMask);
 
-        IInteractable newTarget = null;
-        IProximityHighlightable newHighlight = null;
+        // Next hovered references
+        IProximityHighlightable nextHighlight = null;
+        IHoverInfoUI nextHoverUI = null;
+
+        // Next click target references
+        IInteractable nextTarget = null;
+
+        bool nextInRange = false;
 
         if (hit != null)
         {
-            // Must be interactable
-            var candidate = hit.GetComponentInParent<IInteractable>();
-            if (candidate != null)
-            {
-                // Proximity gate: must be within range of player
-                Vector2 p = transform.position;
-                Vector2 closest = hit.ClosestPoint(p);
-                float distSq = (closest - p).sqrMagnitude;
+            // Hovered object: we can still show UI even if too far.
+            nextHighlight = hit.GetComponentInParent<IProximityHighlightable>();
+            nextHoverUI = hit.GetComponentInParent<IHoverInfoUI>();
 
-                if (distSq <= interactRadius * interactRadius)
-                {
-                    newTarget = candidate;
-                    newHighlight = hit.GetComponentInParent<IProximityHighlightable>();
-                }
+            // Range check determines whether click is valid.
+            Vector2 p = transform.position;
+            Vector2 closest = hit.ClosestPoint(p);
+            float distSq = (closest - p).sqrMagnitude;
+            nextInRange = distSq <= interactRadius * interactRadius;
+
+            if (nextInRange)
+            {
+                // Only set CurrentTarget when in range
+                var candidate = hit.GetComponentInParent<IInteractable>();
+                if (candidate != null)
+                    nextTarget = candidate;
             }
         }
 
-        if (newHighlight == currentHighlight && newTarget == currentTarget)
-            return;
+        // If hovered object OR hover range state changed, update presentation hooks
+        bool hoverChanged = nextHighlight != currentHighlight || nextHoverUI != currentHoverUI;
+        bool rangeChanged = nextInRange != currentHoverInRange;
 
-        // Turn off old prompt
-        currentHighlight?.SetIsClosest(false);
+        if (hoverChanged || rangeChanged)
+        {
+            // Turn off old hover effects
+            if (currentHighlight != null && hoverChanged)
+                currentHighlight.SetIsClosest(false);
 
-        currentTarget = newTarget;
-        currentHighlight = newHighlight;
+            if (currentHoverUI != null)
+                currentHoverUI.SetHoverState(false, false);
 
-        // Turn on new prompt (we reuse SetIsClosest as "highlight on")
-        currentHighlight?.SetIsClosest(true);
+            // Apply new hover effects
+            if (nextHighlight != null)
+                nextHighlight.SetIsClosest(true);
+
+            if (nextHoverUI != null)
+                nextHoverUI.SetHoverState(true, nextInRange);
+
+            currentHighlight = nextHighlight;
+            currentHoverUI = nextHoverUI;
+            currentHoverInRange = nextInRange;
+        }
+
+        // Update click target (can change even if hover didn’t)
+        currentTarget = nextTarget;
 
         if (drawDebug)
-            Debug.Log(currentTarget != null ? $"Hover target: {((MonoBehaviour)currentTarget).name}" : "Hover target: none");
+        {
+            string hoveredName = hit != null ? hit.GetComponentInParent<MonoBehaviour>()?.name : "none";
+            Debug.Log($"Hover: {hoveredName}, InRange: {nextInRange}, ClickTarget: {(currentTarget != null ? ((MonoBehaviour)currentTarget).name : "none")}");
+        }
     }
 
     private void OnDisable()
     {
         currentHighlight?.SetIsClosest(false);
+        currentHoverUI?.SetHoverState(false, false);
+
         currentHighlight = null;
+        currentHoverUI = null;
         currentTarget = null;
+        currentHoverInRange = false;
     }
 
     private void OnDrawGizmosSelected()

@@ -1,0 +1,179 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+
+public class HardwormHoverPanel : MonoBehaviour, IHoverInfoUI
+{
+    [Header("Spawn")]
+    [Tooltip("UI prefab (RectTransform root) to spawn under the WorldUIRoot screen-space canvas.")]
+    [SerializeField] private GameObject screenSpacePanelPrefab;
+
+    [Tooltip("World transform the UI should hover above (usually an empty child above the sprite).")]
+    [SerializeField] private Transform worldAnchor;
+
+    [Tooltip("Tag on the screen-space Canvas root used for world-attached UI.")]
+    [SerializeField] private string worldUIRootTag = "WorldUIRoot";
+
+    [Header("Content")]
+    [SerializeField] private string title = "Hardworms";
+    [TextArea] [SerializeField] private string description = "A wriggling mass prized by seabirds.";
+
+    [Header("Tween")]
+    [SerializeField] private float showDuration = 0.18f;
+    [SerializeField] private float hideDuration = 0.12f;
+    [SerializeField] private float hiddenScale = 0.88f;
+    [SerializeField] private Ease showEase = Ease.OutBack;
+    [SerializeField] private Ease hideEase = Ease.InCubic;
+
+    [Header("Range Visuals")]
+    [SerializeField] private float inRangeAlpha = 1f;
+    [SerializeField] private float outOfRangeAlpha = 0.45f;
+
+    // Spawned UI refs
+    private GameObject panelInstance;
+    private RectTransform panelTransform;
+    private CanvasGroup canvasGroup;
+    private TMP_Text titleText;
+    private TMP_Text descText;
+
+    private Tween activeTween;
+    private bool isVisible;
+    private HardwormPickup pickup;
+
+    private void Awake()
+    {
+        if (worldAnchor == null)
+            worldAnchor = transform;
+
+        pickup = GetComponent<HardwormPickup>();
+
+        SpawnPanel();
+        if (panelInstance == null) return; // safety
+
+        ApplyContent();
+
+        // Start hidden
+        panelInstance.SetActive(true);
+        canvasGroup.alpha = 0f;
+        panelTransform.localScale = Vector3.one * hiddenScale;
+        isVisible = false;
+    }
+
+
+    private void OnDestroy()
+    {
+        if (panelInstance != null)
+            Destroy(panelInstance);
+    }
+
+    private void SpawnPanel()
+    {
+        if (screenSpacePanelPrefab == null)
+        {
+            Debug.LogError($"{nameof(HardwormHoverPanel)}: screenSpacePanelPrefab not assigned.", this);
+            enabled = false;
+            return;
+        }
+
+        GameObject rootGO = GameObject.FindGameObjectWithTag(worldUIRootTag);
+        if (rootGO == null)
+        {
+            Debug.LogError($"{nameof(HardwormHoverPanel)}: Could not find WorldUIRoot with tag '{worldUIRootTag}'.", this);
+            enabled = false;
+            return;
+        }
+
+        var canvas = rootGO.GetComponentInChildren<Canvas>();
+        if (canvas == null)
+        {
+            Debug.LogError($"{nameof(HardwormHoverPanel)}: WorldUIRoot has no Canvas.", this);
+            enabled = false;
+            return;
+        }
+
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+        panelInstance = Instantiate(screenSpacePanelPrefab, canvasRect);
+
+        panelTransform = panelInstance.GetComponent<RectTransform>();
+        canvasGroup = panelInstance.GetComponentInChildren<CanvasGroup>(true);
+        var texts = panelInstance.GetComponentsInChildren<TMP_Text>(true);
+
+        if (canvasGroup == null || texts.Length < 2)
+        {
+            Debug.LogError($"{nameof(HardwormHoverPanel)}: Panel prefab missing CanvasGroup or TMP_Text children.", this);
+            enabled = false;
+            return;
+        }
+
+        // Assume first TMP is title, second is desc (or assign explicitly if you prefer)
+        titleText = texts[0];
+        descText = texts[1];
+
+        var follow = panelInstance.GetComponent<ScreenSpaceFollowWorld>();
+        if (follow == null)
+            follow = panelInstance.AddComponent<ScreenSpaceFollowWorld>();
+
+        follow.Init(Camera.main, canvasRect, worldAnchor);
+    }
+
+    private void ApplyContent()
+    {
+        if (pickup == null || pickup.PackDef == null)
+        {
+            titleText.text = "Unknown Item";
+            descText.text = "";
+            return;
+        }
+
+        var def = pickup.PackDef;
+
+        titleText.text = def.displayName;
+
+        // Requires you to add `description` to ItemDefinition (and thus PackDefinition inherits it)
+        descText.text = def.description ?? "";
+    }
+
+
+    public void SetHoverState(bool isHovered, bool inRange)
+    {
+        if (!enabled) return;
+
+        if (isHovered) Show(inRange);
+        else Hide();
+    }
+
+    private void Show(bool inRange)
+    {
+        float targetAlpha = inRange ? inRangeAlpha : outOfRangeAlpha;
+
+        if (!isVisible)
+        {
+            isVisible = true;
+            // reset baseline on first show
+            canvasGroup.alpha = 0f;
+            panelTransform.localScale = Vector3.one * hiddenScale;
+        }
+
+        activeTween?.Kill();
+
+        activeTween = DOTween.Sequence()
+            .Join(canvasGroup.DOFade(targetAlpha, 0.12f))
+            .Join(panelTransform.DOScale(1f, showDuration).SetEase(showEase))
+            .SetUpdate(true);
+    }
+
+    private void Hide()
+    {
+        if (!isVisible) return;
+
+        isVisible = false;
+        activeTween?.Kill();
+
+        activeTween = DOTween.Sequence()
+            .Join(canvasGroup.DOFade(0f, hideDuration))
+            .Join(panelTransform.DOScale(hiddenScale, hideDuration).SetEase(hideEase))
+            .SetUpdate(true);
+    }
+}

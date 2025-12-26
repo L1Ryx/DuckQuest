@@ -11,6 +11,9 @@ public class HardwormPickup : MonoBehaviour, IInteractable
 
     [Header("Events")]
     [SerializeField] private GameEvent onPickedUp; // optional: hook to your SO event system
+    
+    public HardwormPackDefinition PackDef => packDef;
+    public int PacksGranted => packsGranted;
 
     public void Interact(GameObject interactor)
     {

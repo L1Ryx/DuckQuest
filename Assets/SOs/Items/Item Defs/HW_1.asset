@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HW_1
   m_EditorClassIdentifier: 
   itemId: 001
-  packSize: 1
-  displayName: 1 Hardworm
+  displayName: Single Hardworm
+  description: Used for crafting.
   icon: {fileID: -836567240, guid: 9cb409a9433954d0f9f2a47c671caaf5, type: 3}
+  packSize: 1

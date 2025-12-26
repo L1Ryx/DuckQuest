@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HW_9
   m_EditorClassIdentifier: 
   itemId: 010
-  displayName: 9 Hardworms
+  displayName: Pack of 9 Hardworms
+  description: Used for crafting.
   icon: {fileID: -5144238022852969543, guid: 845a1b67b7c0b485fa7b78a64363656d, type: 3}
   packSize: 9
