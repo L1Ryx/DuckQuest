@@ -108,15 +108,20 @@ public class HardwormHoverPanel : MonoBehaviour, IHoverInfoUI
     canvasGroup = panelInstance.GetComponentInChildren<CanvasGroup>(true);
     var texts = panelInstance.GetComponentsInChildren<TMP_Text>(true);
 
-    if (panelTransform == null || canvasGroup == null || texts.Length < 2)
+    var view = panelInstance.GetComponent<HoverPanelView>();
+    if (view == null)
     {
-        Debug.LogError($"{nameof(HardwormHoverPanel)}: Panel prefab missing RectTransform/CanvasGroup/TMP_Text children.", this);
+        Debug.LogError($"{nameof(HardwormHoverPanel)}: HoverPanelView missing on panel prefab.", this);
         enabled = false;
         return;
     }
 
-    titleText = texts[0];
-    descText = texts[1];
+    panelTransform = view.panelTransform;
+    canvasGroup = view.canvasGroup;
+    titleText = view.titleText;
+    descText = view.descText;
+    symbolImage = view.symbolImage;
+
 
     // 3) NOW find the Symbol image on the spawned instance
     var symbolTf = panelInstance.transform.Find("Float Root/Symbol");
