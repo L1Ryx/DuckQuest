@@ -1,0 +1,76 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class FadeInOnLevelStart : MonoBehaviour
+{
+    [Header("References")]
+    [SerializeField] private Image overlayImage;
+
+    [Header("Fade Settings")]
+    [SerializeField] private float fadeDuration = 1.0f;
+    [SerializeField] private AnimationCurve fadeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+    [Header("Behavior")]
+    [SerializeField] private bool disableAfterFade = true;
+
+    private Coroutine fadeRoutine;
+
+    private void Reset()
+    {
+        overlayImage = GetComponentInChildren<Image>();
+    }
+
+    private void Awake()
+    {
+        if (overlayImage == null)
+        {
+            Debug.LogError($"{nameof(FadeInOnLevelStart)}: overlayImage is not assigned.", this);
+            enabled = false;
+            return;
+        }
+
+        // Start fully black and block input until fade is triggered.
+        SetAlpha(1f);
+        overlayImage.raycastTarget = true;
+    }
+
+    // Hook this up in GameEventListener.Response
+    public void PlayFadeFromBlack()
+    {
+        if (fadeRoutine != null)
+            StopCoroutine(fadeRoutine);
+
+        fadeRoutine = StartCoroutine(FadeOutRoutine());
+    }
+
+    private IEnumerator FadeOutRoutine()
+    {
+        float t = 0f;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            float normalized = Mathf.Clamp01(t / fadeDuration);
+            float eased = fadeCurve.Evaluate(normalized);
+
+            SetAlpha(1f - eased);
+            yield return null;
+        }
+
+        SetAlpha(0f);
+        overlayImage.raycastTarget = false;
+
+        if (disableAfterFade)
+            gameObject.SetActive(false);
+
+        fadeRoutine = null;
+    }
+
+    private void SetAlpha(float alpha)
+    {
+        var c = overlayImage.color;
+        c.a = alpha;
+        overlayImage.color = c;
+    }
+}
