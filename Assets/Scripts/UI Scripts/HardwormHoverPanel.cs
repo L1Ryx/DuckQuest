@@ -29,6 +29,12 @@ public class HardwormHoverPanel : MonoBehaviour, IHoverInfoUI
     [Header("Range Visuals")]
     [SerializeField] private float inRangeAlpha = 1f;
     [SerializeField] private float outOfRangeAlpha = 0.45f;
+    
+    [Header("Symbol")]
+    [SerializeField] private Sprite symbolInRange;
+    [SerializeField] private Sprite symbolOutOfRange;
+    private Image symbolImage;
+
 
     // Spawned UI refs
     private GameObject panelInstance;
@@ -68,55 +74,72 @@ public class HardwormHoverPanel : MonoBehaviour, IHoverInfoUI
     }
 
     private void SpawnPanel()
+{
+    if (screenSpacePanelPrefab == null)
     {
-        if (screenSpacePanelPrefab == null)
-        {
-            Debug.LogError($"{nameof(HardwormHoverPanel)}: screenSpacePanelPrefab not assigned.", this);
-            enabled = false;
-            return;
-        }
-
-        GameObject rootGO = GameObject.FindGameObjectWithTag(worldUIRootTag);
-        if (rootGO == null)
-        {
-            Debug.LogError($"{nameof(HardwormHoverPanel)}: Could not find WorldUIRoot with tag '{worldUIRootTag}'.", this);
-            enabled = false;
-            return;
-        }
-
-        var canvas = rootGO.GetComponentInChildren<Canvas>();
-        if (canvas == null)
-        {
-            Debug.LogError($"{nameof(HardwormHoverPanel)}: WorldUIRoot has no Canvas.", this);
-            enabled = false;
-            return;
-        }
-
-        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
-
-        panelInstance = Instantiate(screenSpacePanelPrefab, canvasRect);
-
-        panelTransform = panelInstance.GetComponent<RectTransform>();
-        canvasGroup = panelInstance.GetComponentInChildren<CanvasGroup>(true);
-        var texts = panelInstance.GetComponentsInChildren<TMP_Text>(true);
-
-        if (canvasGroup == null || texts.Length < 2)
-        {
-            Debug.LogError($"{nameof(HardwormHoverPanel)}: Panel prefab missing CanvasGroup or TMP_Text children.", this);
-            enabled = false;
-            return;
-        }
-
-        // Assume first TMP is title, second is desc (or assign explicitly if you prefer)
-        titleText = texts[0];
-        descText = texts[1];
-
-        var follow = panelInstance.GetComponent<ScreenSpaceFollowWorld>();
-        if (follow == null)
-            follow = panelInstance.AddComponent<ScreenSpaceFollowWorld>();
-
-        follow.Init(Camera.main, canvasRect, worldAnchor);
+        Debug.LogError($"{nameof(HardwormHoverPanel)}: screenSpacePanelPrefab not assigned.", this);
+        enabled = false;
+        return;
     }
+
+    GameObject rootGO = GameObject.FindGameObjectWithTag(worldUIRootTag);
+    if (rootGO == null)
+    {
+        Debug.LogError($"{nameof(HardwormHoverPanel)}: Could not find WorldUIRoot with tag '{worldUIRootTag}'.", this);
+        enabled = false;
+        return;
+    }
+
+    var canvas = rootGO.GetComponentInChildren<Canvas>();
+    if (canvas == null)
+    {
+        Debug.LogError($"{nameof(HardwormHoverPanel)}: WorldUIRoot has no Canvas.", this);
+        enabled = false;
+        return;
+    }
+
+    RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+    // 1) Instantiate FIRST
+    panelInstance = Instantiate(screenSpacePanelPrefab, canvasRect);
+
+    // 2) Cache core UI refs
+    panelTransform = panelInstance.GetComponent<RectTransform>();
+    canvasGroup = panelInstance.GetComponentInChildren<CanvasGroup>(true);
+    var texts = panelInstance.GetComponentsInChildren<TMP_Text>(true);
+
+    if (panelTransform == null || canvasGroup == null || texts.Length < 2)
+    {
+        Debug.LogError($"{nameof(HardwormHoverPanel)}: Panel prefab missing RectTransform/CanvasGroup/TMP_Text children.", this);
+        enabled = false;
+        return;
+    }
+
+    titleText = texts[0];
+    descText = texts[1];
+
+    // 3) NOW find the Symbol image on the spawned instance
+    var symbolTf = panelInstance.transform.Find("Float Root/Symbol");
+    if (symbolTf != null)
+    {
+        symbolImage = symbolTf.GetComponent<Image>();
+        if (symbolImage != null)
+            symbolImage.sprite = symbolOutOfRange;
+    }
+    else
+    {
+        // Not fatal; you can still use the panel without the symbol
+        Debug.LogWarning($"{nameof(HardwormHoverPanel)}: Could not find Symbol at path Float Root/Symbol on spawned panel.", this);
+    }
+
+    // 4) Init follower
+    var follow = panelInstance.GetComponent<ScreenSpaceFollowWorld>();
+    if (follow == null)
+        follow = panelInstance.AddComponent<ScreenSpaceFollowWorld>();
+
+    follow.Init(Camera.main, canvasRect, worldAnchor);
+}
+
 
     private void ApplyContent()
     {
@@ -146,6 +169,9 @@ public class HardwormHoverPanel : MonoBehaviour, IHoverInfoUI
 
     private void Show(bool inRange)
     {
+        if (symbolImage != null)
+            symbolImage.sprite = inRange ? symbolInRange : symbolOutOfRange;
+
         float targetAlpha = inRange ? inRangeAlpha : outOfRangeAlpha;
 
         if (!isVisible)
