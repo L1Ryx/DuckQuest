@@ -1,4 +1,6 @@
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.Events;
 
 public class AdditionSlot : MonoBehaviour, IInteractable
 {
@@ -7,11 +9,72 @@ public class AdditionSlot : MonoBehaviour, IInteractable
     [SerializeField] private Sprite emptySprite;
     [SerializeField] private Sprite filledSprite;
     [SerializeField] private SpriteRenderer itemIconRenderer;
+    
+    [Header("Icon Visual")]
+    [SerializeField] private Transform itemIconRoot;
+
+    [Header("Icon Tween")]
+    [SerializeField] private float iconShowDuration = 0.16f;
+    [SerializeField] private float iconHideDuration = 0.10f;
+    [SerializeField] private float iconHiddenScale = 0.75f;
+    [SerializeField] private Ease iconShowEase = Ease.OutBack;
+    [SerializeField] private Ease iconHideEase = Ease.InCubic;
+    [SerializeField] private float iconFadeDuration = 0.10f;
+    [Header("Events")] [SerializeField] private UnityEvent onSlotSlateChanged;
+
+    private Tween iconTween;
+
+    public bool IsEmpty => !HasValue;
 
 
     public bool HasValue { get; private set; }
     public int Value { get; private set; }
     public string StoredItemId { get; private set; } // for refund
+    private void Awake()
+    {
+        if (itemIconRoot == null && itemIconRenderer != null)
+            itemIconRoot = itemIconRenderer.transform;
+
+        SetIconHiddenImmediate();
+    }
+    
+    public string StoredItemName
+    {
+        get
+        {
+            if (!HasValue || string.IsNullOrEmpty(StoredItemId)) return null;
+            var def = Game.Ctx?.ItemDb?.Get(StoredItemId);
+            return def != null ? def.displayName : null;
+        }
+    }
+
+    public Sprite StoredItemIcon
+    {
+        get
+        {
+            if (!HasValue || string.IsNullOrEmpty(StoredItemId)) return null;
+            var def = Game.Ctx?.ItemDb?.Get(StoredItemId);
+            return def != null ? def.icon : null;
+        }
+    }
+
+    private void SetIconHiddenImmediate()
+    {
+        if (itemIconRenderer == null) return;
+
+        iconTween?.Kill();
+
+        itemIconRenderer.sprite = null;
+        itemIconRenderer.enabled = false;
+
+        // Reset alpha to 1 so future fades behave predictably
+        var c = itemIconRenderer.color;
+        c.a = 1f;
+        itemIconRenderer.color = c;
+
+        if (itemIconRoot != null)
+            itemIconRoot.localScale = Vector3.one * iconHiddenScale;
+    }
 
     public void Interact(GameObject interactor)
     {
@@ -36,6 +99,7 @@ public class AdditionSlot : MonoBehaviour, IInteractable
 
             ClearNoRefund(); // state clear only; refund already done
             UpdateVisual();
+            onSlotSlateChanged?.Invoke();
             return;
         }
 
@@ -68,35 +132,84 @@ public class AdditionSlot : MonoBehaviour, IInteractable
         HasValue = true;
         Value = hwDef.packSize;
         StoredItemId = selectedItemId;
+        ShowIcon(def.icon);
         
-        if (itemIconRenderer != null)
-        {
-            itemIconRenderer.sprite = def.icon;
-            itemIconRenderer.enabled = def.icon != null;
-        }
 
 
         UpdateVisual();
+        onSlotSlateChanged?.Invoke();
     }
+    
+    private void ShowIcon(Sprite icon)
+    {
+        if (itemIconRenderer == null || itemIconRoot == null) return;
+
+        iconTween?.Kill();
+
+        itemIconRenderer.sprite = icon;
+        itemIconRenderer.enabled = (icon != null);
+
+        // Start hidden baseline each time
+        itemIconRoot.localScale = Vector3.one * iconHiddenScale;
+
+        var c = itemIconRenderer.color;
+        c.a = 0f;
+        itemIconRenderer.color = c;
+
+        iconTween = DOTween.Sequence()
+            .Join(itemIconRoot.DOScale(1f, iconShowDuration).SetEase(iconShowEase))
+            .Join(itemIconRenderer.DOFade(1f, iconFadeDuration))
+            .SetUpdate(true);
+    }
+
+    private void HideIcon()
+    {
+        if (itemIconRenderer == null || itemIconRoot == null) return;
+        if (itemIconRenderer.sprite == null) return;
+
+        iconTween?.Kill();
+
+        iconTween = DOTween.Sequence()
+            .Join(itemIconRoot.DOScale(iconHiddenScale, iconHideDuration).SetEase(iconHideEase))
+            .Join(itemIconRenderer.DOFade(0f, iconHideDuration))
+            .SetUpdate(true)
+            .OnComplete(() =>
+            {
+                itemIconRenderer.sprite = null;
+                itemIconRenderer.enabled = false;
+
+                var c = itemIconRenderer.color;
+                c.a = 1f;
+                itemIconRenderer.color = c;
+            });
+    }
+
 
     public void ClearNoRefund()
     {
         HasValue = false;
         Value = 0;
         StoredItemId = null;
+
+        HideIcon();
         UpdateVisual();
-        if (itemIconRenderer != null)
-        {
-            itemIconRenderer.sprite = null;
-            itemIconRenderer.enabled = false;
-        }
+        onSlotSlateChanged?.Invoke();
     }
+
 
     private void Reset()
     {
         filledSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        itemIconRenderer = transform.Find("ItemIcon").GetComponent<SpriteRenderer>();
+
+        // If your child is named exactly "ItemIcon"
+        var iconTf = transform.Find("ItemIcon");
+        if (iconTf != null)
+        {
+            itemIconRoot = iconTf;
+            itemIconRenderer = iconTf.GetComponent<SpriteRenderer>();
+        }
     }
+
 
     private void UpdateVisual()
     {

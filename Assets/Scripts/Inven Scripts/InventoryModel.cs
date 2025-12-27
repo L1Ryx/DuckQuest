@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class InventoryModel
 {
@@ -56,6 +57,20 @@ public class InventoryModel
         OnChanged?.Invoke();
         return true;
     }
+    
+    public bool CanAdd(string itemId)
+    {
+        if (string.IsNullOrEmpty(itemId))
+            return false;
+
+        // Already have this item type → always allowed
+        if (indexById.ContainsKey(itemId))
+            return true;
+
+        // New item type → only allowed if under cap
+        return Data.entries.Count < MaxDistinctItemTypes;
+    }
+
 
     /// <summary>
     /// Backward-compatible; logs if add fails due to capacity.

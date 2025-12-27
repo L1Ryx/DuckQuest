@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AdditionOutputSlot : MonoBehaviour, IInteractable
 {
@@ -6,6 +7,10 @@ public class AdditionOutputSlot : MonoBehaviour, IInteractable
 
     [Header("Rules")]
     [SerializeField] private bool clearInputsAfterSuccess = true;
+
+    public AdditionMachine Machine => machine;
+    [Header("Events")] 
+    [SerializeField] private UnityEvent onOutputSlotChanged;
 
     public void Interact(GameObject interactor)
     {
@@ -45,6 +50,8 @@ public class AdditionOutputSlot : MonoBehaviour, IInteractable
 
         if (clearInputsAfterSuccess)
             machine.ClearInputs();
+
+        onOutputSlotChanged?.Invoke();
 
         Debug.Log($"Addition result: {sum} hardworms -> +1 {outDef.displayName}");
     }
