@@ -6,6 +6,8 @@ public class AdditionSlot : MonoBehaviour, IInteractable
     [SerializeField] private SpriteRenderer filledSpriteRenderer;
     [SerializeField] private Sprite emptySprite;
     [SerializeField] private Sprite filledSprite;
+    [SerializeField] private SpriteRenderer itemIconRenderer;
+
 
     public bool HasValue { get; private set; }
     public int Value { get; private set; }
@@ -66,6 +68,13 @@ public class AdditionSlot : MonoBehaviour, IInteractable
         HasValue = true;
         Value = hwDef.packSize;
         StoredItemId = selectedItemId;
+        
+        if (itemIconRenderer != null)
+        {
+            itemIconRenderer.sprite = def.icon;
+            itemIconRenderer.enabled = def.icon != null;
+        }
+
 
         UpdateVisual();
     }
@@ -76,11 +85,17 @@ public class AdditionSlot : MonoBehaviour, IInteractable
         Value = 0;
         StoredItemId = null;
         UpdateVisual();
+        if (itemIconRenderer != null)
+        {
+            itemIconRenderer.sprite = null;
+            itemIconRenderer.enabled = false;
+        }
     }
 
     private void Reset()
     {
         filledSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        itemIconRenderer = transform.Find("ItemIcon").GetComponent<SpriteRenderer>();
     }
 
     private void UpdateVisual()
