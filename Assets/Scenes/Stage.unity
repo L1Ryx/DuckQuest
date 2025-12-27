@@ -6011,7 +6011,7 @@ MonoBehaviour:
   worldAnchor: {fileID: 375972068}
   worldUIRootTag: WorldUIRoot
   title: Crafting Station
-  description: Combine items into something new.
+  description: Convert hardworms.
   symbolActive: {fileID: 5740432368282143668, guid: 395aa965111f64f9fb57378ed2c1e5d8, type: 3}
   symbolInactive: {fileID: -6496337873559359439, guid: 9c4cb81371e32478f8397b94d36f065e, type: 3}
   showDuration: 0.18

@@ -31,6 +31,8 @@ public class CraftingStationHoverPanel : MonoBehaviour, IHoverInfoUI
     private CraftingHoverPanelView view;
     private Tween activeTween;
     private bool isVisible;
+    private bool lastHovered;
+    private bool lastInRange;
 
     private CraftingStation station;
 
@@ -150,9 +152,31 @@ public class CraftingStationHoverPanel : MonoBehaviour, IHoverInfoUI
     {
         if (!enabled) return;
 
+        lastHovered = isHovered;
+        lastInRange = inRange;
+
         if (isHovered) Show(inRange);
         else Hide();
     }
+
+    public void RefreshAccessibility()
+    {
+        if (!enabled) return;
+        if (!isVisible) return;          // only refresh when panel is up
+        if (!lastHovered) return;        // defensive
+
+        bool active = lastInRange && CanAfford();
+
+        if (view.symbolImage != null)
+            view.symbolImage.sprite = active ? symbolActive : symbolInactive;
+
+        float targetAlpha = active ? activeAlpha : inactiveAlpha;
+
+        // Do NOT replay the pop-in tween; just update alpha smoothly
+        view.canvasGroup.DOKill();
+        view.canvasGroup.DOFade(targetAlpha, 0.08f).SetUpdate(true);
+    }
+
 
     private void Show(bool inRange)
     {

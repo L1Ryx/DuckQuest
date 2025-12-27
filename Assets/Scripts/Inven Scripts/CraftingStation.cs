@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CraftingStation : InventoryCostInteractable
 {
     [SerializeField] private CraftingTradeDefinition trade;
     public CraftingTradeDefinition Trade => trade;
+    [Header("Events")]
+    [SerializeField] private UnityEvent onCraftingComplete;
 
     protected override void OnPaymentSucceeded(GameObject interactor)
     {
@@ -16,6 +19,7 @@ public class CraftingStation : InventoryCostInteractable
         var inv = Game.Ctx.Inventory;
         inv.TryAdd(trade.outputItem.itemId, trade.outputCount);
 
+        onCraftingComplete?.Invoke();
         Debug.Log(
             $"Crafted: -{requiredCount} {requiredItem.displayName}, " +
             $"+{trade.outputCount} {trade.outputItem.displayName}"
