@@ -19,6 +19,9 @@ public abstract class InventoryCostInteractable : MonoBehaviour, IInteractable
     [SerializeField] protected UnityEvent onFail;
 
     protected bool hasBeenUsed = false;
+    public ItemDefinition RequiredItem => requiredItem;
+    public int RequiredCount => requiredCount;
+    public bool HasBeenUsed => hasBeenUsed;
 
     public void Interact(GameObject interactor)
     {
