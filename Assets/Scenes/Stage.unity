@@ -1082,10 +1082,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   easePosition: 1
-  startOffset: {x: 0, y: 15, z: 0}
+  startOffset: {x: 0, y: 50, z: 0}
   easeOrthoSize: 1
   orthoSizeOffset: 0.35
-  duration: 5
+  duration: 8
   startDelay: 0
   ease: 9
   useUnscaledTime: 1
@@ -1132,7 +1132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &582582726
 Transform:
   m_ObjectHideFlags: 0
@@ -5857,7 +5857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1362250913
 Transform:
   m_ObjectHideFlags: 0
@@ -6000,7 +6000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1396547027
 Transform:
   m_ObjectHideFlags: 0
@@ -6651,7 +6651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1739065466
 Transform:
   m_ObjectHideFlags: 0
