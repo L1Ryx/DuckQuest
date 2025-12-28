@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -53.3, y: -311.6}
+  m_AnchoredPosition: {x: -53.3, y: -297.9}
   m_SizeDelta: {x: 40.8496, y: 40.8496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8676581613559191476
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1720650344, guid: 9cb409a9433954d0f9f2a47c671caaf5, type: 3}
+  m_Sprite: {fileID: -5544520364177864938, guid: 6495574875af74d699f1477d93e123e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -730,8 +730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -53.068005, y: -278.56482}
-  m_SizeDelta: {x: 142.39, y: 67.3843}
+  m_AnchoredPosition: {x: -53.068005, y: -258.22736}
+  m_SizeDelta: {x: 142.39, y: 26.7094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2544326407470766264
 CanvasRenderer:
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pack of 5 Hardworms
+  m_text: Bomb x1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}
   m_sharedMaterial: {fileID: 8365030405494945382, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}

@@ -58,22 +58,23 @@ public class UIFloatyJuice : MonoBehaviour
         if (randomizePhase)
             phase = Random.Range(0f, 0.35f);
 
+        // Reset to baseline so loops are stable
+        rt.anchoredPosition = basePos;
+        rt.localScale = baseScale;
+
         seq = DOTween.Sequence()
             .SetUpdate(true)
-            .SetAutoKill(false);
+            .SetAutoKill(false)
+            .SetDelay(phase);
 
-        // Float: y up and down around basePos
-        seq.Join(rt.DOAnchorPosY(basePos.y + floatDistance, floatDuration)
-            .SetEase(floatEase)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetDelay(phase));
+        // Forward "half-cycle" (base -> up / base -> bigger)
+        seq.Join(rt.DOAnchorPosY(basePos.y + floatDistance, floatDuration).SetEase(floatEase));
+        seq.Join(rt.DOScale(baseScale * (1f + scaleAmount), scaleDuration).SetEase(scaleEase));
 
-        // Breath: scale slightly up and down around baseScale
-        seq.Join(rt.DOScale(baseScale * (1f + scaleAmount), scaleDuration)
-            .SetEase(scaleEase)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetDelay(phase * 0.5f));
+        // Loop the entire sequence back and forth forever
+        seq.SetLoops(-1, LoopType.Yoyo);
     }
+
 
     private void StopJuice()
     {

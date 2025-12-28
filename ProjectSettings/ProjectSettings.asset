@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Shawn Guo
   productName: Duck Quest
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: -8328923581568760697, guid: 574bb1e0c8d86483b9d9038f36c317e9, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

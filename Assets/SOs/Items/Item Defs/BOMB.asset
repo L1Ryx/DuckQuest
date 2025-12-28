@@ -15,5 +15,5 @@ MonoBehaviour:
   itemId: 006
   displayName: Bomb
   description: Clear a path.
-  icon: {fileID: -5144238022852969543, guid: 845a1b67b7c0b485fa7b78a64363656d, type: 3}
+  icon: {fileID: -5544520364177864938, guid: 6495574875af74d699f1477d93e123e9, type: 3}
   fuseSeconds: 1.5
