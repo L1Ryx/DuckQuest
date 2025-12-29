@@ -75,6 +75,17 @@ public class UIFloatyJuice : MonoBehaviour
         seq.SetLoops(-1, LoopType.Yoyo);
     }
 
+    public void Rebase()
+    {
+        if (rt == null) rt = (RectTransform)transform;
+
+        basePos = rt.anchoredPosition;
+        baseScale = rt.localScale;
+
+        if (isActiveAndEnabled)
+            StartJuice();
+    }
+    
 
     private void StopJuice()
     {
