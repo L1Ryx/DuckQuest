@@ -15,6 +15,14 @@ public class InventoryBarPanelUI : MonoBehaviour
 
     private int lastSelectedIndex = -1;
     private bool subscribed;
+    
+    private struct SlotSnapshot
+    {
+        public string itemId;
+        public int count;
+    }
+    private readonly SlotSnapshot[] snapshot = new SlotSnapshot[4];
+
 
     private void Awake()
     {
@@ -28,10 +36,6 @@ public class InventoryBarPanelUI : MonoBehaviour
         canvasGroup.alpha = 0f;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
-
-        // Initialize empty
-        for (int i = 0; i < slots.Length; i++)
-            slots[i]?.SetEmpty();
         
         
     }
@@ -100,28 +104,60 @@ public class InventoryBarPanelUI : MonoBehaviour
 
         var entries = Game.Ctx.Inventory.Data.entries;
 
-        // Fill occupied slots by entry order; remaining slots empty
-        for (int i = 0; i < 4; i++)
-        {
-            if (slots[i] == null) continue;
-
-            if (entries != null && i < entries.Count && !string.IsNullOrEmpty(entries[i].itemId))
-            {
-                var def = Game.Ctx.ItemDb.Get(entries[i].itemId);
-                slots[i].BindItem(def);
-            }
-            else
-            {
-                slots[i].SetEmpty();
-            }
-        }
         for (int i = 0; i < 4; i++)
         {
             if (slots[i] == null)
+            {
                 Debug.LogError($"InventoryBarPanelUI: slots[{i}] is NULL");
-        }
+                continue;
+            }
 
+            // Desired state for this UI slot
+            string desiredItemId = null;
+            int desiredCount = 0;
+
+            if (entries != null && i < entries.Count && !string.IsNullOrEmpty(entries[i].itemId))
+            {
+                desiredItemId = entries[i].itemId;
+                desiredCount = entries[i].count;
+            }
+
+            // Normalize empties
+            if (string.IsNullOrEmpty(desiredItemId))
+            {
+                desiredItemId = null;
+                desiredCount = 0;
+            }
+
+            // If unchanged, do nothing (prevents jerk)
+            if (snapshot[i].itemId == desiredItemId && snapshot[i].count == desiredCount)
+                continue;
+
+            // Update snapshot first
+            snapshot[i].itemId = desiredItemId;
+            snapshot[i].count = desiredCount;
+
+            // Apply UI change only when needed
+            if (desiredItemId == null)
+            {
+                slots[i].SetEmpty();
+            }
+            else
+            {
+                var def = Game.Ctx.ItemDb.Get(desiredItemId);
+                if (def == null)
+                {
+                    Debug.LogWarning($"InventoryBarPanelUI: ItemDatabase missing def for '{desiredItemId}'");
+                    slots[i].SetEmpty();
+                }
+                else
+                {
+                    slots[i].BindItem(def, desiredCount);
+                }
+            }
+        }
     }
+
 
     private void ApplySelection(bool force)
     {
@@ -133,9 +169,9 @@ public class InventoryBarPanelUI : MonoBehaviour
         if (!force && selected == lastSelectedIndex)
             return;
 
-        // Deselect all, then select current
-        for (int i = 0; i < 4; i++)
-            slots[i]?.SetSelected(false);
+        // Only update what changed
+        if (lastSelectedIndex >= 0 && lastSelectedIndex < 4)
+            slots[lastSelectedIndex]?.SetSelected(false);
 
         if (selected >= 0 && selected < 4 && selected < entryCount)
             slots[selected]?.SetSelected(true);

@@ -3,10 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class Bootstrapper : MonoBehaviour
 {
-    [SerializeField] private string firstSceneName = "Stage";
+    [SerializeField] private string defaultFirstSceneName = "Stage";
 
     private void Start()
     {
-        SceneManager.LoadScene(firstSceneName);
+        string targetScene =
+            string.IsNullOrEmpty(AutoBootstrapRedirector.BootstrapHandoff.PendingSceneName)
+                ? defaultFirstSceneName
+                : AutoBootstrapRedirector.BootstrapHandoff.PendingSceneName;
+
+        // Clear handoff so future loads are clean
+        AutoBootstrapRedirector.BootstrapHandoff.PendingSceneName = null;
+
+        SceneManager.LoadScene(targetScene);
     }
 }

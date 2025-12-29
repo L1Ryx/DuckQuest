@@ -17,6 +17,14 @@ public class InventoryBarSlotUI : MonoBehaviour
     [SerializeField] private Image titleBackgroundImage;        // e.g. "Item 1 Title Background UI" Image
     [SerializeField] private TMP_Text titleText;                // e.g. "Item 1 Title UI" TMP
 
+    [Header("Count")]
+    [SerializeField] private TMP_Text numberText;   // "Number Text" under the slot
+    [SerializeField, Range(0f, 1f)] private float numberVisibleAlpha = 1f;
+    [SerializeField] private float numberFadeSeconds = 0.10f;
+    [SerializeField] private Ease numberFadeEase = Ease.OutQuad;
+
+    private int itemCount = 0;
+    private bool ShouldShowCount => hasItem && itemCount >= 2;
     [Header("Selection Visuals")]
     [SerializeField] private float selectedScaleMultiplier = 1.10f;
     [SerializeField] private float selectTweenSeconds = 0.10f;
@@ -47,6 +55,10 @@ public class InventoryBarSlotUI : MonoBehaviour
     public string CurrentItemId => currentItemId;
 
     private bool based;
+    private bool hasItem;
+    private bool IsEmpty => !hasItem;
+
+
 
     private void Awake()
     {
@@ -69,6 +81,7 @@ public class InventoryBarSlotUI : MonoBehaviour
 
         // Ensure title starts hidden (your spec: only visible when selected)
         SetTitleVisibleImmediate(false);
+        UpdateCountImmediate();
         
         if (itemFrameImage == null) Debug.LogError($"{name}: itemFrameImage NULL");
         if (itemIconImage == null) Debug.LogError($"{name}: itemIconImage NULL");
@@ -78,13 +91,13 @@ public class InventoryBarSlotUI : MonoBehaviour
 
     public void SetEmpty()
     {
+        hasItem = false;
+        itemCount = 0;
         currentItemId = null;
 
         if (itemIconImage != null)
         {
             itemIconImage.sprite = null;
-
-            // Keep whatever dim tint you authored, but force alpha = 0 so it looks empty
             var c = itemIconImage.color;
             c.a = 0f;
             itemIconImage.color = c;
@@ -92,38 +105,66 @@ public class InventoryBarSlotUI : MonoBehaviour
 
         if (titleText != null) titleText.text = string.Empty;
         SetTitleVisibleImmediate(false);
-
-        // Return visuals to base (dim) state
-        ApplyDeselectedImmediate();
+        UpdateCountImmediate();
     }
 
-    public void BindItem(ItemDefinition def)
+
+    public void BindItem(ItemDefinition def, int quantity)
     {
-        currentItemId = def != null ? def.itemId : null;
+        hasItem = (def != null);
+        itemCount = hasItem ? Mathf.Max(0, quantity) : 0;
+        currentItemId = def != null ? def.itemId : null; // only if ItemDefinition really has itemId
 
         if (itemIconImage != null)
         {
             itemIconImage.sprite = def != null ? def.icon : null;
 
-            // Restore authored “dim” alpha when occupied (leave selection to set it to full)
+            // occupied slots: restore authored inactive color (including its alpha)
             itemIconImage.color = baseIconColor;
         }
 
         if (titleText != null)
             titleText.text = def != null ? def.displayName : string.Empty;
 
-        // Not selected by default; panel will decide selection
-        SetTitleVisibleImmediate(false);
-        ApplyDeselectedImmediate();
+        UpdateCountImmediate();
+        // SetTitleVisibleImmediate(false);
+        // ApplyDeselectedImmediate();
     }
+    
+    private void UpdateCountImmediate()
+    {
+        if (numberText == null) return;
+
+        if (ShouldShowCount)
+            numberText.text = $"{itemCount}";
+        else
+            numberText.text = string.Empty;
+
+        numberText.alpha = ShouldShowCount ? numberVisibleAlpha : 0f;
+    }
+
+    private void UpdateCountTweened()
+    {
+        if (numberText == null) return;
+
+        DOTween.Kill(numberText);
+
+        if (ShouldShowCount)
+            numberText.text = $"x{itemCount}";
+        else
+            numberText.text = string.Empty;
+
+        numberText.DOFade(ShouldShowCount ? numberVisibleAlpha : 0f, numberFadeSeconds)
+            .SetEase(numberFadeEase)
+            .SetUpdate(true);
+    }
+
     
     public void Rebase()
     {
         if (itemFrameRect != null) baseFrameScale = itemFrameRect.localScale;
         if (itemIconRect != null) baseIconScale = itemIconRect.localScale;
-
-        if (itemFrameImage != null) baseFrameColor = itemFrameImage.color;
-        if (itemIconImage != null) baseIconColor = itemIconImage.color;
+        
 
         // Force “title hidden unless selected”
         SetTitleVisibleImmediate(false);
@@ -145,9 +186,16 @@ public class InventoryBarSlotUI : MonoBehaviour
 
     public void SetSelected(bool selected)
     {
+        if (IsEmpty)
+        {
+            ApplyDeselectedImmediate();
+            return;
+        }
+
         if (selected) ApplySelectedTweened();
         else ApplyDeselectedTweened();
     }
+
 
     private void ApplySelectedTweened()
     {
@@ -169,6 +217,8 @@ public class InventoryBarSlotUI : MonoBehaviour
             itemIconImage.DOColor(selectedIconColor, selectTweenSeconds)
                 .SetEase(selectEase).SetUpdate(true);
 
+        if (numberText != null) DOTween.Kill(numberText);
+
         FadeTitle(true);
     }
 
@@ -189,8 +239,19 @@ public class InventoryBarSlotUI : MonoBehaviour
                 .SetEase(deselectEase).SetUpdate(true);
 
         if (itemIconImage != null)
-            itemIconImage.DOColor(baseIconColor, deselectTweenSeconds)
-                .SetEase(deselectEase).SetUpdate(true);
+        {
+            if (IsEmpty)
+            {
+                var c = itemIconImage.color;
+                c.a = 0f;
+                itemIconImage.color = c;
+            }
+            else
+            {
+                itemIconImage.color = baseIconColor;
+            }
+        }
+
 
         FadeTitle(false);
     }
@@ -203,32 +264,43 @@ public class InventoryBarSlotUI : MonoBehaviour
         if (itemIconRect != null) itemIconRect.localScale = baseIconScale;
 
         if (itemFrameImage != null) itemFrameImage.color = baseFrameColor;
-        if (itemIconImage != null) itemIconImage.color = baseIconColor;
+        if (itemIconImage != null)
+        {
+            if (IsEmpty)
+            {
+                var c = itemIconImage.color;
+                c.a = 0f;
+
+                itemIconImage.DOColor(c, deselectTweenSeconds)
+                    .SetEase(deselectEase).SetUpdate(true);
+            }
+            else
+            {
+                itemIconImage.DOColor(baseIconColor, deselectTweenSeconds)
+                    .SetEase(deselectEase).SetUpdate(true);
+            }
+        }
 
         SetTitleVisibleImmediate(false);
     }
 
     private void FadeTitle(bool visible)
     {
-        // If slot is empty, never show title
-        if (string.IsNullOrEmpty(currentItemId))
+        if (IsEmpty)
             visible = false;
 
         float targetTextAlpha = visible ? titleVisibleAlpha : 0f;
         float bgAlpha = visible ? titleBgVisibleAlpha : 0f;
 
         if (titleBackgroundImage != null)
-        {
-            var bg = titleBackgroundImage.color;
-            bg.a = bgAlpha;
-            titleBackgroundImage.color = bg;
-        }
-
+            titleBackgroundImage.DOFade(bgAlpha, titleFadeSeconds)
+                .SetEase(titleFadeEase).SetUpdate(true);
 
         if (titleText != null)
             titleText.DOFade(targetTextAlpha, titleFadeSeconds)
                 .SetEase(titleFadeEase).SetUpdate(true);
     }
+
 
     private void SetTitleVisibleImmediate(bool visible)
     {

@@ -8,15 +8,20 @@ public class AutoBootstrapRedirector : MonoBehaviour
 
     private void Awake()
     {
-        // If the GameContext already exists, do nothing
-        if (Game.IsReady)
-            return;
+        if (Game.IsReady) return;
 
-        // Prevent multiple redirectors from firing
-        if (SceneManager.GetActiveScene().name == bootstrapSceneName)
-            return;
+        var active = SceneManager.GetActiveScene().name;
+        if (active == bootstrapSceneName) return;
 
-        // Redirect to Bootstrap
+        // Remember where we wanted to go
+        BootstrapHandoff.PendingSceneName = active;
+
+        // Load bootstrap
         SceneManager.LoadScene(bootstrapSceneName);
     }
+    public static class BootstrapHandoff
+    {
+        public static string PendingSceneName;
+    }
+
 }
