@@ -344,7 +344,10 @@ MonoBehaviour:
   scaleAmount: 0.02
   scaleDuration: 1.9
   scaleEase: 4
+  randomizeDelay: 1
+  maxDelaySeconds: 0.7
   randomizePhase: 1
+  maxPhaseNormalized: 1
 --- !u!1 &7654190364189295813
 GameObject:
   m_ObjectHideFlags: 0
