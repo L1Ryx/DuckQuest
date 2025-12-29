@@ -35267,18 +35267,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory UI
       objectReference: {fileID: 0}
-    - target: {fileID: 4573850292344500719, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7411859165400010046, guid: 600b076e777764017a75e55f0a159232, type: 3}
-    - target: {fileID: 5592078149211741403, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7411859165400010046, guid: 600b076e777764017a75e55f0a159232, type: 3}
-    - target: {fileID: 6785799920541963845, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7411859165400010046, guid: 600b076e777764017a75e55f0a159232, type: 3}
     - target: {fileID: 8234158048548919187, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -35359,10 +35347,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8706207207651740476, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7411859165400010046, guid: 600b076e777764017a75e55f0a159232, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

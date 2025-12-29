@@ -15,7 +15,13 @@ public class UIFloatyJuice : MonoBehaviour
     [SerializeField] private Ease scaleEase = Ease.InOutSine;
 
     [Header("Variation")]
+    [SerializeField] private bool randomizeDelay = true;
+    [SerializeField] private float maxDelaySeconds = 0.35f;
+
     [SerializeField] private bool randomizePhase = true;
+// 0..1 means "percent through the loop"
+    [SerializeField, Range(0f, 1f)] private float maxPhaseNormalized = 1f;
+
 
     private RectTransform rt;
     private Vector2 basePos;
@@ -54,26 +60,52 @@ public class UIFloatyJuice : MonoBehaviour
     {
         StopJuice();
 
-        float phase = 0f;
-        if (randomizePhase)
-            phase = Random.Range(0f, 0.35f);
-
         // Reset to baseline so loops are stable
         rt.anchoredPosition = basePos;
         rt.localScale = baseScale;
 
+        float delay = 0f;
+        if (randomizeDelay)
+            delay = Random.Range(0f, Mathf.Max(0f, maxDelaySeconds));
+
         seq = DOTween.Sequence()
             .SetUpdate(true)
-            .SetAutoKill(false)
-            .SetDelay(phase);
+            .SetAutoKill(false);
 
-        // Forward "half-cycle" (base -> up / base -> bigger)
+        // Forward half-cycle
         seq.Join(rt.DOAnchorPosY(basePos.y + floatDistance, floatDuration).SetEase(floatEase));
         seq.Join(rt.DOScale(baseScale * (1f + scaleAmount), scaleDuration).SetEase(scaleEase));
 
         // Loop the entire sequence back and forth forever
         seq.SetLoops(-1, LoopType.Yoyo);
+
+        // Apply delay (optional)
+        if (delay > 0f)
+            seq.SetDelay(delay);
+
+        // Apply phase randomization (optional)
+        // This jumps the tween to a random position within its duration,
+        // so multiple instances won't align even if they start the same frame.
+        if (randomizePhase)
+        {
+            float dur = seq.Duration(includeLoops: false);
+            if (dur > 0f)
+            {
+                float phase01 = Random.Range(0f, Mathf.Clamp01(maxPhaseNormalized));
+                float t = phase01 * dur;
+
+                // Force setup then jump without triggering callbacks
+                seq.ForceInit();
+                seq.Goto(t, andPlay: true);
+            }
+        }
+        else
+        {
+            // ensure it plays
+            seq.Play();
+        }
     }
+
 
     public void Rebase()
     {

@@ -41,6 +41,10 @@ public class InventoryBarSlotUI : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float titleBgVisibleAlpha = 1f;
     [SerializeField] private float titleFadeSeconds = 0.10f;
     [SerializeField] private Ease titleFadeEase = Ease.OutQuad;
+    [Header("Floaty")]
+    [SerializeField] private UIFloatyJuice titleFloaty;
+    [SerializeField] private UIFloatyJuice numberFloaty;
+
 
     // Cached authored “base” state (dim/low alpha) from scene/prefab
     private Vector3 baseFrameScale;
@@ -83,14 +87,28 @@ public class InventoryBarSlotUI : MonoBehaviour
         SetTitleVisibleImmediate(false);
         UpdateCountImmediate();
         
+        if (titleFloaty == null && titleText != null)
+            titleFloaty = titleText.GetComponent<UIFloatyJuice>();
+
+        if (numberFloaty == null && numberText != null)
+            numberFloaty = numberText.GetComponent<UIFloatyJuice>();
+        
         if (itemFrameImage == null) Debug.LogError($"{name}: itemFrameImage NULL");
         if (itemIconImage == null) Debug.LogError($"{name}: itemIconImage NULL");
         if (titleText == null) Debug.LogWarning($"{name}: titleText NULL"); // less critical
 
     }
+    
+    private static void SetFloaty(UIFloatyJuice juice, bool enabled)
+    {
+        if (juice != null)
+            juice.enabled = enabled;
+    }
+
 
     public void SetEmpty()
     {
+        KillTweens();
         hasItem = false;
         itemCount = 0;
         currentItemId = null;
@@ -111,6 +129,7 @@ public class InventoryBarSlotUI : MonoBehaviour
 
     public void BindItem(ItemDefinition def, int quantity)
     {
+        KillTweens();
         hasItem = (def != null);
         itemCount = hasItem ? Mathf.Max(0, quantity) : 0;
         currentItemId = def != null ? def.itemId : null; // only if ItemDefinition really has itemId
@@ -242,13 +261,12 @@ public class InventoryBarSlotUI : MonoBehaviour
         {
             if (IsEmpty)
             {
-                var c = itemIconImage.color;
-                c.a = 0f;
-                itemIconImage.color = c;
+                var c = itemIconImage.color; c.a = 0f;
+                itemIconImage.DOColor(c, deselectTweenSeconds).SetEase(deselectEase).SetUpdate(true);
             }
             else
             {
-                itemIconImage.color = baseIconColor;
+                itemIconImage.DOColor(baseIconColor, deselectTweenSeconds).SetEase(deselectEase).SetUpdate(true);
             }
         }
 
@@ -264,25 +282,24 @@ public class InventoryBarSlotUI : MonoBehaviour
         if (itemIconRect != null) itemIconRect.localScale = baseIconScale;
 
         if (itemFrameImage != null) itemFrameImage.color = baseFrameColor;
+
         if (itemIconImage != null)
         {
             if (IsEmpty)
             {
                 var c = itemIconImage.color;
                 c.a = 0f;
-
-                itemIconImage.DOColor(c, deselectTweenSeconds)
-                    .SetEase(deselectEase).SetUpdate(true);
+                itemIconImage.color = c;
             }
             else
             {
-                itemIconImage.DOColor(baseIconColor, deselectTweenSeconds)
-                    .SetEase(deselectEase).SetUpdate(true);
+                itemIconImage.color = baseIconColor;
             }
         }
 
         SetTitleVisibleImmediate(false);
     }
+
 
     private void FadeTitle(bool visible)
     {
