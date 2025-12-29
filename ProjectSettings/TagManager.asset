@@ -45,11 +45,17 @@ TagManager:
   - name: Furthest
     uniqueID: 239568807
     locked: 0
+  - name: Shoreline
+    uniqueID: 187023817
+    locked: 0
   - name: Ocean
     uniqueID: 1196892549
     locked: 0
   - name: Ground
     uniqueID: 2094982563
+    locked: 0
+  - name: Patches
+    uniqueID: 1238092013
     locked: 0
   - name: Items
     uniqueID: 3890755365
@@ -65,6 +71,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2329534319
+    locked: 0
+  - name: World Entities
+    uniqueID: 1611248307
     locked: 0
   - name: UI
     uniqueID: 3652863029
