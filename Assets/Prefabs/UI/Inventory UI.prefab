@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 4897859619390557944}
-  fadeSeconds: 1.5
+  fadeSeconds: 1.25
   fadeEase: 6
   slots:
   - {fileID: 1505340281513259432}
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: a53ca0579f6ed43b899bd5844e13bd0e, type: 2}
+  Event: {fileID: 11400000, guid: fdeaa4625a56b492797a188010c790a6, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:

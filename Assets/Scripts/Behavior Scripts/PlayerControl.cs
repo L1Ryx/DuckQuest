@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -6,6 +7,10 @@ public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
 
+    // [Header("Events")] 
+    // [SerializeField] private UnityEvent lockInteractions;
+    // [SerializeField] private UnityEvent unlockInteractions;
+    
     [Header("Animation")]
     [SerializeField] private Animator animator;
     [SerializeField] private float inputDeadzone = 0.15f;
@@ -62,6 +67,16 @@ public class PlayerControl : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
     }
+
+    // public void LockInteractions()
+    // {
+    //     lockInteractions?.Invoke();
+    // }
+    //
+    // public void unLockInteractions()
+    // {
+    //     unlockInteractions?.Invoke();
+    // }
 
     private void UpdateFacingLock(Vector2 input)
     {

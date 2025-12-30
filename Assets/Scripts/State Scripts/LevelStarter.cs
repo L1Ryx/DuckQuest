@@ -1,10 +1,17 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelStarter : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] private float startDelay = 1f;
+
+    [SerializeField] private bool lockInteractionsAtStart = true;
+    [Header("Events")]
+    [SerializeField] private UnityEvent lockInteractions;
+    
     private void Start()
     {
         if (!Game.IsReady || Game.Ctx.LevelState == null)
@@ -14,6 +21,11 @@ public class LevelStarter : MonoBehaviour
         }
 
         StartCoroutine(DelayedStart(startDelay));
+
+        if (lockInteractionsAtStart)
+        {
+            lockInteractions?.Invoke();
+        }
     }
 
     private IEnumerator DelayedStart(float delay)

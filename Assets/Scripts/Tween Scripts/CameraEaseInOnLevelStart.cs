@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Camera))]
 public class CameraEaseInOnLevelStart : MonoBehaviour
@@ -18,9 +19,15 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
     [SerializeField] private Ease ease = Ease.OutCubic;
     [SerializeField] private bool useUnscaledTime = true;
 
+    [Header("Events")]
+    [SerializeField] private UnityEvent onPanComplete;
+
+    [SerializeField] private UnityEvent onUnlockInteractions;
+
     private Camera cam;
     private Tween posTween;
     private Tween sizeTween;
+    private Sequence seq;
 
     private Vector3 targetPos;
     private float targetOrthoSize;
@@ -36,6 +43,7 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
     {
         posTween?.Kill();
         sizeTween?.Kill();
+        seq?.Kill();
     }
 
     // Hook this to LevelStartedEvent via GameEventListener.Response
@@ -43,29 +51,51 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
     {
         posTween?.Kill();
         sizeTween?.Kill();
+        seq?.Kill();
 
         // Reset targets in case something moved camera pre-start (e.g., spawn system).
         targetPos = transform.position;
         targetOrthoSize = cam.orthographicSize;
 
-        if (easePosition)
+        bool willTweenPos = easePosition;
+        bool willTweenSize = easeOrthoSize && cam.orthographic;
+
+        // If nothing will tween, consider the "pan" complete immediately.
+        if (!willTweenPos && !willTweenSize)
+        {
+            onPanComplete?.Invoke();
+            return;
+        }
+
+        // Build a single sequence so completion is deterministic.
+        seq = DOTween.Sequence()
+            .SetDelay(startDelay)
+            .SetEase(ease)
+            .SetUpdate(useUnscaledTime)
+            .OnComplete(() => onPanComplete?.Invoke());
+
+        if (willTweenPos)
         {
             transform.position = targetPos + startOffset;
 
-            posTween = transform.DOMove(targetPos, duration)
-                .SetDelay(startDelay)
-                .SetEase(ease)
-                .SetUpdate(useUnscaledTime);
+            posTween = transform.DOMove(targetPos, duration);
+
+            // Join so both tweens run concurrently and the sequence completes after both.
+            seq.Join(posTween);
         }
 
-        if (easeOrthoSize && cam.orthographic)
+        if (willTweenSize)
         {
             cam.orthographicSize = targetOrthoSize + orthoSizeOffset;
 
-            sizeTween = cam.DOOrthoSize(targetOrthoSize, duration)
-                .SetDelay(startDelay)
-                .SetEase(ease)
-                .SetUpdate(useUnscaledTime);
+            sizeTween = cam.DOOrthoSize(targetOrthoSize, duration);
+
+            seq.Join(sizeTween);
         }
+    }
+
+    public void UnlockInteractions()
+    {
+        onUnlockInteractions?.Invoke();
     }
 }
