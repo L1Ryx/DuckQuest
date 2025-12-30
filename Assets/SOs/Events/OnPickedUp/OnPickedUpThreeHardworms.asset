@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bebd60ac1e8046699874f0105f70988, type: 3}
   m_Name: OnPickedUpThreeHardworms
   m_EditorClassIdentifier: 
+  description: When picking up three hardworms.
+  isImportant: 0
