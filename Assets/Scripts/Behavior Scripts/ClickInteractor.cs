@@ -20,7 +20,10 @@ public class ClickInteractor : MonoBehaviour
     {
         var target = targeter != null ? targeter.CurrentTarget : null;
         if (target == null) return;
-
+        if (Game.Ctx.InteractionLock.IsLocked)
+        {
+            return;
+        }
         target.Interact(gameObject);
     }
 }

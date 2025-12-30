@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float inputDeadzone = 0.15f;
     [SerializeField] private float movingVelocityThreshold = 0.001f;
+    [Header("Locking")] [SerializeField] private bool shouldLockFacingDirectionChangeWhenInteractionLocked = true;
 
     private Rigidbody2D rb;
 
@@ -33,12 +34,20 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Game.IsReady && Game.Ctx?.InteractionLock?.IsLocked == true)
+        {
+            return; // RETURN EARLY IF LOCKED
+        }
         moveVector = moveInput.sqrMagnitude > 1f ? moveInput.normalized : moveInput;
         rb.linearVelocity = moveVector * moveSpeed;
     }
 
     private void Update()
     {
+        if (Game.IsReady && Game.Ctx?.InteractionLock?.IsLocked == true && shouldLockFacingDirectionChangeWhenInteractionLocked)
+        {
+            return; // THIS IS A DESIGN CHOICE???
+        }
         UpdateFacingLock(moveInput);
     }
 

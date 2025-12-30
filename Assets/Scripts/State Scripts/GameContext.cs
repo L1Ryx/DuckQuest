@@ -9,6 +9,7 @@ public class GameContext : MonoBehaviour
     public InventoryModel Inventory { get; private set; }
     public InventorySelectionModel InventorySelection { get; private set; }
     public LevelStateModel LevelState { get; private set; }
+    public InteractionLockModel InteractionLock { get; private set; }
 
     [Header("Databases")] [SerializeField] private ItemDatabase itemDatabase;
 
@@ -33,5 +34,6 @@ public class GameContext : MonoBehaviour
         Inventory = new InventoryModel(new InventoryData());
         InventorySelection = new InventorySelectionModel(Inventory);
         LevelState = new LevelStateModel();
+        InteractionLock = new InteractionLockModel();
     }
 }

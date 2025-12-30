@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d776c0d24ce1d40b1be2dde02631652a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSceneName: Stage
+  defaultFirstSceneName: Stage
 --- !u!1 &1161664107
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +528,9 @@ GameObject:
   - component: {fileID: 1712910839}
   - component: {fileID: 1712910840}
   - component: {fileID: 1712910841}
+  - component: {fileID: 1712910844}
+  - component: {fileID: 1712910843}
+  - component: {fileID: 1712910842}
   m_Layer: 0
   m_Name: GameContext
   m_TagString: Untagged
@@ -590,6 +593,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onInventoryChanged: {fileID: 11400000, guid: 8ca9362b000ba43fab148b9b0f87f611, type: 2}
+--- !u!114 &1712910842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712910837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f751737a3be1c406abc841072408341d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1712910844}
+        m_TargetAssemblyTypeName: InteractionLockEventBridge, Assembly-CSharp
+        m_MethodName: ReleaseLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1712910843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712910837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 896c5de8b819443c8bd44fc0c620048d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1712910844}
+        m_TargetAssemblyTypeName: InteractionLockEventBridge, Assembly-CSharp
+        m_MethodName: AcquireLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1712910844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712910837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d4ee797ff7147f498ba7179629529d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockInteractions: {fileID: 11400000, guid: 896c5de8b819443c8bd44fc0c620048d, type: 2}
+  unlockInteractions: {fileID: 11400000, guid: f751737a3be1c406abc841072408341d, type: 2}
 --- !u!1 &2001520359
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,20 @@ public class MouseInteractTargeter2D : MonoBehaviour
 
     private void Update()
     {
+        if (Game.IsReady && Game.Ctx?.InteractionLock?.IsLocked == true)
+        {
+            ClearHover();
+            return;
+        }
+
         UpdateHoverTarget();
+    }
+    
+    private void ClearHover()
+    {
+        currentHighlight?.SetIsClosest(false);
+        currentHighlight = null;
+        currentTarget = null;
     }
 
     public IInteractable CurrentTarget => currentTarget;
