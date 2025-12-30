@@ -4,8 +4,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameEvent", menuName = "Events/GameEvent")]
 public class GameEvent : ScriptableObject
 {
+    [Header("Metadata")] 
+    [SerializeField] private string description;
+
+    [SerializeField] private bool isImportant;
+    
+    
     private List<GameEventListener> listeners =
         new List<GameEventListener>();
+    
 
     public void Raise()
     {

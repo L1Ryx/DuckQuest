@@ -18,7 +18,7 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
     [SerializeField] private float startDelay = 0.0f;
     [SerializeField] private Ease ease = Ease.OutCubic;
     [SerializeField] private bool useUnscaledTime = true;
-
+    
     [Header("Events")]
     [SerializeField] private UnityEvent onPanComplete;
 
