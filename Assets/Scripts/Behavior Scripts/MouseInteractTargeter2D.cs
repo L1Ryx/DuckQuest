@@ -19,6 +19,7 @@ public class MouseInteractTargeter2D : MonoBehaviour
 
     // Track range state for hovered object
     private bool currentHoverInRange;
+    private bool wasLocked;
 
     private void Awake()
     {
@@ -28,21 +29,34 @@ public class MouseInteractTargeter2D : MonoBehaviour
 
     private void Update()
     {
-        if (Game.IsReady && Game.Ctx?.InteractionLock?.IsLocked == true)
+        bool locked = Game.IsReady && Game.Ctx?.InteractionLock?.IsLocked == true;
+
+        if (locked)
         {
-            ClearHover();
+            if (!wasLocked) ClearHover();
+            wasLocked = true;
             return;
         }
 
+        wasLocked = false;
         UpdateHoverTarget();
     }
     
     private void ClearHover()
     {
+        // Turn off highlight
         currentHighlight?.SetIsClosest(false);
+
+        // Hide the hover panel (important)
+        currentHoverUI?.SetHoverState(false, false);
+
+        // Clear cached refs/state
         currentHighlight = null;
+        currentHoverUI = null;
         currentTarget = null;
+        currentHoverInRange = false;
     }
+
 
     public IInteractable CurrentTarget => currentTarget;
 
