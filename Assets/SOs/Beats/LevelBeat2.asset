@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelBeat2
   m_EditorClassIdentifier: 
   beatId: 002
-  description: 
+  description: This is the second beat.
   onEnterEvents:
   - {fileID: 11400000, guid: 06e419e222efc4844b2750ffdfc3d27f, type: 2}
   advanceEvent: {fileID: 11400000, guid: 8ca9362b000ba43fab148b9b0f87f611, type: 2}

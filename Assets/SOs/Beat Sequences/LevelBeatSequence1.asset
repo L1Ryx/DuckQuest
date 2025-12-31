@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelBeatSequence1
   m_EditorClassIdentifier: 
   levelId: 001
-  description: 
+  description: For level 1.
   beats:
   - {fileID: 11400000, guid: ac6211827e7c94d6fbb648da87281129, type: 2}
   - {fileID: 11400000, guid: ac4a01cd2e9d54a1aa59e6bf81b25eb3, type: 2}

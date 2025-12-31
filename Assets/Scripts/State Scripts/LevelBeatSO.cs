@@ -8,6 +8,7 @@ public class LevelBeatSO : ScriptableObject
     [SerializeField] private string beatId;
     [TextArea] [SerializeField] private string description;
 
+    public string Description => description;
     [Header("Beat Actions")]
     [Tooltip("Raised immediately when this beat becomes active (in order).")]
     [SerializeField] private List<GameEvent> onEnterEvents = new();

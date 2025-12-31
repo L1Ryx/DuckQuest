@@ -8,6 +8,9 @@ public class LevelBeatDirector : MonoBehaviour
     [Header("Optional Events")]
     [SerializeField] private GameEvent onSequenceStarted;
     [SerializeField] private GameEvent onSequenceCompleted;
+    public LevelBeatSequenceSO Sequence => sequence;
+    public bool IsRunning => isRunning;
+
 
     public int CurrentBeatIndex { get; private set; } = -1;
     public LevelBeatSO CurrentBeat =>

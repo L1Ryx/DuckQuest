@@ -10,6 +10,7 @@ public class LevelBeatSequenceSO : ScriptableObject
 
     [Header("Ordered Beats")]
     [SerializeField] private List<LevelBeatSO> beats = new();
+    public string Description => description;
 
     public string LevelId => levelId;
     public IReadOnlyList<LevelBeatSO> Beats => beats;

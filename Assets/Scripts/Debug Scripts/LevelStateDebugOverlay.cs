@@ -15,6 +15,6 @@ public class LevelStateDebugOverlay : MonoBehaviour
         if (!Game.IsReady || Game.Ctx.LevelState == null || text == null)
             return;
 
-        text.text = $"Level State: {Game.Ctx.LevelState.CurrentState}";
+        text.text = $"Level State Debug: {Game.Ctx.LevelState.CurrentState}";
     }
 }
