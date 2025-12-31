@@ -18517,6 +18517,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6124419915756670023, guid: bdf50a3dcf640470a88826387a8174a7, type: 3}
   m_PrefabInstance: {fileID: 1520340400}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1535081826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535081827}
+  - component: {fileID: 1535081829}
+  - component: {fileID: 1535081828}
+  m_Layer: 0
+  m_Name: Debug Dummy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1535081827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535081826}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1535081828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535081826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 06e419e222efc4844b2750ffdfc3d27f, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1535081829}
+        m_TargetAssemblyTypeName: DebugDummy, Assembly-CSharp
+        m_MethodName: PrintDebugMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1535081829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535081826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81af7a9958c0d441281b88ac533f1a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1553965559
 GameObject:
   m_ObjectHideFlags: 8
@@ -21014,6 +21087,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7640530346663513238, guid: 810ce57161b5d4e2cb5292124b85554a, type: 3}
   m_PrefabInstance: {fileID: 1930705316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1934743599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1934743600}
+  - component: {fileID: 1934743602}
+  - component: {fileID: 1934743601}
+  m_Layer: 0
+  m_Name: Beat Director
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1934743600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934743599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1934743601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934743599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a53ca0579f6ed43b899bd5844e13bd0e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1934743602}
+        m_TargetAssemblyTypeName: LevelBeatDirector, Assembly-CSharp
+        m_MethodName: StartSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1934743602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934743599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9eb1861c27043e284e093feb88832b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequence: {fileID: 11400000, guid: a15971760cdf74a61970d9ba0ddae57f, type: 2}
+  onSequenceStarted: {fileID: 11400000, guid: 06e419e222efc4844b2750ffdfc3d27f, type: 2}
+  onSequenceCompleted: {fileID: 11400000, guid: 06e419e222efc4844b2750ffdfc3d27f, type: 2}
 --- !u!1001 &1934956452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89540,5 +89689,7 @@ SceneRoots:
   - {fileID: 1301222136}
   - {fileID: 1553965560}
   - {fileID: 341446716}
+  - {fileID: 1535081827}
   - {fileID: 1070373771}
   - {fileID: 1753732305}
+  - {fileID: 1934743600}
