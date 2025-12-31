@@ -17,6 +17,7 @@ public class LevelBeatSO : ScriptableObject
     [Tooltip("When this event is raised, the director advances to the next beat.")]
     [SerializeField] private GameEvent advanceEvent;
 
+    
     public string BeatId => beatId;
     public IReadOnlyList<GameEvent> OnEnterEvents => onEnterEvents;
     public GameEvent AdvanceEvent => advanceEvent;

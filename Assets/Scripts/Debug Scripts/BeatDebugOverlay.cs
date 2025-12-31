@@ -26,7 +26,7 @@ public class BeatDebugOverlay : MonoBehaviour
         if (timer < interval) return;
         timer = 0f;
 
-        var sb = new StringBuilder(512);
+        var sb = new StringBuilder(768);
         sb.AppendLine("Beat Debug:");
 
         var sequence = beatDirector.Sequence;
@@ -52,14 +52,9 @@ public class BeatDebugOverlay : MonoBehaviour
           .AppendLine();
 
         if (!string.IsNullOrWhiteSpace(sequence.Description))
-        {
-            sb.Append("  ")
-              .AppendLine(sequence.Description.Replace("\n", "\n  "));
-        }
+            sb.Append("  ").AppendLine(sequence.Description.Replace("\n", "\n  "));
         else
-        {
             sb.AppendLine("  (none)");
-        }
 
         sb.AppendLine();
 
@@ -78,28 +73,52 @@ public class BeatDebugOverlay : MonoBehaviour
         if (currentBeat == null)
         {
             sb.AppendLine("Beat: (none)");
+            text.text = sb.ToString();
+            return;
+        }
+
+        sb.Append("Beat ID: ")
+          .AppendLine(currentBeat.BeatId);
+
+        sb.Append("Beat Name: ")
+          .AppendLine(currentBeat.name);
+
+        sb.Append("Beat Description:")
+          .AppendLine();
+
+        if (!string.IsNullOrWhiteSpace(currentBeat.Description))
+            sb.Append("  ").AppendLine(currentBeat.Description.Replace("\n", "\n  "));
+        else
+            sb.AppendLine("  (none)");
+
+        sb.AppendLine();
+
+        // --- NEW: OnEnter (effect) events ---
+        sb.AppendLine("Beat OnEnter Events:");
+
+        var enterEvents = currentBeat.OnEnterEvents;
+        if (enterEvents == null || enterEvents.Count == 0)
+        {
+            sb.AppendLine("  (none)");
         }
         else
         {
-            sb.Append("Beat ID: ")
-              .AppendLine(currentBeat.BeatId);
-
-            sb.Append("Beat Name: ")
-              .AppendLine(currentBeat.name);
-
-            sb.Append("Beat Description:")
-              .AppendLine();
-
-            if (!string.IsNullOrWhiteSpace(currentBeat.Description))
+            for (int i = 0; i < enterEvents.Count; i++)
             {
-                sb.Append("  ")
-                  .AppendLine(currentBeat.Description.Replace("\n", "\n  "));
-            }
-            else
-            {
-                sb.AppendLine("  (none)");
+                var evt = enterEvents[i];
+                sb.Append("  • ")
+                  .AppendLine(evt != null ? evt.name : "(null)");
             }
         }
+
+        sb.AppendLine();
+
+        // --- NEW: Advance event ---
+        sb.Append("Beat Advance Event: ");
+        if (currentBeat.AdvanceEvent != null)
+            sb.AppendLine(currentBeat.AdvanceEvent.name);
+        else
+            sb.AppendLine("(none)");
 
         text.text = sb.ToString();
     }
