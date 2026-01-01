@@ -41,11 +41,15 @@ public class PlayerControl : MonoBehaviour
     {
         if (Game.IsReady && Game.Ctx?.InteractionLock?.IsLocked == true)
         {
-            return; // RETURN EARLY IF LOCKED
+            rb.linearVelocity = Vector2.zero;   
+            moveVector = Vector2.zero;          // optional, for clarity/debug
+            return;
         }
+
         moveVector = moveInput.sqrMagnitude > 1f ? moveInput.normalized : moveInput;
         rb.linearVelocity = moveVector * moveSpeed;
     }
+
 
     private void Update()
     {
@@ -119,6 +123,28 @@ public class PlayerControl : MonoBehaviour
 
             lockedAxis = 0;
             UpdateFacingLock(input);
+        }
+    }
+    private void OnEnable()
+    {
+        if (Game.IsReady && Game.Ctx?.InteractionLock != null)
+            Game.Ctx.InteractionLock.OnLockChanged += HandleLockChanged;
+    }
+
+    private void OnDisable()
+    {
+        if (Game.IsReady && Game.Ctx?.InteractionLock != null)
+            Game.Ctx.InteractionLock.OnLockChanged -= HandleLockChanged;
+    }
+
+    private void HandleLockChanged(bool locked)
+    {
+        if (locked)
+        {
+            moveInput = Vector2.zero;
+            moveVector = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
+            lockedAxis = 0; 
         }
     }
 }
