@@ -40,4 +40,10 @@ public class LevelStateModel
         CurrentState = next;
         OnStateChanged?.Invoke(prev, next);
     }
+    
+    public void Reset()
+    {
+        SetState(LevelState.NotStarted);
+    }
+
 }

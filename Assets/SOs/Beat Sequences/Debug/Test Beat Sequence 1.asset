@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf769a5f9f8d14817abb248c634a86eb, type: 3}
-  m_Name: LevelBeatSequence1
+  m_Name: Test Beat Sequence 1
   m_EditorClassIdentifier: 
   levelId: 001
   description: For level 1.

@@ -3,7 +3,6 @@ using System;
 public class InteractionLockModel
 {
     public bool IsLocked => lockCount > 0;
-
     public event Action<bool> OnLockChanged;
 
     private int lockCount = 0;
