@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{B5C92CE5-DB2A-5AFB-898A-DDF052532BDC}",
+    "Hash": "{4CFEC70F-3134-19C3-BC81-85B0F77ECC51}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -71,8 +71,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_CraftingComplete",
       "GUID": "{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}",
       "DurationType": "OneShot",
-      "DurationMin": "1.1369063",
-      "DurationMax": "1.1369063",
+      "DurationMin": "0.98403394",
+      "DurationMax": "1.3135277",
       "MediaRefs": [
        {
         "Id": "855146624"
@@ -93,8 +93,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_PetBowlComplete",
       "GUID": "{72BE6CB0-7372-4B2E-8A8E-8216AC3A79D6}",
       "DurationType": "OneShot",
-      "DurationMin": "4.0813603",
-      "DurationMax": "4.0813603",
+      "DurationMin": "3.8522909",
+      "DurationMax": "4.324051",
       "MediaRefs": [
        {
         "Id": "939932267"
@@ -115,8 +115,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_PickUp",
       "GUID": "{ED4BAE91-AA0D-40E1-86F0-E2512C8A990F}",
       "DurationType": "OneShot",
-      "DurationMin": "0.035604168",
-      "DurationMax": "0.061708335",
+      "DurationMin": "0.031719707",
+      "DurationMax": "0.06926526",
       "MediaRefs": [
        {
         "Id": "159984069"
@@ -143,6 +143,6 @@
     ]
    }
   ],
-  "FileHash": "{D75B4BC2-1E9F-C6F1-E026-2659179B8F5C}"
+  "FileHash": "{8D8677CC-C733-5B22-5C66-E91316D1CFE6}"
  }
 }
