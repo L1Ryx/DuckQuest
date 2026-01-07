@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatId: 001
   description: Pan into level view at start of level. Interactions should be locked.
+    Play ambience.
   onEnterEvents:
   - {fileID: 11400000, guid: deff3e0959c374c71bbd31f7b2dd0843, type: 2}
   - {fileID: 11400000, guid: c5be6b9fc70d8472c9e2b84eea9388df, type: 2}
   - {fileID: 11400000, guid: 896c5de8b819443c8bd44fc0c620048d, type: 2}
+  - {fileID: 11400000, guid: 32ceaf05c9498470da5f8d9ac655f4fd, type: 2}
   advanceEvent: {fileID: 11400000, guid: fdeaa4625a56b492797a188010c790a6, type: 2}

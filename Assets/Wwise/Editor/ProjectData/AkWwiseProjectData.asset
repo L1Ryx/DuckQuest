@@ -38,8 +38,25 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 3b285fafa3b13043963f7baa8242bcfd
     GuidInternal: 
-    m_lastTime: -8584338026681958368
+    m_lastTime: -8584337986407831246
     List:
+    - name: AMB Bus
+      guid: 97c70cc0c78bfe4a8cc365236d39fe13
+      id: 1313057045
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3b285fafa3b13043963f7baa8242bcfd
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: AMB Bus
+        ObjectType: 2
+        guid: 97c70cc0c78bfe4a8cc365236d39fe13
+      Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/AMB Bus
     - name: ForestVerb
       guid: 601eb4a0ce48324ba6b2ca15c855c8be
       id: 1690558513
@@ -71,6 +88,23 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus
+    - name: SFX Bus
+      guid: a1ec96729fcefd46bc1bafe26e131159
+      id: 1502772432
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3b285fafa3b13043963f7baa8242bcfd
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SFX Bus
+        ObjectType: 2
+        guid: a1ec96729fcefd46bc1bafe26e131159
+      Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/SFX Bus
   BankWwu:
   - PhysicalPath: SoundBanks/Default Work Unit.wwu
     PathAndIcons:
@@ -83,7 +117,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584338011256708308
+    m_lastTime: -8584337919571244042
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -111,8 +145,45 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584338011404788581
+    m_lastTime: -8584337983907333084
     List:
+    - name: AMBIENCE
+      guid: 48c35fd5762956438c1cf171a3fe1b0c
+      id: 85412153
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: AMBIENCE
+        ObjectType: 4
+        guid: 48c35fd5762956438c1cf171a3fe1b0c
+      Path: Events/Default Work Unit/AMBIENCE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_BeachAmbience
+      guid: d34da3ee0f31d84cbb3c16ce25ef91a1
+      id: 283495111
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: AMBIENCE
+        ObjectType: 4
+        guid: 48c35fd5762956438c1cf171a3fe1b0c
+      - ElementName: Play_BeachAmbience
+        ObjectType: 3
+        guid: d34da3ee0f31d84cbb3c16ce25ef91a1
+      Path: Events/Default Work Unit/AMBIENCE/Play_BeachAmbience
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_CraftingComplete
       guid: 0d6f326e36a9d14bb5ccc3a4ff6d5438
       id: 1504944989
@@ -173,6 +244,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.06926526
       minDuration: 0.031719707
+    - name: Stop_BeachAmbience
+      guid: c5a07c9c7587884eb40d01568c42ac25
+      id: 1285050629
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: AMBIENCE
+        ObjectType: 4
+        guid: 48c35fd5762956438c1cf171a3fe1b0c
+      - ElementName: Stop_BeachAmbience
+        ObjectType: 3
+        guid: c5a07c9c7587884eb40d01568c42ac25
+      Path: Events/Default Work Unit/AMBIENCE/Stop_BeachAmbience
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: WORLD
       guid: 21a210147b9d364eab6d5cc6c4572afb
       id: 2609808943
@@ -247,7 +338,7 @@ MonoBehaviour:
     m_lastTime: -8584341111578402456
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000000a0000000b000000
+  ExpandedWaapiItemIds: 0500000006000000070000000a0000000b000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

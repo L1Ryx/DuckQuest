@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{40B4B0B3-2E3F-9F68-0842-D893B9E64EAC}",
+    "Hash": "{7F1927C0-9AC6-8AF7-E23A-FF67A41C3791}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -40,6 +40,14 @@
       "CachePath": "EB/{EB0D708E-F9AC-44AF-3D67-F2E95F12B15C}.wem"
      },
      {
+      "Id": "798440518",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Early Morning Beach Loop.wav",
+      "CachePath": "8B/{8BC8938F-1325-482C-8EAC-8D55E1D43B5D}.wem"
+     },
+     {
       "Id": "800590812",
       "Language": "SFX",
       "Streaming": "false",
@@ -65,6 +73,18 @@
      }
     ],
     "Events": [
+     {
+      "Id": "283495111",
+      "Name": "Play_BeachAmbience",
+      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_BeachAmbience",
+      "GUID": "{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "798440518"
+       }
+      ]
+     },
      {
       "Id": "1504944989",
       "Name": "Play_CraftingComplete",
@@ -139,10 +159,20 @@
         "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
        }
       ]
+     },
+     {
+      "Id": "1285050629",
+      "Name": "Stop_BeachAmbience",
+      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_BeachAmbience",
+      "GUID": "{9C7CA0C5-8775-4E88-B40D-01568C42AC25}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ]
    }
   ],
-  "FileHash": "{9C680572-6913-6B0A-BE03-64E74E2A6917}"
+  "FileHash": "{C8A05BF8-68F8-7D52-F7A6-6AAEED00803E}"
  }
 }

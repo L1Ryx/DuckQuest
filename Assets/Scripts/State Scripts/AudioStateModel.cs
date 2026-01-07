@@ -9,6 +9,10 @@ using UnityEngine;
 /// </summary>
 public sealed class AudioStateModel
 {
+    private string _currentAmbienceEventName;
+    private uint _currentAmbiencePlayingId;
+    private AudioCue _currentAmbienceCue;
+
     private GameObject _globalEmitter;
 
     // Track "current music" to prevent accidental restarts.
@@ -252,4 +256,47 @@ public sealed class AudioStateModel
         if (_globalEmitter == null)
             throw new InvalidOperationException("AudioStateModel is not initialized. Call Initialize(globalEmitter) from GameContext.");
     }
+    
+    public void SetGlobalAmbience(AudioCue ambienceCue)
+    {
+        EnsureInitialized();
+
+        if (ambienceCue == null || !ambienceCue.HasPlayEvent)
+            return;
+
+        // Idempotent: if the same cue is already playing, do nothing.
+        if (_currentAmbienceCue == ambienceCue && _currentAmbiencePlayingId != 0)
+            return;
+
+        StopGlobalAmbience();
+
+        _currentAmbienceCue = ambienceCue;
+        _currentAmbienceEventName = ambienceCue.playEvent;
+
+        // Apply cue RTPCs globally (or emitter-scoped if you prefer; global ambience typically global RTPCs)
+        ApplyCueRtpcs(ambienceCue, emitter: null);
+
+        _currentAmbiencePlayingId = AkSoundEngine.PostEvent(ambienceCue.playEvent, _globalEmitter);
+    }
+
+    public void StopGlobalAmbience()
+    {
+        EnsureInitialized();
+
+        // Prefer authored Stop event (fade out).
+        if (_currentAmbienceCue != null && _currentAmbienceCue.HasStopEvent)
+        {
+            AkSoundEngine.PostEvent(_currentAmbienceCue.stopEvent, _globalEmitter);
+        }
+        else if (_currentAmbiencePlayingId != 0)
+        {
+            // Fallback hard stop by playing ID (no fade unless Wwise is set up for it).
+            AkSoundEngine.StopPlayingID(_currentAmbiencePlayingId);
+        }
+
+        _currentAmbienceCue = null;
+        _currentAmbienceEventName = null;
+        _currentAmbiencePlayingId = 0;
+    }
+
 }
