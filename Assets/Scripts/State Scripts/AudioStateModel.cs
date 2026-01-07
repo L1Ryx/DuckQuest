@@ -149,6 +149,78 @@ public sealed class AudioStateModel
         // Uncomment if you have a pause state in Wwise:
         // AkSoundEngine.SetState("GameState", paused ? "Paused" : "Unpaused");
     }
+    
+        /// <summary>
+    /// Plays a cue globally (posts play event and applies any RTPC bindings).
+    /// </summary>
+    public uint PlayCueGlobal(AudioCue cue)
+    {
+        EnsureInitialized();
+        if (cue == null || !cue.HasPlayEvent)
+            return 0;
+
+        ApplyCueRtpcs(cue, emitter: null);
+        return AkSoundEngine.PostEvent(cue.playEvent, _globalEmitter);
+    }
+
+    /// <summary>
+    /// Plays a cue on a specific emitter (posts play event and applies any RTPC bindings).
+    /// </summary>
+    public uint PlayCueOn(AudioCue cue, GameObject emitter)
+    {
+        EnsureInitialized();
+        if (cue == null || !cue.HasPlayEvent || emitter == null)
+            return 0;
+
+        ApplyCueRtpcs(cue, emitter);
+        return AkSoundEngine.PostEvent(cue.playEvent, emitter);
+    }
+
+    /// <summary>
+    /// Stops a cue globally, if it has a stop event.
+    /// </summary>
+    public void StopCueGlobal(AudioCue cue)
+    {
+        EnsureInitialized();
+        if (cue == null || !cue.HasStopEvent)
+            return;
+
+        AkSoundEngine.PostEvent(cue.stopEvent, _globalEmitter);
+    }
+
+    /// <summary>
+    /// Stops a cue on a specific emitter, if it has a stop event.
+    /// </summary>
+    public void StopCueOn(AudioCue cue, GameObject emitter)
+    {
+        EnsureInitialized();
+        if (cue == null || !cue.HasStopEvent || emitter == null)
+            return;
+
+        AkSoundEngine.PostEvent(cue.stopEvent, emitter);
+    }
+
+    private void ApplyCueRtpcs(AudioCue cue, GameObject emitter)
+    {
+        if (cue.rtpcBindings == null)
+            return;
+
+        for (int i = 0; i < cue.rtpcBindings.Length; i++)
+        {
+            var binding = cue.rtpcBindings[i];
+            if (string.IsNullOrWhiteSpace(binding.rtpcName))
+                continue;
+
+            if (binding.isGlobal)
+            {
+                AkSoundEngine.SetRTPCValue(binding.rtpcName, binding.value);
+            }
+            else if (emitter != null)
+            {
+                AkSoundEngine.SetRTPCValue(binding.rtpcName, binding.value, emitter);
+            }
+        }
+    }
 
     private void EnsureInitialized()
     {
