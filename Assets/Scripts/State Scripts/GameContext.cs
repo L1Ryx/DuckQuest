@@ -10,6 +10,7 @@ public class GameContext : MonoBehaviour
     public InventorySelectionModel InventorySelection { get; private set; }
     public LevelStateModel LevelState { get; private set; }
     public InteractionLockModel InteractionLock { get; private set; }
+    public AudioStateModel Audio { get; private set; }
 
     [Header("Databases")] [SerializeField] private ItemDatabase itemDatabase;
 
@@ -35,5 +36,7 @@ public class GameContext : MonoBehaviour
         InventorySelection = new InventorySelectionModel(Inventory);
         LevelState = new LevelStateModel();
         InteractionLock = new InteractionLockModel();
+        Audio = new AudioStateModel();
+        Audio.Initialize(gameObject); // Global emitter is on game context!
     }
 }
