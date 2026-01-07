@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 1712910844}
   - component: {fileID: 1712910843}
   - component: {fileID: 1712910842}
+  - component: {fileID: 1712910845}
   m_Layer: 0
   m_Name: GameContext
   m_TagString: Untagged
@@ -753,6 +754,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockInteractions: {fileID: 11400000, guid: 896c5de8b819443c8bd44fc0c620048d, type: 2}
   unlockInteractions: {fileID: 11400000, guid: f751737a3be1c406abc841072408341d, type: 2}
+--- !u!114 &1712910845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712910837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26be647abbab48c9ac77fee975c2299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 19837e9d5be8747ac94c8c6831901cd4, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &2001520359
 GameObject:
   m_ObjectHideFlags: 0

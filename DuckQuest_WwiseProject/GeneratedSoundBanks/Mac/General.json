@@ -1,0 +1,148 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "133642231",
+    "Type": "User",
+    "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
+    "Language": "SFX",
+    "Hash": "{B5C92CE5-DB2A-5AFB-898A-DDF052532BDC}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
+    "ShortName": "General",
+    "Path": "General.bnk",
+    "Media": [
+     {
+      "Id": "159984069",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Pop 3.wav",
+      "CachePath": "CC/{CCA8FFF8-97DC-BB43-B79C-44BD4F7DEB72}.wem"
+     },
+     {
+      "Id": "402495002",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Pop 1.wav",
+      "CachePath": "22/{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem"
+     },
+     {
+      "Id": "790644183",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Pop 4.wav",
+      "CachePath": "EB/{EB0D708E-F9AC-44AF-3D67-F2E95F12B15C}.wem"
+     },
+     {
+      "Id": "800590812",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Pop 2.wav",
+      "CachePath": "48/{486DD6BA-72A6-A864-BF26-5FD55A01A34C}.wem"
+     },
+     {
+      "Id": "855146624",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Chisel.wav",
+      "CachePath": "BB/{BB907DCD-5635-2DD8-C5ED-1B126493BEA1}.wem"
+     },
+     {
+      "Id": "939932267",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bell Hit.wav",
+      "CachePath": "3A/{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1504944989",
+      "Name": "Play_CraftingComplete",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_CraftingComplete",
+      "GUID": "{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1369063",
+      "DurationMax": "1.1369063",
+      "MediaRefs": [
+       {
+        "Id": "855146624"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
+      "Id": "654680740",
+      "Name": "Play_PetBowlComplete",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_PetBowlComplete",
+      "GUID": "{72BE6CB0-7372-4B2E-8A8E-8216AC3A79D6}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.0813603",
+      "DurationMax": "4.0813603",
+      "MediaRefs": [
+       {
+        "Id": "939932267"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
+      "Id": "3860455926",
+      "Name": "Play_PickUp",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_PickUp",
+      "GUID": "{ED4BAE91-AA0D-40E1-86F0-E2512C8A990F}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.035604168",
+      "DurationMax": "0.061708335",
+      "MediaRefs": [
+       {
+        "Id": "159984069"
+       },
+       {
+        "Id": "402495002"
+       },
+       {
+        "Id": "790644183"
+       },
+       {
+        "Id": "800590812"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D75B4BC2-1E9F-C6F1-E026-2659179B8F5C}"
+ }
+}

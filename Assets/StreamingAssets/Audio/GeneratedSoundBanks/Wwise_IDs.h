@@ -11,10 +11,28 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
+        static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
+        static const AkUniqueID PLAY_PICKUP = 3860455926U;
+    } // namespace EVENTS
+
+    namespace BANKS
+    {
+        static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID GENERAL = 133642231U;
+    } // namespace BANKS
+
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID FORESTVERB = 1690558513U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

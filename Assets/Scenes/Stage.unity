@@ -12431,6 +12431,9 @@ GameObject:
   - component: {fileID: 944538727}
   - component: {fileID: 944538729}
   - component: {fileID: 944538730}
+  - component: {fileID: 944538732}
+  - component: {fileID: 944538731}
+  - component: {fileID: 944538733}
   m_Layer: 6
   m_Name: Pet Bowl
   m_TagString: Untagged
@@ -12619,6 +12622,66 @@ MonoBehaviour:
   hideEase: 8
   activeAlpha: 0.95
   inactiveAlpha: 0.7
+--- !u!114 &944538731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944538723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52598bb461cbb40a49dea9fc86335cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  routeMode: 0
+  targetEmitter: {fileID: 944538732}
+  targetGameObject: {fileID: 944538723}
+  cue: {fileID: 11400000, guid: 5b7ba1e81eb5f494bbcf3e903278ff33, type: 2}
+  rtpcName: 
+  rtpcValue: 0
+  rtpcIsGlobal: 1
+--- !u!114 &944538732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944538723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e275319916bf841f4b989d8581dc92f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useGameContext: 1
+--- !u!114 &944538733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944538723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d1beb7cb5807e4919a0c33d057213237, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 944538731}
+        m_TargetAssemblyTypeName: AudioEventRelay, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &949962066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13484,6 +13547,7 @@ GameObject:
   - component: {fileID: 1023407510}
   - component: {fileID: 1023407511}
   - component: {fileID: 1023407512}
+  - component: {fileID: 1023407513}
   m_Layer: 6
   m_Name: SlotB
   m_TagString: Untagged
@@ -13616,6 +13680,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  pickupCue: {fileID: 11400000, guid: 92b972cba3cbf4ba286a6338c6547500, type: 2}
 --- !u!114 &1023407510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13700,6 +13765,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1023407513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023407505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e275319916bf841f4b989d8581dc92f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useGameContext: 1
 --- !u!1001 &1027317158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14068,6 +14146,7 @@ GameObject:
   - component: {fileID: 1051177693}
   - component: {fileID: 1051177694}
   - component: {fileID: 1051177695}
+  - component: {fileID: 1051177696}
   m_Layer: 6
   m_Name: SlotA
   m_TagString: Untagged
@@ -14200,6 +14279,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  pickupCue: {fileID: 11400000, guid: 92b972cba3cbf4ba286a6338c6547500, type: 2}
 --- !u!114 &1051177693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14284,6 +14364,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1051177696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051177688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e275319916bf841f4b989d8581dc92f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useGameContext: 1
 --- !u!1001 &1057002596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17731,6 +17824,8 @@ GameObject:
   - component: {fileID: 1396547030}
   - component: {fileID: 1396547031}
   - component: {fileID: 1396547032}
+  - component: {fileID: 1396547033}
+  - component: {fileID: 1396547034}
   m_Layer: 6
   m_Name: Crafting Station
   m_TagString: Untagged
@@ -17776,13 +17871,6 @@ MonoBehaviour:
   interactedLayerName: Interacted
   onSuccess:
     m_PersistentCalls:
-      m_Calls: []
-  onFail:
-    m_PersistentCalls:
-      m_Calls: []
-  trade: {fileID: 11400000, guid: b0a9b08d3d16b44f78289034c9677081, type: 2}
-  onCraftingComplete:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: b6f586ef60cd442548de468a26e83ad3, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
@@ -17796,6 +17884,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onFail:
+    m_PersistentCalls:
+      m_Calls: []
+  trade: {fileID: 11400000, guid: b0a9b08d3d16b44f78289034c9677081, type: 2}
 --- !u!212 &1396547029
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17951,6 +18043,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1396547034}
+        m_TargetAssemblyTypeName: AudioEventRelay, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1396547033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396547026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e275319916bf841f4b989d8581dc92f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useGameContext: 1
+--- !u!114 &1396547034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396547026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52598bb461cbb40a49dea9fc86335cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  routeMode: 0
+  targetEmitter: {fileID: 1396547033}
+  targetGameObject: {fileID: 1396547026}
+  cue: {fileID: 11400000, guid: 7f807320c6b3040c19cc7632bc0c08b2, type: 2}
+  rtpcName: 
+  rtpcValue: 0
+  rtpcIsGlobal: 1
 --- !u!1001 &1403471991
 PrefabInstance:
   m_ObjectHideFlags: 0

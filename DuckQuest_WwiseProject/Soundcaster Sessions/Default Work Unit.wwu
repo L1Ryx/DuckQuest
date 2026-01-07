@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2E420216-AB4E-4CD3-A693-B06F75A31490}" SchemaVersion="123">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{2E420216-AB4E-4CD3-A693-B06F75A31490}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2E420216-AB4E-4CD3-A693-B06F75A31490}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Session 1" ID="{E41A3CA1-53FA-4598-9DC5-B1E503951BC8}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_CraftingComplete" ID="{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PetBowlComplete" ID="{72BE6CB0-7372-4B2E-8A8E-8216AC3A79D6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PickUp" ID="{ED4BAE91-AA0D-40E1-86F0-E2512C8A990F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

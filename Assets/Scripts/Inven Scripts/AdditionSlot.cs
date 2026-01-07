@@ -22,6 +22,9 @@ public class AdditionSlot : MonoBehaviour, IInteractable
     [SerializeField] private float iconFadeDuration = 0.10f;
     [Header("Events")] [SerializeField] private UnityEvent onSlotSlateChanged;
 
+    [Header("Audio")] [SerializeField] private AudioCue pickupCue;
+    private AudioEmitter ae;
+
     private Tween iconTween;
 
     public bool IsEmpty => !HasValue;
@@ -34,6 +37,7 @@ public class AdditionSlot : MonoBehaviour, IInteractable
     {
         if (itemIconRoot == null && itemIconRenderer != null)
             itemIconRoot = itemIconRenderer.transform;
+        ae = GetComponent<AudioEmitter>();
 
         SetIconHiddenImmediate();
     }
@@ -97,6 +101,8 @@ public class AdditionSlot : MonoBehaviour, IInteractable
                 return;
             }
 
+            // SUCCESS
+            ae?.Play(pickupCue);
             ClearNoRefund(); // state clear only; refund already done
             UpdateVisual();
             onSlotSlateChanged?.Invoke();

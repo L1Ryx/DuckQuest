@@ -17,8 +17,8 @@ public sealed class AudioCue : ScriptableObject
     [Serializable]
     public struct RtpcBinding
     {
-        [Tooltip("RTPC name in Wwise.")]
-        public string rtpcName;
+        [Tooltip("RTPC SO that's been set up in Unity.")]
+        public AudioRtpc rtpc;
 
         [Tooltip("Value to set when this cue is played.")]
         public float value;

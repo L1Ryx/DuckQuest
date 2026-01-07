@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" SchemaVersion="123">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="WORLD" ID="{1410A221-9D7B-4E36-AB6D-5CC6C4572AFB}" ShortID="811097297">
+					<ChildrenList>
+						<Event Name="Play_CraftingComplete" ID="{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}">
+							<ChildrenList>
+								<Action Name="" ID="{8F5D3E65-19C9-475F-A0BA-6097E931D333}" ShortID="967529475">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Chisel_Blend" ID="{80D2340F-424B-4B0D-AC78-BE2CAFDEDB69}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_PetBowlComplete" ID="{72BE6CB0-7372-4B2E-8A8E-8216AC3A79D6}">
+							<ChildrenList>
+								<Action Name="" ID="{24414457-3198-46D8-8226-8656C4365C05}" ShortID="1047201057">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_BellHit_Blend" ID="{D188894A-4FCB-4882-A71A-B8B43A3C037E}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_PickUp" ID="{ED4BAE91-AA0D-40E1-86F0-E2512C8A990F}">
+							<ChildrenList>
+								<Action Name="" ID="{A42E5DFE-128C-4D36-AAA3-90AF2169CD04}" ShortID="86542218">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_PickUp_Random" ID="{420A0F60-9064-40E4-AB70-298904A5454F}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

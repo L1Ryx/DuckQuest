@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4438870808978783373}
   - component: {fileID: 1811832145532550314}
   - component: {fileID: 1938683262874462543}
+  - component: {fileID: 5608874862861480045}
   m_Layer: 6
   m_Name: HardwormPickup_Base
   m_TagString: Untagged
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -404211931
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -836567240, guid: 9cb409a9433954d0f9f2a47c671caaf5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -153,6 +154,8 @@ MonoBehaviour:
   packDef: {fileID: 0}
   packsGranted: 1
   onPickedUp: {fileID: 11400000, guid: 58f1ad35b191d4c4588cb3358c75c601, type: 2}
+  onPickedUpGenericItem: {fileID: 11400000, guid: 26e8e2b9da95941618740b2abd454f56, type: 2}
+  pickupCue: {fileID: 11400000, guid: 92b972cba3cbf4ba286a6338c6547500, type: 2}
 --- !u!114 &1938683262874462543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +182,19 @@ MonoBehaviour:
   outOfRangeAlpha: 0.75
   symbolInRange: {fileID: -1226265285564992136, guid: 0eb09609f8295429fa711bd720efc0f7, type: 3}
   symbolOutOfRange: {fileID: -5686591620353406901, guid: 956ce94b414ec4c0a9675dd6b50fe2f5, type: 3}
+--- !u!114 &5608874862861480045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147483194781078891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e275319916bf841f4b989d8581dc92f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useGameContext: 1
 --- !u!1 &4501905580893571560
 GameObject:
   m_ObjectHideFlags: 0

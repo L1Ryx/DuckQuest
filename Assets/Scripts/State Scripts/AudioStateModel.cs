@@ -202,24 +202,49 @@ public sealed class AudioStateModel
 
     private void ApplyCueRtpcs(AudioCue cue, GameObject emitter)
     {
-        if (cue.rtpcBindings == null)
+        if (cue == null || cue.rtpcBindings == null)
             return;
 
         for (int i = 0; i < cue.rtpcBindings.Length; i++)
         {
             var binding = cue.rtpcBindings[i];
-            if (string.IsNullOrWhiteSpace(binding.rtpcName))
+
+            // Validate binding
+            if (binding.rtpc == null || !binding.rtpc.IsValid)
                 continue;
+
+            float v = binding.rtpc.ClampValue(binding.value);
 
             if (binding.isGlobal)
             {
-                AkSoundEngine.SetRTPCValue(binding.rtpcName, binding.value);
+                AkSoundEngine.SetRTPCValue(binding.rtpc.rtpcName, v);
             }
             else if (emitter != null)
             {
-                AkSoundEngine.SetRTPCValue(binding.rtpcName, binding.value, emitter);
+                AkSoundEngine.SetRTPCValue(binding.rtpc.rtpcName, v, emitter);
             }
         }
+    }
+
+    
+    public void SetGlobalRtpc(AudioRtpc rtpc, float value)
+    {
+        EnsureInitialized();
+        if (rtpc == null || !rtpc.IsValid)
+            return;
+
+        float v = rtpc.ClampValue(value);
+        AkSoundEngine.SetRTPCValue(rtpc.rtpcName, v);
+    }
+
+    public void SetRtpcOn(AudioRtpc rtpc, float value, GameObject emitter)
+    {
+        EnsureInitialized();
+        if (rtpc == null || !rtpc.IsValid || emitter == null)
+            return;
+
+        float v = rtpc.ClampValue(value);
+        AkSoundEngine.SetRTPCValue(rtpc.rtpcName, v, emitter);
     }
 
     private void EnsureInitialized()
