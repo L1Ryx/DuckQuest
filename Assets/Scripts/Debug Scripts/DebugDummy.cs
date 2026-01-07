@@ -19,6 +19,7 @@ public class DebugDummy : MonoBehaviour
     {
         if (Game.IsReady && Game.Ctx != null)
         {
+            Game.Ctx.Audio?.StopGlobalAmbience(immediate: false);
             Game.Ctx.LevelState?.Reset();
             Game.Ctx.InteractionLock?.ForceClear();
             // Optional: reset other per-run state here (inventory, selections, etc.)

@@ -69,7 +69,7 @@ public sealed class AmbiencePlayer : MonoBehaviour
             return;
         }
 
-        Game.Ctx.Audio.StopGlobalAmbience();
+        Game.Ctx.Audio.StopGlobalAmbience(immediate: false);
         _hasRequestedPlay = false;
     }
 }

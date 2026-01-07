@@ -268,7 +268,7 @@ public sealed class AudioStateModel
         if (_currentAmbienceCue == ambienceCue && _currentAmbiencePlayingId != 0)
             return;
 
-        StopGlobalAmbience();
+        StopGlobalAmbience(immediate: false);
 
         _currentAmbienceCue = ambienceCue;
         _currentAmbienceEventName = ambienceCue.playEvent;
@@ -279,24 +279,35 @@ public sealed class AudioStateModel
         _currentAmbiencePlayingId = AkSoundEngine.PostEvent(ambienceCue.playEvent, _globalEmitter);
     }
 
-    public void StopGlobalAmbience()
+    public void StopGlobalAmbience(bool immediate)
     {
         EnsureInitialized();
 
-        // Prefer authored Stop event (fade out).
+        if (immediate)
+        {
+            // Hard stop: guarantees it is gone before scene reload.
+            if (_currentAmbiencePlayingId != 0)
+                AkSoundEngine.StopPlayingID(_currentAmbiencePlayingId);
+
+            // Optional: also stop all instances of the object if you don't trust playing IDs:
+            // AkSoundEngine.ExecuteActionOnEvent(_currentAmbienceCue.playEvent, AkActionOnEventType.AkActionOnEventType_Stop, _globalEmitter, 0);
+
+            _currentAmbienceCue = null;
+            _currentAmbienceEventName = null;
+            _currentAmbiencePlayingId = 0;
+            return;
+        }
+
+        // Graceful stop: fade-out via stop event (your current behavior)
         if (_currentAmbienceCue != null && _currentAmbienceCue.HasStopEvent)
-        {
             AkSoundEngine.PostEvent(_currentAmbienceCue.stopEvent, _globalEmitter);
-        }
         else if (_currentAmbiencePlayingId != 0)
-        {
-            // Fallback hard stop by playing ID (no fade unless Wwise is set up for it).
             AkSoundEngine.StopPlayingID(_currentAmbiencePlayingId);
-        }
 
         _currentAmbienceCue = null;
         _currentAmbienceEventName = null;
         _currentAmbiencePlayingId = 0;
     }
+
 
 }
