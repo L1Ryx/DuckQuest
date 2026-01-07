@@ -5,7 +5,10 @@
 			<PropertyList>
 				<Property Name="Event Action List\{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{72BE6CB0-7372-4B2E-8A8E-8216AC3A79D6}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{9C7CA0C5-8775-4E88-B40D-01568C42AC25}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{ED4BAE91-AA0D-40E1-86F0-E2512C8A990F}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{FFDEA6AD-95B1-459E-9FD3-FD82F1275C9E}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
 						<Value Platform="Mac"></Value>

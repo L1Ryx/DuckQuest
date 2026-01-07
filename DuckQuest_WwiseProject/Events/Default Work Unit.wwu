@@ -40,6 +40,41 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="AMBIENCE" ID="{D55FC348-2976-4356-8C1C-F171A3FE1B0C}" ShortID="322830194">
+					<ChildrenList>
+						<Event Name="Play_BeachAmbience" ID="{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}">
+							<ChildrenList>
+								<Action Name="" ID="{195E3101-ED06-4A43-B0E2-435F7FA186E0}" ShortID="321632195">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Beach_Blend" ID="{BAAD000F-F8E3-49F2-A62D-8C95C8BA1648}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_BeachAmbience" ID="{9C7CA0C5-8775-4E88-B40D-01568C42AC25}">
+							<ChildrenList>
+								<Action Name="" ID="{1927E8D0-46F6-4AE5-96F1-584332834C5A}" ShortID="404223024">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Delay" Type="Real64" Value="4"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Beach_Blend" ID="{BAAD000F-F8E3-49F2-A62D-8C95C8BA1648}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

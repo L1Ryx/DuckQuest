@@ -131,8 +131,8 @@ MonoBehaviour:
         guid: 0d6f326e36a9d14bb5ccc3a4ff6d5438
       Path: Events/Default Work Unit/WORLD/Play_CraftingComplete
       maxAttenuation: 0
-      maxDuration: 1.1369063
-      minDuration: 1.1369063
+      maxDuration: 1.3135277
+      minDuration: 0.98403394
     - name: Play_PetBowlComplete
       guid: b06cbe7272732e4b8a8e8216ac3a79d6
       id: 654680740
@@ -151,8 +151,8 @@ MonoBehaviour:
         guid: b06cbe7272732e4b8a8e8216ac3a79d6
       Path: Events/Default Work Unit/WORLD/Play_PetBowlComplete
       maxAttenuation: 0
-      maxDuration: 4.0813603
-      minDuration: 4.0813603
+      maxDuration: 4.324051
+      minDuration: 3.8522909
     - name: Play_PickUp
       guid: 91ae4bed0daae14086f0e2512c8a990f
       id: 3860455926
@@ -171,8 +171,8 @@ MonoBehaviour:
         guid: 91ae4bed0daae14086f0e2512c8a990f
       Path: Events/Default Work Unit/WORLD/Play_PickUp
       maxAttenuation: 0
-      maxDuration: 0.061708335
-      minDuration: 0.035604168
+      maxDuration: 0.06926526
+      minDuration: 0.031719707
     - name: WORLD
       guid: 21a210147b9d364eab6d5cc6c4572afb
       id: 2609808943

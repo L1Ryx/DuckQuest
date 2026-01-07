@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{CCAC307B-6498-DE27-F233-3A6BB203BBC3}",
+    "Hash": "{2B0D88AF-CE35-ED27-5E5A-E91E1B0937AF}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -46,6 +46,18 @@
     },
     "Busses": [
      {
+      "Id": "1313057045",
+      "Name": "AMB Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\AMB Bus",
+      "GUID": "{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}"
+     },
+     {
+      "Id": "1502772432",
+      "Name": "SFX Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX Bus",
+      "GUID": "{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}"
+     },
+     {
       "Id": "3803692087",
       "Name": "Master Audio Bus",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
@@ -69,6 +81,6 @@
     ]
    }
   ],
-  "FileHash": "{DB361A53-7F1E-57F7-50BC-2D7C4AAD22BE}"
+  "FileHash": "{7C9B7997-5307-5D19-B50A-08B26CFF6142}"
  }
 }
