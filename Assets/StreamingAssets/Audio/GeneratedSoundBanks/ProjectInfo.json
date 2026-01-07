@@ -1,0 +1,36 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "DuckQuest_WwiseProject",
+   "GUID": "{A56BCA53-A75B-4A29-A013-5239D3C5BEA5}",
+   "Generator": "2024.1.1.8691"
+  },
+  "CacheRoot": "../../../../DuckQuest_WwiseProject/.cache",
+  "Platforms": [
+   {
+    "Name": "Mac",
+    "GUID": "{E6255785-0F19-4211-9320-439423393D14}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "../../../../DuckQuest_WwiseProject/GeneratedSoundBanks/Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{855A6F7A-A71F-4C0C-A4E4-4BF59A5E59DB}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../../../../DuckQuest_WwiseProject/GeneratedSoundBanks/Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{3C026C3A-2FC4-4333-91B9-296F77594851}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{569EDFDC-D215-BACE-72E9-A84F243062EA}"
+ }
+}
