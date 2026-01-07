@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{313C1C87-BBEF-F951-56B3-EAD1FCD48241}",
+    "Hash": "{F89B216C-A68B-6084-5C27-63BECB87B627}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
     "Media": [
+     {
+      "Id": "81657979",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Typewriter 2.wav",
+      "CachePath": "F8/{F8E8F71E-9CAB-1CDB-7ADB-B048587DDC83}.wem"
+     },
      {
       "Id": "159984069",
       "Language": "SFX",
@@ -30,6 +38,14 @@
       "Location": "Memory",
       "ShortName": "Pop 1.wav",
       "CachePath": "22/{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem"
+     },
+     {
+      "Id": "672181511",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Typewriter 3.wav",
+      "CachePath": "AC/{ACD0530F-7C0D-117F-30AE-EBB1B4DDA025}.wem"
      },
      {
       "Id": "790644183",
@@ -64,12 +80,28 @@
       "CachePath": "BB/{BB907DCD-5635-2DD8-C5ED-1B126493BEA1}.wem"
      },
      {
+      "Id": "867519653",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Typewriter 1.wav",
+      "CachePath": "B7/{B7844C9A-A640-97FD-D3CD-4BEFE9C73181}.wem"
+     },
+     {
       "Id": "939932267",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Bell Hit.wav",
       "CachePath": "3A/{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem"
+     },
+     {
+      "Id": "1017960476",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Typewriter 4.wav",
+      "CachePath": "F1/{F1989F5B-7EBB-3E3A-D026-3F6EF9B0A4FD}.wem"
      }
     ],
     "Events": [
@@ -161,6 +193,37 @@
       ]
      },
      {
+      "Id": "1239474135",
+      "Name": "Play_TyperwriterClack",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_TyperwriterClack",
+      "GUID": "{DBDE7A52-4ABC-4C4F-AC48-294DDBDAAE1A}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2503299",
+      "DurationMax": "2.109036",
+      "MediaRefs": [
+       {
+        "Id": "81657979"
+       },
+       {
+        "Id": "672181511"
+       },
+       {
+        "Id": "867519653"
+       },
+       {
+        "Id": "1017960476"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
       "Id": "1285050629",
       "Name": "Stop_BeachAmbience",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_BeachAmbience",
@@ -173,6 +236,6 @@
     ]
    }
   ],
-  "FileHash": "{2414F20C-F7A1-5749-8793-3AF76FB02495}"
+  "FileHash": "{6E07A209-267E-B5E4-AC1A-59D4649648A7}"
  }
 }

@@ -1,16 +1,21 @@
 Event	ID	Name			Wwise Object Path	Notes
 	283495111	Play_BeachAmbience			\Default Work Unit\AMBIENCE\Play_BeachAmbience	
 	654680740	Play_PetBowlComplete			\Default Work Unit\WORLD\Play_PetBowlComplete	
+	1239474135	Play_TyperwriterClack			\Default Work Unit\UI\Play_TyperwriterClack	
 	1285050629	Stop_BeachAmbience			\Default Work Unit\AMBIENCE\Stop_BeachAmbience	
 	1504944989	Play_CraftingComplete			\Default Work Unit\WORLD\Play_CraftingComplete	
 	3860455926	Play_PickUp			\Default Work Unit\WORLD\Play_PickUp	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	81657979	Typewriter 2	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\F8\{F8E8F71E-9CAB-1CDB-7ADB-B048587DDC83}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_TypewriterClack_Random\Typewriter 2		180474
 	159984069	Pop 3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\CC\{CCA8FFF8-97DC-BB43-B79C-44BD4F7DEB72}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_PickUp_Random\Pop 3		11632
 	402495002	Pop 1	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\22\{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_PickUp_Random\Pop 1		9988
+	672181511	Typewriter 3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\AC\{ACD0530F-7C0D-117F-30AE-EBB1B4DDA025}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_TypewriterClack_Random\Typewriter 3		166982
 	790644183	Pop 4	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\EB\{EB0D708E-F9AC-44AF-3D67-F2E95F12B15C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_PickUp_Random\Pop 4		6932
 	798440518	Early Morning Beach Loop	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\8B\{8BC8938F-1325-482C-8EAC-8D55E1D43B5D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMBIENCE\AMB_Beach_Blend\Early Morning Beach Loop		9758696
 	800590812	Pop 2	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\48\{486DD6BA-72A6-A864-BF26-5FD55A01A34C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_PickUp_Random\Pop 2		11944
 	855146624	Chisel	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\BB\{BB907DCD-5635-2DD8-C5ED-1B126493BEA1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_Chisel_Blend\Chisel		218380
+	867519653	Typewriter 1	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\B7\{B7844C9A-A640-97FD-D3CD-4BEFE9C73181}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_TypewriterClack_Random\Typewriter 1		140644
 	939932267	Bell Hit	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\3A\{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_BellHit_Blend\Bell Hit		720048
+	1017960476	Typewriter 4	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\F1\{F1989F5B-7EBB-3E3A-D026-3F6EF9B0A4FD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_TypewriterClack_Random\Typewriter 4		134826
 

@@ -29,6 +29,7 @@
 						</AuxBus>
 						<Bus Name="AMB Bus" ID="{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}"/>
 						<Bus Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}"/>
+						<Bus Name="UI Bus" ID="{BE7C4AD1-2F98-479C-9B2D-3FF905DB3669}"/>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

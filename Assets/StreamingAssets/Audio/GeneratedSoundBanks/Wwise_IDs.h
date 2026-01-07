@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
         static const AkUniqueID PLAY_PICKUP = 3860455926U;
+        static const AkUniqueID PLAY_TYPERWRITERCLACK = 1239474135U;
         static const AkUniqueID STOP_BEACHAMBIENCE = 1285050629U;
     } // namespace EVENTS
 
@@ -31,6 +32,7 @@ namespace AK
         static const AkUniqueID AMB_BUS = 1313057045U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID SFX_BUS = 1502772432U;
+        static const AkUniqueID UI_BUS = 3600729941U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES

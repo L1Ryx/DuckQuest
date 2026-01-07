@@ -75,6 +75,21 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="UI" ID="{67FF80D0-D27B-409C-ABB3-609187ABDA0E}" ShortID="395831611">
+					<ChildrenList>
+						<Event Name="Play_TyperwriterClack" ID="{DBDE7A52-4ABC-4C4F-AC48-294DDBDAAE1A}">
+							<ChildrenList>
+								<Action Name="" ID="{01B8A335-7069-46F7-8F88-3B0A1ED4FB63}" ShortID="608669809">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_TypewriterClack_Random" ID="{953A6AA0-1399-4C90-AB1F-6D8B7FA131E2}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
