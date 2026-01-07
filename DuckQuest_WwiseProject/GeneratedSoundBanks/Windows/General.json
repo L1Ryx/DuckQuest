@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{F89B216C-A68B-6084-5C27-63BECB87B627}",
+    "Hash": "{1844B89F-84B7-48B7-7B1C-C9AB5E61DED7}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -193,9 +193,9 @@
       ]
      },
      {
-      "Id": "1239474135",
-      "Name": "Play_TyperwriterClack",
-      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_TyperwriterClack",
+      "Id": "928013289",
+      "Name": "Play_TypewriterClack",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_TypewriterClack",
       "GUID": "{DBDE7A52-4ABC-4C4F-AC48-294DDBDAAE1A}",
       "DurationType": "OneShot",
       "DurationMin": "1.2503299",
@@ -236,6 +236,6 @@
     ]
    }
   ],
-  "FileHash": "{6E07A209-267E-B5E4-AC1A-59D4649648A7}"
+  "FileHash": "{C6A42D24-5C4A-D01B-1AC9-3A5F29F36739}"
  }
 }

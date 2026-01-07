@@ -4002,11 +4002,18 @@ MonoBehaviour:
   - {fileID: 529316066}
   - {fileID: 831134002}
   delayAfterLine: 0.75
-  typeSpeedCps: 18
+  typeSpeedCps: 12
   delayAfterLastLine: 2.5
   fadeOutRate: 1.5
   useUnscaledTime: 1
   disableOnFinish: 0
+  perCharTimeJitter: 0.4
+  minCharTimeMultiplier: 0.1
+  maxCharTimeMultiplier: 1.5
+  enableHumanPauses: 1
+  extraDelayAfterSpace: 0.015
+  extraDelayAfterPunctuation: 0.05
+  ac: {fileID: 11400000, guid: 70cc6b54e64b7494495e12fcd95d4a61, type: 2}
 --- !u!225 &439671773
 CanvasGroup:
   m_ObjectHideFlags: 0

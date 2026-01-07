@@ -1,7 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	283495111	Play_BeachAmbience			\Default Work Unit\AMBIENCE\Play_BeachAmbience	
 	654680740	Play_PetBowlComplete			\Default Work Unit\WORLD\Play_PetBowlComplete	
-	1239474135	Play_TyperwriterClack			\Default Work Unit\UI\Play_TyperwriterClack	
+	928013289	Play_TypewriterClack			\Default Work Unit\UI\Play_TypewriterClack	
 	1285050629	Stop_BeachAmbience			\Default Work Unit\AMBIENCE\Stop_BeachAmbience	
 	1504944989	Play_CraftingComplete			\Default Work Unit\WORLD\Play_CraftingComplete	
 	3860455926	Play_PickUp			\Default Work Unit\WORLD\Play_PickUp	

@@ -36,6 +36,33 @@ public class TitleCardSequencer : MonoBehaviour
 
     [Tooltip("If true, disables the panel GameObject at the end.")]
     [SerializeField] private bool disableOnFinish = true;
+    
+    [Header("Typing Randomness")]
+    [Tooltip("0 = perfectly uniform typing. 0.25 = +/-25% jitter per character.")]
+    [Range(0f, 1f)]
+    [SerializeField] private float perCharTimeJitter = 0.15f;
+
+    [Tooltip("Minimum multiplier applied to base secondsPerChar after jitter.")]
+    [Min(0.01f)]
+    [SerializeField] private float minCharTimeMultiplier = 0.4f;
+
+    [Tooltip("Maximum multiplier applied to base secondsPerChar after jitter.")]
+    [Min(0.01f)]
+    [SerializeField] private float maxCharTimeMultiplier = 2.0f;
+
+    [Header("Optional Human Pauses")]
+    [Tooltip("If enabled, adds small extra delays after spaces/punctuation.")]
+    [SerializeField] private bool enableHumanPauses = false;
+
+    [Tooltip("Extra delay (seconds) after a space character.")]
+    [Min(0f)]
+    [SerializeField] private float extraDelayAfterSpace = 0.015f;
+
+    [Tooltip("Extra delay (seconds) after punctuation like .,!?:;")]
+    [Min(0f)]
+    [SerializeField] private float extraDelayAfterPunctuation = 0.05f;
+
+    [Header("Audio")] [SerializeField] private AudioCue ac;
 
     private readonly Dictionary<TMP_Text, string> _fullTexts = new();
     private Coroutine _sequenceCo;
@@ -179,21 +206,68 @@ public class TitleCardSequencer : MonoBehaviour
     {
         if (totalChars <= 0)
         {
-            // Empty line (or whitespace-only) — still allow an immediate "finish"
             t.maxVisibleCharacters = 0;
             yield break;
         }
 
-        float secondsPerChar = 1f / Mathf.Max(0.1f, typeSpeedCps);
+        float baseSecondsPerChar = 1f / Mathf.Max(0.1f, typeSpeedCps);
         int visible = 0;
+
+        // Make sure textInfo is current and stable.
+        t.ForceMeshUpdate();
 
         while (visible < totalChars)
         {
             visible++;
             t.maxVisibleCharacters = visible;
-            yield return StartCoroutine(WaitRoutine(secondsPerChar));
+
+            // Character that just became visible (by TMP character index)
+            char c = '\0';
+            if (t.textInfo != null && t.textInfo.characterCount >= visible)
+            {
+                var charInfo = t.textInfo.characterInfo[visible - 1];
+                c = charInfo.character;
+            }
+
+            // Play typing audio
+            Game.Ctx.Audio.PlayCueGlobal(ac);
+
+            float delay = GetHumanCharDelay(baseSecondsPerChar, c);
+            yield return StartCoroutine(WaitRoutine(delay));
         }
-    }   
+    }
+
+    private float GetHumanCharDelay(float baseSecondsPerChar, char c)
+    {
+        // Jitter: multiplier in [1-jitter, 1+jitter], then clamped to min/max multipliers.
+        float jitter = Mathf.Clamp01(perCharTimeJitter);
+        float multiplier = 1f;
+
+        if (jitter > 0f)
+        {
+            float raw = Random.Range(1f - jitter, 1f + jitter);
+            multiplier = Mathf.Clamp(raw, minCharTimeMultiplier, maxCharTimeMultiplier);
+        }
+
+        float delay = baseSecondsPerChar * multiplier;
+
+        if (enableHumanPauses)
+        {
+            if (c == ' ')
+                delay += extraDelayAfterSpace;
+            else if (IsPunctuation(c))
+                delay += extraDelayAfterPunctuation;
+        }
+
+        return Mathf.Max(0f, delay);
+    }
+
+    private static bool IsPunctuation(char c)
+    {
+        // keeping simple and predictable, I might change this later
+        return c == '.' || c == ',' || c == '!' || c == '?' || c == ':' || c == ';';
+    }
+
 
     private IEnumerator FadeOutRoutine()
     {

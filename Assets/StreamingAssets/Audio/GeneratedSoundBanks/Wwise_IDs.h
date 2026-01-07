@@ -17,7 +17,7 @@ namespace AK
         static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
         static const AkUniqueID PLAY_PICKUP = 3860455926U;
-        static const AkUniqueID PLAY_TYPERWRITERCLACK = 1239474135U;
+        static const AkUniqueID PLAY_TYPEWRITERCLACK = 928013289U;
         static const AkUniqueID STOP_BEACHAMBIENCE = 1285050629U;
     } // namespace EVENTS
 
