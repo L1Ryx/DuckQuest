@@ -1765,7 +1765,7 @@ GameObject:
   - component: {fileID: 204302758}
   - component: {fileID: 204302757}
   m_Layer: 0
-  m_Name: Ambience Player
+  m_Name: Level Ambience Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22085,7 +22085,7 @@ GameObject:
   - component: {fileID: 1934743602}
   - component: {fileID: 1934743601}
   m_Layer: 0
-  m_Name: Beat Director
+  m_Name: Level Beat Director
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
