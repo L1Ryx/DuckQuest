@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -8,6 +9,8 @@ public sealed class AmbiencePlayer : MonoBehaviour
 {
     [Header("Ambience")]
     [SerializeField] private AudioCue ambienceCue;
+
+    [SerializeField] private float startDelay = 0.05f;
 
     [Header("Behavior")]
     [Tooltip("If true, Stop() is called automatically when this object is disabled/destroyed.")]
@@ -38,23 +41,28 @@ public sealed class AmbiencePlayer : MonoBehaviour
     /// Starts this ambience as the global ambience via AudioStateModel ownership.
     /// Safe to call multiple times (AudioStateModel should be idempotent).
     /// </summary>
-    public void Play()
+    public void Play() {
+        
+        _hasRequestedPlay = true;
+
+        StartCoroutine(PlayWhenReady());
+        
+    }
+
+    IEnumerator PlayWhenReady()
     {
+        yield return new WaitForSeconds(startDelay);
         if (!Game.IsReady)
         {
             Debug.LogWarning($"{nameof(AmbiencePlayer)}: GameContext not ready. Cannot play ambience.", this);
-            return;
+            yield break;
         }
 
         if (ambienceCue == null || !ambienceCue.HasPlayEvent)
         {
             Debug.LogWarning($"{nameof(AmbiencePlayer)}: No valid AudioCue assigned.", this);
-            return;
+            yield break;
         }
-
-        _hasRequestedPlay = true;
-
-        // Preferred: use the ownership-aware global ambience API.
         Game.Ctx.Audio.SetGlobalAmbience(ambienceCue);
     }
 
