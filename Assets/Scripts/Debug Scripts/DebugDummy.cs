@@ -23,6 +23,7 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/debugView", "Toggles debug view", ToggleDebugView);
         DebugLogConsole.AddCommand("/restart", "Reloads the current scene", ReloadSameScene);
         DebugLogConsole.AddCommand("/hyperspeed", "Toggles hyperspeed for the player", ToggleHyperspeed);
+        DebugLogConsole.AddCommand("/killAllAudio", "Kills all Wwise audio", KillAllWwiseAudio);
     }
 
     public void PrintDebugMessage()
@@ -61,5 +62,10 @@ public class DebugDummy : MonoBehaviour
     public void ToggleHyperspeed()
     {
         OnToggleHyperspeed?.Invoke();
+    }
+
+    public void KillAllWwiseAudio()
+    {
+        AkSoundEngine.StopAll();
     }
 }
