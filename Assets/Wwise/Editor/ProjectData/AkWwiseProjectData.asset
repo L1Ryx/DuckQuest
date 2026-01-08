@@ -151,7 +151,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584337368183528676
+    m_lastTime: -8584336974411723780
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -179,7 +179,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584337368712161854
+    m_lastTime: -8584336976074740106
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -198,6 +198,66 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_AddCadenceA
+      guid: 1196829db34c854b911ea424fb1504b4
+      id: 1331068477
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_AddCadenceA
+        ObjectType: 3
+        guid: 1196829db34c854b911ea424fb1504b4
+      Path: Events/Default Work Unit/WORLD/Play_AddCadenceA
+      maxAttenuation: 0
+      maxDuration: 4
+      minDuration: 4
+    - name: Play_AddCadenceB
+      guid: 25a869588dfd5c4a9197efe04b7d8693
+      id: 1331068478
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_AddCadenceB
+        ObjectType: 3
+        guid: 25a869588dfd5c4a9197efe04b7d8693
+      Path: Events/Default Work Unit/WORLD/Play_AddCadenceB
+      maxAttenuation: 0
+      maxDuration: 4
+      minDuration: 4
+    - name: Play_AddCadenceC
+      guid: 4b5b4a138fe1f04a8c938d90edb46451
+      id: 1331068479
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_AddCadenceC
+        ObjectType: 3
+        guid: 4b5b4a138fe1f04a8c938d90edb46451
+      Path: Events/Default Work Unit/WORLD/Play_AddCadenceC
+      maxAttenuation: 0
+      maxDuration: 6
+      minDuration: 6
     - name: Play_BeachAmbience
       guid: d34da3ee0f31d84cbb3c16ce25ef91a1
       id: 283495111
@@ -404,8 +464,39 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 401f8d77f57fc74a830de12ff87383af
     GuidInternal: 
-    m_lastTime: -8584341111578438304
-    List: []
+    m_lastTime: -8584336978070987550
+    List:
+    - name: HW_PianoNotesCount
+      guid: d93ac710aa282f4e85b82856d5431666
+      id: 1071466500
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Pickups
+        ObjectType: 4
+        guid: 484fa8cf3ad4814abdc3f92f4d6e783d
+      - ElementName: HW_PianoNotesCount
+        ObjectType: 13
+        guid: d93ac710aa282f4e85b82856d5431666
+      Path: Game Parameters/Default Work Unit/Pickups/HW_PianoNotesCount
+    - name: Pickups
+      guid: 484fa8cf3ad4814abdc3f92f4d6e783d
+      id: 488853820
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Pickups
+        ObjectType: 4
+        guid: 484fa8cf3ad4814abdc3f92f4d6e783d
+      Path: Game Parameters/Default Work Unit/Pickups
   StateWwu:
   - PhysicalPath: States/Default Work Unit.wwu
     PathAndIcons:
@@ -449,7 +540,7 @@ MonoBehaviour:
     m_lastTime: -8584341111578402456
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000a0000000b000000
+  ExpandedWaapiItemIds: 0500000006000000090000000a0000000b000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

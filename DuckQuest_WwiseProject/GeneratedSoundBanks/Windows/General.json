@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{51355AC8-F692-CD78-D67B-70266F25EA4E}",
+    "Hash": "{B6D238BD-D100-DCE4-DAEA-FE33451D4444}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -24,12 +24,36 @@
       "CachePath": "03/{03D451A0-198D-9092-2929-CAF8D78ABFA0}.wem"
      },
      {
+      "Id": "42124371",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-C-4.wav",
+      "CachePath": "C4/{C42F2206-337C-3844-7FE8-3C838F0371D0}.wem"
+     },
+     {
       "Id": "81657979",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Typewriter 2.wav",
       "CachePath": "F8/{F8E8F71E-9CAB-1CDB-7ADB-B048587DDC83}.wem"
+     },
+     {
+      "Id": "123039379",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-B-4.wav",
+      "CachePath": "08/{083CA655-29E7-2894-A9DB-0B9AFFB0BB68}.wem"
+     },
+     {
+      "Id": "129293928",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-A-1.wav",
+      "CachePath": "EF/{EF9BEC3D-6A54-7999-1699-4F8EFE901020}.wem"
      },
      {
       "Id": "159984069",
@@ -40,6 +64,30 @@
       "CachePath": "CC/{CCA8FFF8-97DC-BB43-B79C-44BD4F7DEB72}.wem"
      },
      {
+      "Id": "207193044",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-A-2.wav",
+      "CachePath": "C7/{C75BEE7E-EE1B-7E5F-32A4-29B1BFC49C6A}.wem"
+     },
+     {
+      "Id": "294326928",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-C-5.wav",
+      "CachePath": "B2/{B231BE4C-5DD8-A94D-64ED-7CF70168485D}.wem"
+     },
+     {
+      "Id": "322555041",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-A-4.wav",
+      "CachePath": "D5/{D5DBAC54-0580-72F1-0EA7-832165E29566}.wem"
+     },
+     {
       "Id": "402495002",
       "Language": "SFX",
       "Streaming": "false",
@@ -48,12 +96,60 @@
       "CachePath": "22/{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem"
      },
      {
+      "Id": "624210698",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-C-2.wav",
+      "CachePath": "80/{80FD37FB-F6E0-1E7E-6E2A-19C785C149F1}.wem"
+     },
+     {
       "Id": "672181511",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Typewriter 3.wav",
       "CachePath": "AC/{ACD0530F-7C0D-117F-30AE-EBB1B4DDA025}.wem"
+     },
+     {
+      "Id": "679306726",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-A-5.wav",
+      "CachePath": "D2/{D23F7EAA-01E1-D720-BCF8-5A8390157F3A}.wem"
+     },
+     {
+      "Id": "683992905",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-B-3.wav",
+      "CachePath": "29/{296C2E90-55B1-868B-8A89-E008F4A7F614}.wem"
+     },
+     {
+      "Id": "744795544",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-B-2.wav",
+      "CachePath": "8C/{8C34FC63-E508-7AD1-A175-08936223CC11}.wem"
+     },
+     {
+      "Id": "757572227",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-B-1.wav",
+      "CachePath": "F6/{F6FC2138-D1AA-9DF9-27ED-E3E3A933CEA7}.wem"
+     },
+     {
+      "Id": "783888783",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-C-3.wav",
+      "CachePath": "8F/{8F2CC53C-A171-1D2B-9770-2ADEE1C036E6}.wem"
      },
      {
       "Id": "790644183",
@@ -96,6 +192,14 @@
       "CachePath": "B7/{B7844C9A-A640-97FD-D3CD-4BEFE9C73181}.wem"
      },
      {
+      "Id": "883605110",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-B-5.wav",
+      "CachePath": "4F/{4FD0AA40-2294-01D1-4DA5-028956805C5F}.wem"
+     },
+     {
       "Id": "914958189",
       "Language": "SFX",
       "Streaming": "false",
@@ -104,12 +208,28 @@
       "CachePath": "48/{4808D398-A2D1-803F-E561-29482B58EBD8}.wem"
      },
      {
+      "Id": "923534012",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-C-1.wav",
+      "CachePath": "89/{8914576E-20D3-B2A5-456C-F69B0650DD4D}.wem"
+     },
+     {
       "Id": "939932267",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Bell Hit.wav",
       "CachePath": "3A/{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem"
+     },
+     {
+      "Id": "995171218",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Add-A-3.wav",
+      "CachePath": "1A/{1A198B2E-A1AC-869C-5468-149F8E2B2C2F}.wem"
      },
      {
       "Id": "1017960476",
@@ -121,6 +241,84 @@
      }
     ],
     "Events": [
+     {
+      "Id": "1331068477",
+      "Name": "Play_AddCadenceA",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_AddCadenceA",
+      "GUID": "{9D829611-4CB3-4B85-911E-A424FB1504B4}",
+      "DurationType": "OneShot",
+      "DurationMin": "4",
+      "DurationMax": "4",
+      "MediaRefs": [
+       {
+        "Id": "129293928"
+       },
+       {
+        "Id": "207193044"
+       },
+       {
+        "Id": "322555041"
+       },
+       {
+        "Id": "679306726"
+       },
+       {
+        "Id": "995171218"
+       }
+      ]
+     },
+     {
+      "Id": "1331068478",
+      "Name": "Play_AddCadenceB",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_AddCadenceB",
+      "GUID": "{5869A825-FD8D-4A5C-9197-EFE04B7D8693}",
+      "DurationType": "OneShot",
+      "DurationMin": "4",
+      "DurationMax": "4",
+      "MediaRefs": [
+       {
+        "Id": "123039379"
+       },
+       {
+        "Id": "683992905"
+       },
+       {
+        "Id": "744795544"
+       },
+       {
+        "Id": "757572227"
+       },
+       {
+        "Id": "883605110"
+       }
+      ]
+     },
+     {
+      "Id": "1331068479",
+      "Name": "Play_AddCadenceC",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_AddCadenceC",
+      "GUID": "{134A5B4B-E18F-4AF0-8C93-8D90EDB46451}",
+      "DurationType": "OneShot",
+      "DurationMin": "6",
+      "DurationMax": "6",
+      "MediaRefs": [
+       {
+        "Id": "42124371"
+       },
+       {
+        "Id": "294326928"
+       },
+       {
+        "Id": "624210698"
+       },
+       {
+        "Id": "783888783"
+       },
+       {
+        "Id": "923534012"
+       }
+      ]
+     },
      {
       "Id": "283495111",
       "Name": "Play_BeachAmbience",
@@ -299,9 +497,17 @@
       "DurationMin": "0",
       "DurationMax": "0"
      }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1071466500",
+      "Name": "HW_PianoNotesCount",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Pickups\\HW_PianoNotesCount",
+      "GUID": "{10C73AD9-28AA-4E2F-85B8-2856D5431666}"
+     }
     ]
    }
   ],
-  "FileHash": "{7EBD3647-23D4-4FAD-41ED-7AFCF8C47C3E}"
+  "FileHash": "{CD403DB8-51CC-4CE1-B5AF-942F7FCB64C1}"
  }
 }

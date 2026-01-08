@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{984B29C2-66C7-E5C8-084A-98B2361C3B86}",
+    "Hash": "{2AFC4C28-9173-A1C8-9F6B-371E79CB17F7}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -105,9 +105,17 @@
        ]
       }
      }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1071466500",
+      "Name": "HW_PianoNotesCount",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Pickups\\HW_PianoNotesCount",
+      "GUID": "{10C73AD9-28AA-4E2F-85B8-2856D5431666}"
+     }
     ]
    }
   ],
-  "FileHash": "{41B26B99-25B2-57C2-C0C9-CBB878855FA2}"
+  "FileHash": "{085C215B-8E51-1A7A-E16D-245B9C551D31}"
  }
 }

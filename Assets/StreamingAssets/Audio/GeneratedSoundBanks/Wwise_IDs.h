@@ -13,6 +13,9 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_ADDCADENCEA = 1331068477U;
+        static const AkUniqueID PLAY_ADDCADENCEB = 1331068478U;
+        static const AkUniqueID PLAY_ADDCADENCEC = 1331068479U;
         static const AkUniqueID PLAY_BEACHAMBIENCE = 283495111U;
         static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
@@ -22,6 +25,11 @@ namespace AK
         static const AkUniqueID PLAY_TYPEWRITERCLACK = 928013289U;
         static const AkUniqueID STOP_BEACHAMBIENCE = 1285050629U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID HW_PIANONOTESCOUNT = 1071466500U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {

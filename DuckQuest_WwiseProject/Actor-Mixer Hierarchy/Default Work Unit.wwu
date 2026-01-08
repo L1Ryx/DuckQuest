@@ -390,6 +390,615 @@
 								</Sound>
 							</ChildrenList>
 						</BlendContainer>
+						<ActorMixer Name="SFX_HardwormPianoCadence_AM" ID="{2EE80649-F589-4E3B-9308-35976FA6B89C}" ShortID="115875165">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<BlendContainer Name="A_Blend" ID="{807E3085-C4D1-4780-937D-89038DA838C1}" ShortID="723237365">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{541D3933-458B-4FC1-8555-6A91196E89DA}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="2"/>
+															<Property Name="Min" Type="Real64" Value="-2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Add-A-1" ID="{8FEFB851-F5F6-4B25-8734-745D832A1FB8}" ShortID="252192840">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-A-1" ID="{516A34EC-AD47-46C6-ABA5-C1BB41784A67}">
+													<Language>SFX</Language>
+													<AudioFile>Add-A-1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="129293928"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-A-1" ID="{516A34EC-AD47-46C6-ABA5-C1BB41784A67}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-A-2" ID="{0075CC20-3AAC-4A8B-849D-B3347DEDFB02}" ShortID="324083965">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-A-2" ID="{19A73724-4175-4FEA-9A4E-7640AAC08031}">
+													<Language>SFX</Language>
+													<AudioFile>Add-A-2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="207193044"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-A-2" ID="{19A73724-4175-4FEA-9A4E-7640AAC08031}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-A-3" ID="{52370A6C-3418-44DA-8497-078C65A5287C}" ShortID="63108011">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-A-3" ID="{64970614-C74E-40C5-AFB6-D5780D66DFC8}">
+													<Language>SFX</Language>
+													<AudioFile>Add-A-3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="995171218"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-A-3" ID="{64970614-C74E-40C5-AFB6-D5780D66DFC8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-A-4" ID="{3810BD2E-39EC-42ED-B37C-22BF97AE44EF}" ShortID="286957903">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-A-4" ID="{351CC361-48AF-4589-B03F-91DC6F6B0D9D}">
+													<Language>SFX</Language>
+													<AudioFile>Add-A-4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="322555041"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-A-4" ID="{351CC361-48AF-4589-B03F-91DC6F6B0D9D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-A-5" ID="{73A31750-3BCD-42BC-84FA-F410DC0046CB}" ShortID="245479472">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-A-5" ID="{579BF6FB-A3F7-4AB3-A1D7-BD13DD8AC17F}">
+													<Language>SFX</Language>
+													<AudioFile>Add-A-5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="679306726"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-A-5" ID="{579BF6FB-A3F7-4AB3-A1D7-BD13DD8AC17F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<BlendTrackList>
+										<BlendTrack Name="New Blend Track" ID="{55ADB104-CFD1-4D4E-BB9B-2B596AFD6762}" ShortID="75889562">
+											<PropertyList>
+												<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="LayerCrossFadeControlInput">
+													<ObjectRef Name="HW_PianoNotesCount" ID="{10C73AD9-28AA-4E2F-85B8-2856D5431666}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+												</Reference>
+											</ReferenceList>
+											<BlendTrackAssocList>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-A-1" ID="{8FEFB851-F5F6-4B25-8734-745D832A1FB8}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>1</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>1.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-A-2" ID="{0075CC20-3AAC-4A8B-849D-B3347DEDFB02}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>1.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>2.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-A-3" ID="{52370A6C-3418-44DA-8497-078C65A5287C}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>2.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>3.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-A-4" ID="{3810BD2E-39EC-42ED-B37C-22BF97AE44EF}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>3.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>4.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-A-5" ID="{73A31750-3BCD-42BC-84FA-F410DC0046CB}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>4.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+											</BlendTrackAssocList>
+										</BlendTrack>
+									</BlendTrackList>
+								</BlendContainer>
+								<BlendContainer Name="B_Blend" ID="{5BD29899-F1D3-415F-8549-80E1456FAFD5}" ShortID="977802758">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{88A036DD-601D-4F53-84C6-D91290C736F2}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="2"/>
+															<Property Name="Min" Type="Real64" Value="-2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Add-B-1" ID="{F63FC5B1-8764-483A-A858-EE9B61C935FD}" ShortID="678991161">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-B-1" ID="{A212A1DD-61A4-48EA-A7D6-BF46856B133E}">
+													<Language>SFX</Language>
+													<AudioFile>Add-B-1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="757572227"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-B-1" ID="{A212A1DD-61A4-48EA-A7D6-BF46856B133E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-B-2" ID="{B47A46AC-AF09-480D-AAE6-A760B9A50632}" ShortID="395949752">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-B-2" ID="{39391432-7CD6-4182-899D-EDA1779A31F8}">
+													<Language>SFX</Language>
+													<AudioFile>Add-B-2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="744795544"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-B-2" ID="{39391432-7CD6-4182-899D-EDA1779A31F8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-B-3" ID="{CB206FBF-01D1-4DC1-AC23-F165B8E41721}" ShortID="523748300">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-B-3" ID="{4F0B53C6-AF54-4E73-AFD3-BE0EBC0AEF13}">
+													<Language>SFX</Language>
+													<AudioFile>Add-B-3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="683992905"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-B-3" ID="{4F0B53C6-AF54-4E73-AFD3-BE0EBC0AEF13}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-B-4" ID="{08465596-7A29-4309-A791-8F3CEBD452BC}" ShortID="842564148">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-B-4" ID="{543DE09A-C016-427B-8246-EF1796BA331E}">
+													<Language>SFX</Language>
+													<AudioFile>Add-B-4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="123039379"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-B-4" ID="{543DE09A-C016-427B-8246-EF1796BA331E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-B-5" ID="{27757A0C-53E2-4FA6-9738-449D93275248}" ShortID="73043333">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-B-5" ID="{82A2F333-3125-4C8E-825B-5099F3278160}">
+													<Language>SFX</Language>
+													<AudioFile>Add-B-5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="883605110"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-B-5" ID="{82A2F333-3125-4C8E-825B-5099F3278160}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<BlendTrackList>
+										<BlendTrack Name="New Blend Track" ID="{7F9B532E-BE4D-45AB-9065-A5BCFA5DD31F}" ShortID="1038432887">
+											<PropertyList>
+												<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="LayerCrossFadeControlInput">
+													<ObjectRef Name="HW_PianoNotesCount" ID="{10C73AD9-28AA-4E2F-85B8-2856D5431666}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+												</Reference>
+											</ReferenceList>
+											<BlendTrackAssocList>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-B-1" ID="{F63FC5B1-8764-483A-A858-EE9B61C935FD}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>1</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>1.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-B-2" ID="{B47A46AC-AF09-480D-AAE6-A760B9A50632}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>1.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>2.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-B-3" ID="{CB206FBF-01D1-4DC1-AC23-F165B8E41721}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>2.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>3.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-B-4" ID="{08465596-7A29-4309-A791-8F3CEBD452BC}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>3.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>4.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-B-5" ID="{27757A0C-53E2-4FA6-9738-449D93275248}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>4.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+											</BlendTrackAssocList>
+										</BlendTrack>
+									</BlendTrackList>
+								</BlendContainer>
+								<BlendContainer Name="C_Blend" ID="{D738EFF3-7808-43E4-BE86-2155B05BCDC3}" ShortID="948363366">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{C3739FAA-EAB5-4B05-A2CD-7A1F7B54A3EB}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="2"/>
+															<Property Name="Min" Type="Real64" Value="-2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Add-C-1" ID="{4B0E0D2B-8EEC-44ED-AFB1-C09079680114}" ShortID="799991322">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-C-1" ID="{4E42CA35-0AD9-4BC6-A03F-002C04BC0D02}">
+													<Language>SFX</Language>
+													<AudioFile>Add-C-1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="923534012"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-C-1" ID="{4E42CA35-0AD9-4BC6-A03F-002C04BC0D02}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-C-2" ID="{07B2C478-96FA-43EB-87CD-E3549CF1DEF2}" ShortID="774089493">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-C-2" ID="{B9503C8E-3FE9-4E6D-A967-C9B674D5F773}">
+													<Language>SFX</Language>
+													<AudioFile>Add-C-2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="624210698"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-C-2" ID="{B9503C8E-3FE9-4E6D-A967-C9B674D5F773}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-C-3" ID="{334DE60C-014F-44EF-A26C-15DDD5A88B74}" ShortID="160317577">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-C-3" ID="{D6BF36C2-A1FE-45C4-84E4-A595028B83A7}">
+													<Language>SFX</Language>
+													<AudioFile>Add-C-3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="783888783"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-C-3" ID="{D6BF36C2-A1FE-45C4-84E4-A595028B83A7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-C-4" ID="{7EB04097-142B-4048-A00B-DD0AFA6E41A1}" ShortID="951522809">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-C-4" ID="{41FA1086-E99A-4E60-A047-8FBEDC7C5494}">
+													<Language>SFX</Language>
+													<AudioFile>Add-C-4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="42124371"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-C-4" ID="{41FA1086-E99A-4E60-A047-8FBEDC7C5494}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Add-C-5" ID="{66E0C832-CBA9-447F-9338-FCBA7ACD6E49}" ShortID="41422844">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Add-C-5" ID="{9F60D978-496E-4746-8C0C-ADF6BCC09C0D}">
+													<Language>SFX</Language>
+													<AudioFile>Add-C-5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="294326928"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Add-C-5" ID="{9F60D978-496E-4746-8C0C-ADF6BCC09C0D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<BlendTrackList>
+										<BlendTrack Name="New Blend Track" ID="{4DA21710-1A7F-4C1F-B770-B43EF170FA2B}" ShortID="469876873">
+											<PropertyList>
+												<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="LayerCrossFadeControlInput">
+													<ObjectRef Name="HW_PianoNotesCount" ID="{10C73AD9-28AA-4E2F-85B8-2856D5431666}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+												</Reference>
+											</ReferenceList>
+											<BlendTrackAssocList>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-C-1" ID="{4B0E0D2B-8EEC-44ED-AFB1-C09079680114}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>1</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>1.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-C-2" ID="{07B2C478-96FA-43EB-87CD-E3549CF1DEF2}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>1.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>2.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-C-3" ID="{334DE60C-014F-44EF-A26C-15DDD5A88B74}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>2.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>3.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-C-4" ID="{7EB04097-142B-4048-A00B-DD0AFA6E41A1}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>3.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>4.5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="Add-C-5" ID="{66E0C832-CBA9-447F-9338-FCBA7ACD6E49}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>4.5</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>5</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+											</BlendTrackAssocList>
+										</BlendTrack>
+									</BlendTrackList>
+								</BlendContainer>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="AMBIENCE" ID="{601EBDA4-BE38-4BB9-A38C-B95DF2765927}" ShortID="529818581">

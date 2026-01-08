@@ -47,6 +47,9 @@ public class AdditionOutputSlot : MonoBehaviour, IInteractable
             Debug.Log($"{name}: Backpack is full (4 types). Cannot add result '{outDef.itemId}'.");
             return;
         }
+        
+        var cadenceSfx = machine.GetComponent<AdditionMachineCadenceSfx>();
+        cadenceSfx?.PlayOutputPickup(sum);
 
         if (clearInputsAfterSuccess)
             machine.ClearInputs();

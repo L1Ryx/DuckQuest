@@ -22,6 +22,9 @@ public class AdditionSlot : MonoBehaviour, IInteractable
     [SerializeField] private float iconFadeDuration = 0.10f;
     [Header("Events")] [SerializeField] private UnityEvent onSlotSlateChanged;
     
+    [SerializeField] private AdditionMachine machine;
+    private AdditionMachineCadenceSfx cadenceSfx;
+
 
     private Tween iconTween;
 
@@ -36,6 +39,10 @@ public class AdditionSlot : MonoBehaviour, IInteractable
         if (itemIconRoot == null && itemIconRenderer != null)
             itemIconRoot = itemIconRenderer.transform;
 
+        if (machine != null)
+        {
+            cadenceSfx = machine.GetComponent<AdditionMachineCadenceSfx>();
+        }
         SetIconHiddenImmediate();
     }
     
@@ -147,6 +154,7 @@ public class AdditionSlot : MonoBehaviour, IInteractable
         StoredItemId = selectedItemId;
         ShowIcon(def.icon);
         
+        cadenceSfx?.PlayPlacement(this, hwDef.packSize);
 
 
         UpdateVisual();

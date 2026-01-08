@@ -15,6 +15,23 @@ public class AdditionMachine : MonoBehaviour
         slotA?.ClearNoRefund();
         slotB?.ClearNoRefund();
     }
+    
+    public bool WereBothInputsEmptyBeforePlacing(AdditionSlot placingSlot)
+    {
+        // Called from AdditionSlot BEFORE it sets HasValue=true.
+        // If the "other" slot is empty right now, then both were empty.
+        if (slotA == null || slotB == null) return true;
+
+        if (placingSlot == slotA)
+            return !slotB.HasValue;
+
+        if (placingSlot == slotB)
+            return !slotA.HasValue;
+
+        // If something unexpected calls this, treat as first placement.
+        return true;
+    }
+
 
     // Optional: if you want “take back” behavior later, slots already support it.
 }

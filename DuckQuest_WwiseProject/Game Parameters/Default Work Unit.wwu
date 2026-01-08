@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}" SchemaVersion="123">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Pickups" ID="{CFA84F48-D43A-4A81-BDC3-F92F4D6E783D}" ShortID="935385282">
+					<ChildrenList>
+						<GameParameter Name="HW_PianoNotesCount" ID="{10C73AD9-28AA-4E2F-85B8-2856D5431666}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="1"/>
+								<Property Name="Max" Type="Real64" Value="5"/>
+								<Property Name="Min" Type="Real64" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>
