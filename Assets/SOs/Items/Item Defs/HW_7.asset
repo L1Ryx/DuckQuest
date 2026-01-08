@@ -15,5 +15,5 @@ MonoBehaviour:
   itemId: 008
   displayName: Pack of 7 Hardworms
   description: Used for crafting.
-  icon: {fileID: -5144238022852969543, guid: 845a1b67b7c0b485fa7b78a64363656d, type: 3}
+  icon: {fileID: -3525507928815062269, guid: 54a66f0d346014ed59da26e158a557eb, type: 3}
   packSize: 7
