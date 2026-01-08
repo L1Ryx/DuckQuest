@@ -5,6 +5,9 @@ public class ExplodableRock : InventoryCostInteractable
     [Header("Explosion")]
     [SerializeField] private GameObject destroyedVersion;
     [SerializeField] private float destroyDelay = 0f;
+    
+    [Header("Audio")]
+    [SerializeField] private AudioCue ac;
 
     protected override void OnPaymentSucceeded(GameObject interactor)
     {
@@ -16,6 +19,8 @@ public class ExplodableRock : InventoryCostInteractable
         {
             Instantiate(destroyedVersion, transform.position, Quaternion.identity);
         }
+
+        Game.Ctx.Audio.PlayCueGlobal(ac);
 
         Destroy(gameObject, destroyDelay);
     }

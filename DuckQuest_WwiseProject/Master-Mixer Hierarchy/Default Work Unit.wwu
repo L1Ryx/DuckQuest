@@ -18,7 +18,7 @@
 											<EffectSlot Name="" ID="{F9968AAE-CCE2-4EF4-A5E9-A9C24AB660DC}" ShortID="581442942">
 												<ReferenceList>
 													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-														<ObjectRef Name="Hall_Large" ID="{6D154498-FF6D-4823-96FC-56841B70E079}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+														<ObjectRef Name="Hall_Large_Dark" ID="{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 													</Reference>
 												</ReferenceList>
 											</EffectSlot>
@@ -30,6 +30,23 @@
 						<Bus Name="AMB Bus" ID="{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}"/>
 						<Bus Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}"/>
 						<Bus Name="UI Bus" ID="{BE7C4AD1-2F98-479C-9B2D-3FF905DB3669}"/>
+						<AuxBus Name="ImpactDelay" ID="{75E8FF73-24F3-4021-830E-DBCB32EE9C07}">
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{779C29B3-4016-4549-85AF-87998782790B}" ShortID="427314160">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
+														<ObjectRef Name="Echoes_Linear" ID="{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AuxBus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

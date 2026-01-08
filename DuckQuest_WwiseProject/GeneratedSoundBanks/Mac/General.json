@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{1844B89F-84B7-48B7-7B1C-C9AB5E61DED7}",
+    "Hash": "{FB3F9174-85AC-C451-E984-50579CDEE5D1}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -86,6 +86,14 @@
       "Location": "Memory",
       "ShortName": "Typewriter 1.wav",
       "CachePath": "B7/{B7844C9A-A640-97FD-D3CD-4BEFE9C73181}.wem"
+     },
+     {
+      "Id": "914958189",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rock Break.wav",
+      "CachePath": "48/{4808D398-A2D1-803F-E561-29482B58EBD8}.wem"
      },
      {
       "Id": "939932267",
@@ -193,6 +201,34 @@
       ]
      },
      {
+      "Id": "1119824134",
+      "Name": "Play_RockBreak",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_RockBreak",
+      "GUID": "{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.43907046",
+      "DurationMax": "0.5860888",
+      "MediaRefs": [
+       {
+        "Id": "914958189"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       },
+       {
+        "Id": "2806164392",
+        "Name": "ImpactDelay",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ImpactDelay",
+        "GUID": "{75E8FF73-24F3-4021-830E-DBCB32EE9C07}"
+       }
+      ]
+     },
+     {
       "Id": "928013289",
       "Name": "Play_TypewriterClack",
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_TypewriterClack",
@@ -236,6 +272,6 @@
     ]
    }
   ],
-  "FileHash": "{9E2115AB-06D4-993A-DF76-9EB1FEDD97F0}"
+  "FileHash": "{5177FB19-346A-196C-D328-71E3638C8803}"
  }
 }

@@ -14,16 +14,9 @@ public class HardwormPickup : MonoBehaviour, IInteractable
     [SerializeField] private GameEvent onPickedUp; // optional: hook to your SO event system
 
     [SerializeField] private GameEvent onPickedUpGenericItem;
-    [Header("Audio")] [SerializeField] private AudioCue pickupCue;
-    private AudioEmitter ae;
     
     public HardwormPackDefinition PackDef => packDef;
     public int PacksGranted => packsGranted;
-
-    private void Awake()
-    {
-        ae = GetComponent<AudioEmitter>();
-    }
 
     public void Interact(GameObject interactor)
     {
@@ -49,7 +42,7 @@ public class HardwormPickup : MonoBehaviour, IInteractable
         }
 
         // SUCCESS
-        ae?.Play(pickupCue);
+        Game.Ctx.HardwormPickupSfx?.PlayPickup(packDef);
         if (onPickedUp != null) onPickedUp.Raise();
         if (onPickedUpGenericItem != null) onPickedUpGenericItem.Raise();
 

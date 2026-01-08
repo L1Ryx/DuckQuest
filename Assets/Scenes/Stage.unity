@@ -4989,6 +4989,7 @@ MonoBehaviour:
       m_Calls: []
   destroyedVersion: {fileID: 8102771898147078986, guid: 8d729a257f16d4829a5ec7c7280c8ae4, type: 3}
   destroyDelay: 0
+  ac: {fileID: 11400000, guid: ac7995ff2371c49f69654d42e295ab20, type: 2}
 --- !u!61 &582582728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13719,7 +13720,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  pickupCue: {fileID: 11400000, guid: 92b972cba3cbf4ba286a6338c6547500, type: 2}
 --- !u!114 &1023407510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14318,7 +14318,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  pickupCue: {fileID: 11400000, guid: 92b972cba3cbf4ba286a6338c6547500, type: 2}
 --- !u!114 &1051177693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89357,7 +89356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0
-  lockInteractionsByDefault: 0
+  lockInteractionsByDefault: 1
   onInteractionsLocked:
     m_PersistentCalls:
       m_Calls:

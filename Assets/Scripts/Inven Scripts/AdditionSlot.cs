@@ -21,9 +21,7 @@ public class AdditionSlot : MonoBehaviour, IInteractable
     [SerializeField] private Ease iconHideEase = Ease.InCubic;
     [SerializeField] private float iconFadeDuration = 0.10f;
     [Header("Events")] [SerializeField] private UnityEvent onSlotSlateChanged;
-
-    [Header("Audio")] [SerializeField] private AudioCue pickupCue;
-    private AudioEmitter ae;
+    
 
     private Tween iconTween;
 
@@ -37,7 +35,6 @@ public class AdditionSlot : MonoBehaviour, IInteractable
     {
         if (itemIconRoot == null && itemIconRenderer != null)
             itemIconRoot = itemIconRenderer.transform;
-        ae = GetComponent<AudioEmitter>();
 
         SetIconHiddenImmediate();
     }
@@ -102,7 +99,17 @@ public class AdditionSlot : MonoBehaviour, IInteractable
             }
 
             // SUCCESS
-            ae?.Play(pickupCue);
+            ItemDefinition itemDef = Game.Ctx.ItemDb.Get(StoredItemId);
+            if (itemDef is HardwormPackDefinition hwItemDef)
+            {
+                Game.Ctx.HardwormPickupSfx?.PlayPickup(hwItemDef);
+            }
+            else
+            {
+                // Fallback: still play at least one tick if something unexpected is stored
+                Game.Ctx.HardwormPickupSfx?.PlayPickupCount(1);
+                Debug.LogWarning("hwItemDef not assigned. Playing pickup sound for 1.");
+            }
             ClearNoRefund(); // state clear only; refund already done
             UpdateVisual();
             onSlotSlateChanged?.Invoke();

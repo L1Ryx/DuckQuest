@@ -6,9 +6,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	1690558513	ForestVerb			\Default Work Unit\Master Audio Bus\ForestVerb	
+	2806164392	ImpactDelay			\Default Work Unit\Master Audio Bus\ImpactDelay	
 
 Effect plug-ins	ID	Name	Type				Notes
-	2513915904	Hall_Large	Wwise RoomVerb			
+	1588715066	Echoes_Linear	Wwise Delay			
+	3442768367	Hall_Large_Dark	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

@@ -29,6 +29,10 @@
 							<ObjectRef Name="Play_TypewriterClack" ID="{DBDE7A52-4ABC-4C4F-AC48-294DDBDAAE1A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="3" Y="0"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="4" Y="0"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true"/>

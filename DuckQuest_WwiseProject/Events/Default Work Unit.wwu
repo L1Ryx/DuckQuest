@@ -38,6 +38,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}">
+							<ChildrenList>
+								<Action Name="" ID="{740B1727-DB46-4B40-8D91-4F851FE2A50D}" ShortID="354811112">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_RockBreak_Blend" ID="{DE9BA85D-0456-4E80-9F6E-325E5F671403}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{D55FC348-2976-4356-8C1C-F171A3FE1B0C}" ShortID="322830194">

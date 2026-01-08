@@ -31,7 +31,7 @@
 								</Property>
 								<Property Name="UserAuxSendVolume0" Type="Real64">
 									<ValueList>
-										<Value>-28</Value>
+										<Value>-22</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
@@ -134,7 +134,7 @@
 										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 										<Property Name="UserAuxSendVolume0" Type="Real64">
 											<ValueList>
-												<Value>-26</Value>
+												<Value>-16</Value>
 											</ValueList>
 										</Property>
 										<Property Name="Volume" Type="Real64">
@@ -187,7 +187,7 @@
 								</Property>
 								<Property Name="UserAuxSendVolume0" Type="Real64">
 									<ValueList>
-										<Value>-20</Value>
+										<Value>-14</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
@@ -309,6 +309,87 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<BlendContainer Name="SFX_RockBreak_Blend" ID="{DE9BA85D-0456-4E80-9F6E-325E5F671403}" ShortID="241804153">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{EE6E029D-544D-4D05-97AD-D3B49D0E5A73}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="250"/>
+													<Property Name="Min" Type="Real64" Value="-250"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{0FC669C5-3FD5-4517-B2F1-06E7966709A9}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="2"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Rock Break" ID="{045E84CA-9787-42FB-B5C1-DAB1A86BB98D}" ShortID="692631518">
+									<PropertyList>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="ForestVerb" ID="{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="ImpactDelay" ID="{75E8FF73-24F3-4021-830E-DBCB32EE9C07}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rock Break" ID="{20C0FF28-2BED-4801-9375-8B71A2605E38}">
+											<Language>SFX</Language>
+											<AudioFile>Rock Break.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="914958189"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rock Break" ID="{20C0FF28-2BED-4801-9375-8B71A2605E38}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="AMBIENCE" ID="{601EBDA4-BE38-4BB9-A38C-B95DF2765927}" ShortID="529818581">

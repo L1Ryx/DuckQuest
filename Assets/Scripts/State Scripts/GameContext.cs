@@ -11,6 +11,7 @@ public class GameContext : MonoBehaviour
     public LevelStateModel LevelState { get; private set; }
     public InteractionLockModel InteractionLock { get; private set; }
     public AudioStateModel Audio { get; private set; }
+    public HardwormPickupSfx HardwormPickupSfx { get; private set; }
 
     [Header("Databases")] [SerializeField] private ItemDatabase itemDatabase;
 
@@ -38,5 +39,11 @@ public class GameContext : MonoBehaviour
         InteractionLock = new InteractionLockModel();
         Audio = new AudioStateModel();
         Audio.Initialize(gameObject); // Global emitter is on game context!
+
+        HardwormPickupSfx = GetComponentInChildren<HardwormPickupSfx>();
+        if (HardwormPickupSfx == null)
+        {
+            Debug.LogWarning("HardwormPickupSfx is null");
+        }
     }
 }
