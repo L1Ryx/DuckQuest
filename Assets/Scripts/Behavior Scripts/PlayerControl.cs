@@ -29,7 +29,11 @@ public class PlayerControl : MonoBehaviour
     // 0=none, 1=vertical, 2=horizontal
     private int lockedAxis = 0;
     private CapsuleCollider2D capsule;
+    
+    [Header("Debug Console")]
     public bool IsNoclipEnabled { get; private set; }
+    public bool IsHyperspeedEnabled { get; private set; }
+    [SerializeField] private float hyperspeedMultiplier = 3f;
     
 
     private void Awake()
@@ -48,12 +52,26 @@ public class PlayerControl : MonoBehaviour
             animator = GetComponentInChildren<Animator>();
         
         ApplyCollisionState();
+        IsHyperspeedEnabled = false;
     }
     
     public void ToggleNoclip()
     {
         IsNoclipEnabled = !IsNoclipEnabled;
         ApplyCollisionState();
+    }
+
+    public void ToggleHyperspeed()
+    {
+        if (IsHyperspeedEnabled)
+        {
+            moveSpeed /= hyperspeedMultiplier;
+        }
+        else
+        {
+            moveSpeed *= hyperspeedMultiplier;
+        }
+        IsHyperspeedEnabled = !IsHyperspeedEnabled;
     }
 
     public void SetNoclip(bool enabled)

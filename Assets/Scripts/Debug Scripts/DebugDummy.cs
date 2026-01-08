@@ -10,6 +10,7 @@ public class DebugDummy : MonoBehaviour
     private int callCount = 1;
     [Header("Events")] [SerializeField] private UnityEvent OnToggleNoclip;
     [SerializeField] private UnityEvent OnToggleDebugView;
+    [SerializeField] private UnityEvent OnToggleHyperspeed;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/noclip", "Toggles noclip for the player", ToggleNoclip);
         DebugLogConsole.AddCommand("/debugView", "Toggles debug view", ToggleDebugView);
         DebugLogConsole.AddCommand("/restart", "Reloads the current scene", ReloadSameScene);
+        DebugLogConsole.AddCommand("/hyperspeed", "Toggles hyperspeed for the player", ToggleHyperspeed);
     }
 
     public void PrintDebugMessage()
@@ -54,5 +56,10 @@ public class DebugDummy : MonoBehaviour
     public void ToggleDebugView()
     {
         OnToggleDebugView?.Invoke();
+    }
+
+    public void ToggleHyperspeed()
+    {
+        OnToggleHyperspeed?.Invoke();
     }
 }
