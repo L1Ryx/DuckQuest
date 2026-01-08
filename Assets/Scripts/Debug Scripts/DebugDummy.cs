@@ -24,6 +24,36 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/restart", "Reloads the current scene", ReloadSameScene);
         DebugLogConsole.AddCommand("/hyperspeed", "Toggles hyperspeed for the player", ToggleHyperspeed);
         DebugLogConsole.AddCommand("/killAllAudio", "Kills all Wwise audio", KillAllWwiseAudio);
+        DebugLogConsole.AddCommand("/addHW1", "Try adds 1-Hardworm Pack", DebugAddHardwormOne);
+        DebugLogConsole.AddCommand("/addHW2", "Try adds 2-Hardworm Pack", DebugAddHardwormTwo);
+        DebugLogConsole.AddCommand("/addHW3", "Try adds 3-Hardworm Pack", DebugAddHardwormThree);
+        DebugLogConsole.AddCommand("/addHW4", "Try adds 4-Hardworm Pack", DebugAddHardwormFour);
+        DebugLogConsole.AddCommand("/addHW5", "Try adds 5-Hardworm Pack", DebugAddHardwormFive);
+    }
+
+    public void DebugAddHardwormOne()
+    {
+        Game.Ctx.Inventory.TryAdd("001", 1);
+    }
+    
+    public void DebugAddHardwormTwo()
+    {
+        Game.Ctx.Inventory.TryAdd("002", 1);
+    }
+    
+    public void DebugAddHardwormThree()
+    {
+        Game.Ctx.Inventory.TryAdd("003", 1);
+    }
+    
+    public void DebugAddHardwormFour()
+    {
+        Game.Ctx.Inventory.TryAdd("004", 1);
+    }
+    
+    public void DebugAddHardwormFive()
+    {
+        Game.Ctx.Inventory.TryAdd("005", 1);
     }
 
     public void PrintDebugMessage()
