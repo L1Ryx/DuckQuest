@@ -404,6 +404,11 @@
 					<ChildrenList>
 						<BlendContainer Name="AMB_Beach_Blend" ID="{BAAD000F-F8E3-49F2-A62D-8C95C8BA1648}" ShortID="370708460">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>28</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
