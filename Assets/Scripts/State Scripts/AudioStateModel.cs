@@ -281,7 +281,7 @@ public sealed class AudioStateModel
 
     public void StopGlobalAmbience(bool immediate)
     {
-        Debug.Log($"StopGlobalAmbience called\n{System.Environment.StackTrace}");
+        // Debug.Log($"StopGlobalAmbience called\n{System.Environment.StackTrace}");
         EnsureInitialized();
 
         if (immediate)

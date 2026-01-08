@@ -4007,7 +4007,7 @@ MonoBehaviour:
   fadeOutRate: 1.5
   useUnscaledTime: 1
   disableOnFinish: 0
-  perCharTimeJitter: 0.4
+  perCharTimeJitter: 0.769
   minCharTimeMultiplier: 0.1
   maxCharTimeMultiplier: 1.5
   enableHumanPauses: 1
