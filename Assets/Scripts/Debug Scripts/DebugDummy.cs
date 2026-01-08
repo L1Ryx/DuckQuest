@@ -2,11 +2,13 @@ using System;
 using IngameDebugConsole;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class DebugDummy : MonoBehaviour
 {
     private int callCount = 1;
+    [Header("Events")] [SerializeField] private UnityEvent OnToggleNoclip;
 
     private void Awake()
     {
@@ -15,7 +17,8 @@ public class DebugDummy : MonoBehaviour
 
     void RegisterConsoleCommands()
     {
-        DebugLogConsole.AddCommand("restart", "Reloads the current scene", ReloadSameScene);
+        DebugLogConsole.AddCommand("/noclip", "Toggles noclip for the player", ToggleNoclip);
+        DebugLogConsole.AddCommand("/restart", "Reloads the current scene", ReloadSameScene);
     }
 
     public void PrintDebugMessage()
@@ -39,5 +42,10 @@ public class DebugDummy : MonoBehaviour
         }
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ToggleNoclip()
+    {
+        OnToggleNoclip?.Invoke();
     }
 }

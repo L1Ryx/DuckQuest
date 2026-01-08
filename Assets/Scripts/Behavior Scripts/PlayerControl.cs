@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerControl : MonoBehaviour
@@ -27,14 +28,45 @@ public class PlayerControl : MonoBehaviour
 
     // 0=none, 1=vertical, 2=horizontal
     private int lockedAxis = 0;
+    private CapsuleCollider2D capsule;
+    public bool IsNoclipEnabled { get; private set; }
+    
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
 
+        capsule = GetComponent<CapsuleCollider2D>();
+
+        if (capsule == null)
+        {
+            Debug.LogError($"No Player Capsule Collider");
+        }
+
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
+        
+        ApplyCollisionState();
+    }
+    
+    public void ToggleNoclip()
+    {
+        IsNoclipEnabled = !IsNoclipEnabled;
+        ApplyCollisionState();
+    }
+
+    public void SetNoclip(bool enabled)
+    {
+        IsNoclipEnabled = enabled;
+        ApplyCollisionState();
+    }
+
+    private void ApplyCollisionState()
+    {
+        // noclip ON  => collider disabled
+        // noclip OFF => collider enabled
+        capsule.enabled = !IsNoclipEnabled;
     }
 
     private void FixedUpdate()

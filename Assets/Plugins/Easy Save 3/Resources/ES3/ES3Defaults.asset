@@ -42,6 +42,7 @@ MonoBehaviour:
     - AK.Wwise.Unity.Timeline
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
+    - IngameDebugConsole.Runtime
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
