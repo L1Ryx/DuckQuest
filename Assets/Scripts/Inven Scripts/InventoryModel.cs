@@ -22,6 +22,17 @@ public class InventoryModel
     {
         return indexById.TryGetValue(itemId, out var idx) ? Data.entries[idx].count : 0;
     }
+    
+    public void Clear()
+    {
+        if (Data.entries.Count == 0)
+            return;
+
+        Data.entries.Clear();
+        indexById.Clear();
+
+        OnChanged?.Invoke();
+    }
 
     public bool Contains(string itemId) => indexById.ContainsKey(itemId);
 

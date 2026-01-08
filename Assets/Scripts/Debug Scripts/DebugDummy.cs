@@ -1,3 +1,5 @@
+using System;
+using IngameDebugConsole;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -5,6 +7,16 @@ using UnityEngine.SceneManagement;
 public class DebugDummy : MonoBehaviour
 {
     private int callCount = 1;
+
+    private void Awake()
+    {
+        RegisterConsoleCommands();
+    }
+
+    void RegisterConsoleCommands()
+    {
+        DebugLogConsole.AddCommand("restart", "Reloads the current scene", ReloadSameScene);
+    }
 
     public void PrintDebugMessage()
     {
@@ -19,9 +31,10 @@ public class DebugDummy : MonoBehaviour
     {
         if (Game.IsReady && Game.Ctx != null)
         {
-            // Game.Ctx.Audio?.StopGlobalAmbience(immediate: false);
+            Game.Ctx.Audio?.StopGlobalAmbience(immediate: false);
             Game.Ctx.LevelState?.Reset();
             Game.Ctx.InteractionLock?.ForceClear();
+            Game.Ctx.Inventory.Clear();
             // Optional: reset other per-run state here (inventory, selections, etc.)
         }
 
