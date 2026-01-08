@@ -29,6 +29,7 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/addHW3", "Try adds 3-Hardworm Pack", DebugAddHardwormThree);
         DebugLogConsole.AddCommand("/addHW4", "Try adds 4-Hardworm Pack", DebugAddHardwormFour);
         DebugLogConsole.AddCommand("/addHW5", "Try adds 5-Hardworm Pack", DebugAddHardwormFive);
+        DebugLogConsole.AddCommand("clearInven", "Clears Inventory", ClearInventory);
     }
 
     public void DebugAddHardwormOne()
@@ -54,6 +55,11 @@ public class DebugDummy : MonoBehaviour
     public void DebugAddHardwormFive()
     {
         Game.Ctx.Inventory.TryAdd("005", 1);
+    }
+
+    public void ClearInventory()
+    {
+        Game.Ctx.Inventory.Clear();
     }
 
     public void PrintDebugMessage()
