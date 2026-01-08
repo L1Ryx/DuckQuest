@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 3b285fafa3b13043963f7baa8242bcfd
     GuidInternal: 
-    m_lastTime: -8584337386818970406
+    m_lastTime: -8584337383370818018
     List:
     - name: AMB Bus
       guid: 97c70cc0c78bfe4a8cc365236d39fe13
@@ -74,6 +74,23 @@ MonoBehaviour:
         ObjectType: 1
         guid: 601eb4a0ce48324ba6b2ca15c855c8be
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/ForestVerb
+    - name: ImpactDelay
+      guid: 73ffe875f3242140830edbcb32ee9c07
+      id: 2806164392
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3b285fafa3b13043963f7baa8242bcfd
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: ImpactDelay
+        ObjectType: 1
+        guid: 73ffe875f3242140830edbcb32ee9c07
+      Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/ImpactDelay
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
