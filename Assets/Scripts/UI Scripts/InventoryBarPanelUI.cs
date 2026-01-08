@@ -13,6 +13,8 @@ public class InventoryBarPanelUI : MonoBehaviour
     [Header("Slots (size must be 4)")]
     [SerializeField] private InventoryBarSlotUI[] slots = new InventoryBarSlotUI[4];
 
+    [Header("Audio")] [SerializeField] private AudioCue ac;
+
     private int lastSelectedIndex = -1;
     private bool subscribed;
     
@@ -169,6 +171,13 @@ public class InventoryBarPanelUI : MonoBehaviour
         if (!force && selected == lastSelectedIndex)
             return;
 
+        // 🔊 PLAY SOUND WHEN SELECTION ACTUALLY CHANGES
+        if (!force && lastSelectedIndex != -1 && selected != -1)
+        {
+            if (ac != null && Game.IsReady)
+                Game.Ctx.Audio.PlayCueGlobal(ac);
+        }
+
         // Only update what changed
         if (lastSelectedIndex >= 0 && lastSelectedIndex < 4)
             slots[lastSelectedIndex]?.SetSelected(false);
@@ -178,6 +187,7 @@ public class InventoryBarPanelUI : MonoBehaviour
 
         lastSelectedIndex = selected;
     }
+
 
     // Hook these from GameEventListener responses
     public void FadeInOnLevelStarted()

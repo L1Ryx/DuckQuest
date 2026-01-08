@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{BD76855D-C48E-6DB9-07C9-3BA68CFE4A73}",
+    "Hash": "{51355AC8-F692-CD78-D67B-70266F25EA4E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
     "Media": [
+     {
+      "Id": "21795085",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Phone Tap.wav",
+      "CachePath": "03/{03D451A0-198D-9092-2929-CAF8D78ABFA0}.wem"
+     },
      {
       "Id": "81657979",
       "Language": "SFX",
@@ -170,6 +178,28 @@
       ]
      },
      {
+      "Id": "625749573",
+      "Name": "Play_PhoneTap",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_PhoneTap",
+      "GUID": "{DF6DF94B-B470-4339-9041-D723A0643C33}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.21815975",
+      "DurationMax": "0.3085245",
+      "MediaRefs": [
+       {
+        "Id": "21795085"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
       "Id": "3860455926",
       "Name": "Play_PickUp",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_PickUp",
@@ -272,6 +302,6 @@
     ]
    }
   ],
-  "FileHash": "{57CA32F8-BA60-0618-F384-1C2A7D35F23D}"
+  "FileHash": "{C12F5D50-3CC3-506A-B3B2-41BF9289020B}"
  }
 }

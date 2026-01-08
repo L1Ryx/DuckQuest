@@ -7274,7 +7274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -648, y: -379}
+  m_AnchoredPosition: {x: 731, y: -437}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &776384215
@@ -90654,6 +90654,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1921058117}
     m_Modifications:
+    - target: {fileID: 553355705463091782, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
+      propertyPath: ac
+      value: 
+      objectReference: {fileID: 11400000, guid: ba0d6a97316e5402db78b65d7c193c3a, type: 2}
     - target: {fileID: 3422250153092642812, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
       propertyPath: m_Name
       value: Inventory UI

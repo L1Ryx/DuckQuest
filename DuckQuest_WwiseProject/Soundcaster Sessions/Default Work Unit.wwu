@@ -10,6 +10,10 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_PhoneTap" ID="{DF6DF94B-B470-4339-9041-D723A0643C33}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_BeachAmbience" ID="{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="0" Y="2"/>
 						</Module>

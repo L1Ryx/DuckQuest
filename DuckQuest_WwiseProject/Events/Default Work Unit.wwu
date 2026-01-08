@@ -99,6 +99,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_PhoneTap" ID="{DF6DF94B-B470-4339-9041-D723A0643C33}">
+							<ChildrenList>
+								<Action Name="" ID="{DE1A013D-DFA1-4868-AC5C-51616C48E4F9}" ShortID="482706701">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_PhoneTap_Blend" ID="{C00C6D2D-E70E-4FEB-AD8B-D25F8617B9DD}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
