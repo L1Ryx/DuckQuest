@@ -19,4 +19,11 @@ public class ScreenDebugLog : MonoBehaviour
             Debug.Log($"RES CHANGE: {Screen.width}x{Screen.height} fullscreen={Screen.fullScreen} mode={Screen.fullScreenMode}");
         }
     }
+    void LateUpdate()
+    {
+        var cam = Camera.main;
+        if (cam != null)
+            Debug.Log($"orthoSize={cam.orthographicSize} screen={Screen.width}x{Screen.height}");
+        enabled = false; // print once
+    }
 }
