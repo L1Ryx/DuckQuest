@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 4c6e8b15d9c9b4e8695c6d3d85c2477a, type: 2}
+  Event: {fileID: 11400000, guid: b20667fc295a749b8911426858fc6b11, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:

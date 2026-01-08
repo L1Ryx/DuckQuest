@@ -90654,10 +90654,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1921058117}
     m_Modifications:
-    - target: {fileID: 553355705463091782, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
-      propertyPath: ac
-      value: 
-      objectReference: {fileID: 11400000, guid: ba0d6a97316e5402db78b65d7c193c3a, type: 2}
     - target: {fileID: 3422250153092642812, guid: b1f3a74aae3d7461e84561b06d1c9471, type: 3}
       propertyPath: m_Name
       value: Inventory UI
