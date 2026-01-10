@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatId: 001
   description: Initializing the scene.
-  onEnterEvents: []
+  onEnterEvents:
+  - {fileID: 11400000, guid: 47ef5143e7bd944d086032aace2fa8f8, type: 2}
   advanceEvent: {fileID: 11400000, guid: d0c4b9a2f65224d5e8782423f0e0d6cd, type: 2}
