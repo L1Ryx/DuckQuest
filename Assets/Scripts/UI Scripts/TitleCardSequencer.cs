@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class TitleCardLine
 {
     public TMP_Text text;
 
+    [Tooltip("Optional event invoked when this line finishes typing (before delay).")]
+    public UnityEvent onLineCompleted;
+    
     [Tooltip("If >= 0, overrides the default delay after this line finishes typing.")]
     [Min(-1f)]
     public float delayAfterLineOverride = -1f;
@@ -197,6 +201,8 @@ public class TitleCardSequencer : MonoBehaviour
             }
 
             yield return TypeTextRoutine(t, totalChars);
+            
+            line.onLineCompleted?.Invoke();
 
             bool isLastLine = (i == lines.Count - 1);
 
@@ -208,6 +214,7 @@ public class TitleCardSequencer : MonoBehaviour
                         : delayAfterLine);
 
             yield return StartCoroutine(WaitRoutine(delay));
+
         }
 
         if (fadeOutAtEnd)
