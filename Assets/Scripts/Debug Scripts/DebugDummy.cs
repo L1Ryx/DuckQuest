@@ -12,6 +12,8 @@ public class DebugDummy : MonoBehaviour
     [SerializeField] private UnityEvent OnToggleDebugView;
     [SerializeField] private UnityEvent OnToggleHyperspeed;
 
+    [Header("Settings")] [SerializeField] private string nextScene = "Demo Reset";
+
     private void Awake()
     {
         RegisterConsoleCommands();
@@ -68,10 +70,7 @@ public class DebugDummy : MonoBehaviour
         callCount++;
     }
 
-    /*
-     * SHAWN REFACTOR THIS INTO ANOTHER GAMEOBJECT PLEASE IM BEGGING
-     */
-    public void ReloadSameScene()
+    public void DoSceneResets()
     {
         if (Game.IsReady && Game.Ctx != null)
         {
@@ -81,8 +80,20 @@ public class DebugDummy : MonoBehaviour
             Game.Ctx.Inventory.Clear();
             // Optional: reset other per-run state here (inventory, selections, etc.)
         }
-
+    }
+    /*
+     * SHAWN REFACTOR THIS INTO ANOTHER GAMEOBJECT PLEASE IM BEGGING
+     */
+    public void ReloadSameScene()
+    {
+        DoSceneResets();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GoToNextScene()
+    {
+        DoSceneResets();
+        SceneManager.LoadScene(nextScene);
     }
 
     public void ToggleNoclip()
