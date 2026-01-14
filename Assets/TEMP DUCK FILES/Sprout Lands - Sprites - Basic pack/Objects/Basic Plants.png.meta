@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Basic Plants_0: 5196230094273877852
+      Basic Plants_1: 7842502339710366499
+      Basic Plants_10: -8097741200915394387
+      Basic Plants_11: 5822373649741285269
+      Basic Plants_2: 8009980020533041875
+      Basic Plants_3: 873675997408803650
+      Basic Plants_4: 8411801333702420389
+      Basic Plants_5: -5659601288151787448
+      Basic Plants_6: -386788524301670192
+      Basic Plants_7: -1361314268720151567
+      Basic Plants_8: 6325485877500199750
+      Basic Plants_9: -8709406779607625839
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

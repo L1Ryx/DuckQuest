@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nine-Sliced-UI-Panel_0: 5353615654966896061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
