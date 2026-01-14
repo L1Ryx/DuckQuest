@@ -32,6 +32,11 @@ public class AdditionOutputSlotHoverPanel : MonoBehaviour, IHoverInfoUI
     [SerializeField] private float activeAlpha = 1f;
     [SerializeField] private float inactiveAlpha = 0.45f;
     
+    [Header("Unavailable Copy")]
+    [SerializeField] private string missingInputsText = "Need both inputs";
+    [SerializeField] private string invalidResultText = "Result must be > 0";
+
+    
 
     private GameObject panelInstance;
     private AdditionOutputHoverPanelView view;
@@ -190,29 +195,50 @@ public class AdditionOutputSlotHoverPanel : MonoBehaviour, IHoverInfoUI
 
     private void ApplyResultUI()
     {
-        // Not ready state
-        if (machine == null || !machine.HasBothInputs || machine.Sum <= 0 || !Game.IsReady || Game.Ctx.ItemDb == null)
+        if (machine == null || !Game.IsReady || Game.Ctx.ItemDb == null)
         {
-            view.resultName.text = unavailableText;
+            view.resultName.text = missingInputsText;
             view.resultIcon.sprite = unavailableIcon;
             view.resultIcon.enabled = unavailableIcon != null;
             return;
         }
 
-        var outDef = Game.Ctx.ItemDb.GetHardwormByPackSize(machine.Sum);
+        // Case 1: Missing inputs
+        if (!machine.HasBothInputs)
+        {
+            view.resultName.text = missingInputsText;
+            view.resultIcon.sprite = unavailableIcon;
+            view.resultIcon.enabled = unavailableIcon != null;
+            return;
+        }
+
+        int result = machine.Result;
+
+        // Case 2: Subtraction result invalid (<= 0)
+        if (result <= 0)
+        {
+            view.resultName.text = invalidResultText;
+            view.resultIcon.sprite = unavailableIcon;
+            view.resultIcon.enabled = unavailableIcon != null;
+            return;
+        }
+
+        // Case 3: Valid result, but no matching pack definition
+        var outDef = Game.Ctx.ItemDb.GetHardwormByPackSize(result);
         if (outDef == null)
         {
-            view.resultName.text = $"No pack for {machine.Sum}";
+            view.resultName.text = $"No pack for {result}";
             view.resultIcon.sprite = unavailableIcon;
             view.resultIcon.enabled = unavailableIcon != null;
             return;
         }
 
+        // Case 4: Valid output
         view.resultName.text = $"{outDef.displayName} ×1";
         view.resultIcon.sprite = outDef.icon;
         view.resultIcon.enabled = outDef.icon != null;
     }
-
+    
     private bool CanClaimNow()
     {
         if (!Game.IsReady || Game.Ctx.Inventory == null || Game.Ctx.ItemDb == null)
@@ -221,16 +247,17 @@ public class AdditionOutputSlotHoverPanel : MonoBehaviour, IHoverInfoUI
         if (machine == null || !machine.HasBothInputs)
             return false;
 
-        int sum = machine.Sum;
-        if (sum <= 0)
+        int result = machine.Result;
+        if (result <= 0)
             return false;
 
-        var outDef = Game.Ctx.ItemDb.GetHardwormByPackSize(sum);
+        var outDef = Game.Ctx.ItemDb.GetHardwormByPackSize(result);
         if (outDef == null)
             return false;
 
         return Game.Ctx.Inventory.CanAdd(outDef.itemId);
     }
+
 
     private void ApplyAccessibilityVisuals(bool isActive)
     {
