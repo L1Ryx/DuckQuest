@@ -645,6 +645,8 @@ MonoBehaviour:
   hideEase: 8
   activeAlpha: 0.95
   inactiveAlpha: 0.7
+  missingInputsText: Need both inputs
+  invalidResultText: Result must be > 0
 --- !u!114 &6855987287929742195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,6 +1237,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotA: {fileID: 7897274283847462689}
   slotB: {fileID: 7648108257154561097}
+  isSubtractionMachine: 0
+  isAdditionMachine: 1
 --- !u!114 &5911992452681846081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1572,7 +1576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: a4dc73b348a544f4088930d7a9e7442e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: a4dc73b348a544f4088930d7a9e7442e, type: 3}
       propertyPath: m_LocalPosition.z
