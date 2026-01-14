@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924f4dfa867d14996ac6e0450bc1eadb, type: 3}
-  m_Name: HW_6
+  m_Script: {fileID: 11500000, guid: 6bebd60ac1e8046699874f0105f70988, type: 3}
+  m_Name: OnPickedUpSixHardworms
   m_EditorClassIdentifier: 
-  itemId: 007
-  displayName: Pack of 6 Hardworms
-  description: Used for crafting.
-  icon: {fileID: -5635042336435510123, guid: fbfb806242edf4fab9ca36827c463b5a, type: 3}
-  packSize: 6
+  description: When picking up six hardworms.
+  isImportant: 0
