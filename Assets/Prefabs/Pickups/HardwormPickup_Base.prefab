@@ -214,7 +214,7 @@ MonoBehaviour:
   overrideColor: 1
   lightColor: {r: 0.9150943, g: 0.90214485, b: 0.90214485, a: 1}
   overrideIntensity: 1
-  intensity: 0.2
+  intensity: 0.1
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.025
