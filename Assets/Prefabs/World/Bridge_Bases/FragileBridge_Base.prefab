@@ -5044,7 +5044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac435f721e4dd4bd3bf9cf7b6e899770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nightLightPrefab: {fileID: 3503798210951607582}
+  nightLightPrefab: {fileID: 1486021082201966384, guid: 32a90f4b090244ef794ee05c6d8d7e6b, type: 3}
   night: 0
   overrideOuterRadius: 1
   outerRadius: 10
