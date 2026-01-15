@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3503798210951607582, guid: 6b1cb3f951eed44b08f018bfb4330199, type: 3}
       propertyPath: m_Name
-      value: FragileBridge_Base
+      value: FragileBridge_Base_H
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302103401603660244, guid: 6b1cb3f951eed44b08f018bfb4330199, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151744391552670475, guid: 6b1cb3f951eed44b08f018bfb4330199, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7559826903602671714, guid: 6b1cb3f951eed44b08f018bfb4330199, type: 3}
       propertyPath: m_LocalPosition.x
