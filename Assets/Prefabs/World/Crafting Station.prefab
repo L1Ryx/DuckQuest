@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 2487506742718905636}
   - component: {fileID: 5696262972002863614}
   - component: {fileID: 2084293692636709597}
+  - component: {fileID: 5871383940999011779}
   m_Layer: 6
   m_Name: Crafting Station
   m_TagString: Untagged
@@ -140,7 +141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7722247455280480581}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -192,7 +193,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1465715855
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 7956969696047905004, guid: 4faea0b0c5e5949d58707d11e06ba648, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -386,6 +387,32 @@ MonoBehaviour:
   rtpcName: 
   rtpcValue: 0
   rtpcIsGlobal: 1
+--- !u!114 &5871383940999011779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722247455280480581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac435f721e4dd4bd3bf9cf7b6e899770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightLightPrefab: {fileID: 1486021082201966384, guid: 32a90f4b090244ef794ee05c6d8d7e6b, type: 3}
+  night: 0
+  overrideOuterRadius: 0
+  outerRadius: 3
+  overrideColor: 0
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  shouldFlicker: 0
+  radiusFlickerAmount: 0.05
+  intensityFlickerAmount: 0.05
+  flickerStepDurationRange: {x: 0.05, y: 0.12}
+  flickerAffectsColor: 0
+  colorValueFlickerAmount: 0.03
+  localOffset: {x: 0, y: 0, z: 0}
+  followRotation: 1
 --- !u!1001 &6254463147213761192
 PrefabInstance:
   m_ObjectHideFlags: 0

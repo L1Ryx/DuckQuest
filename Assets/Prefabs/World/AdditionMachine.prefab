@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4288889472396445381}
   - component: {fileID: 3227265835010713904}
   - component: {fileID: 690281303462972585}
+  - component: {fileID: 5522669504944355318}
   m_Layer: 6
   m_Name: SlotB
   m_TagString: Untagged
@@ -246,6 +247,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useGameContext: 1
+--- !u!114 &5522669504944355318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636483681019539792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac435f721e4dd4bd3bf9cf7b6e899770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightLightPrefab: {fileID: 1486021082201966384, guid: 32a90f4b090244ef794ee05c6d8d7e6b, type: 3}
+  night: 0
+  overrideOuterRadius: 0
+  outerRadius: 3
+  overrideColor: 0
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  shouldFlicker: 0
+  radiusFlickerAmount: 0.05
+  intensityFlickerAmount: 0.05
+  flickerStepDurationRange: {x: 0.05, y: 0.12}
+  flickerAffectsColor: 0
+  colorValueFlickerAmount: 0.03
+  localOffset: {x: 0, y: 0, z: 0}
+  followRotation: 1
 --- !u!1 &1407144347320458004
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +522,7 @@ GameObject:
   - component: {fileID: 3971470671513581922}
   - component: {fileID: 6855987287929742195}
   - component: {fileID: 9050187895285348040}
+  - component: {fileID: 6436155106066664461}
   m_Layer: 6
   m_Name: OutputSlot
   m_TagString: Untagged
@@ -703,6 +731,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6436155106066664461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708482933704225028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac435f721e4dd4bd3bf9cf7b6e899770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightLightPrefab: {fileID: 1486021082201966384, guid: 32a90f4b090244ef794ee05c6d8d7e6b, type: 3}
+  night: 0
+  overrideOuterRadius: 0
+  outerRadius: 3
+  overrideColor: 0
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  shouldFlicker: 0
+  radiusFlickerAmount: 0.05
+  intensityFlickerAmount: 0.05
+  flickerStepDurationRange: {x: 0.05, y: 0.12}
+  flickerAffectsColor: 0
+  colorValueFlickerAmount: 0.03
+  localOffset: {x: 0, y: 0, z: 0}
+  followRotation: 1
 --- !u!1 &3663825002031490404
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +978,7 @@ GameObject:
   - component: {fileID: 3871107890737587884}
   - component: {fileID: 7779538595133923948}
   - component: {fileID: 2138100988188479450}
+  - component: {fileID: 4353994176057339115}
   m_Layer: 6
   m_Name: SlotA
   m_TagString: Untagged
@@ -1154,6 +1209,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useGameContext: 1
+--- !u!114 &4353994176057339115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994832849064439145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac435f721e4dd4bd3bf9cf7b6e899770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightLightPrefab: {fileID: 1486021082201966384, guid: 32a90f4b090244ef794ee05c6d8d7e6b, type: 3}
+  night: 0
+  overrideOuterRadius: 0
+  outerRadius: 3
+  overrideColor: 0
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  shouldFlicker: 0
+  radiusFlickerAmount: 0.05
+  intensityFlickerAmount: 0.05
+  flickerStepDurationRange: {x: 0.05, y: 0.12}
+  flickerAffectsColor: 0
+  colorValueFlickerAmount: 0.03
+  localOffset: {x: 0, y: 0, z: 0}
+  followRotation: 1
 --- !u!1 &7188865184493237040
 GameObject:
   m_ObjectHideFlags: 0

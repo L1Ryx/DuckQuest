@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 2690121476812105803}
   - component: {fileID: 7980670195689664599}
   - component: {fileID: 5734407928677720217}
+  - component: {fileID: 936946899477750672}
   m_Layer: 6
   m_Name: Pet Bowl
   m_TagString: Untagged
@@ -192,7 +193,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1465715855
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 2710346176272861009, guid: bca2dc9e9c5584812916ed11d97f6ca6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -373,6 +374,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &936946899477750672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578636772555899403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac435f721e4dd4bd3bf9cf7b6e899770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightLightPrefab: {fileID: 1486021082201966384, guid: 32a90f4b090244ef794ee05c6d8d7e6b, type: 3}
+  night: 0
+  overrideOuterRadius: 0
+  outerRadius: 3
+  overrideColor: 0
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  shouldFlicker: 1
+  radiusFlickerAmount: 0.05
+  intensityFlickerAmount: 0.05
+  flickerStepDurationRange: {x: 0.05, y: 0.12}
+  flickerAffectsColor: 0
+  colorValueFlickerAmount: 0.03
+  localOffset: {x: 0, y: 0, z: 0}
+  followRotation: 1
 --- !u!1001 &1680283226048175033
 PrefabInstance:
   m_ObjectHideFlags: 0
