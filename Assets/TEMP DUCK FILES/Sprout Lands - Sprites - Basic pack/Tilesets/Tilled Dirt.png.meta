@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tilled Dirt_0: 3059907982329966377
+      Tilled Dirt_1: -2885056433616965576
+      Tilled Dirt_2: 165240979840018154
+      Tilled Dirt_3: 6800109163939881490
+      Tilled Dirt_4: -1707274443761176232
+      Tilled Dirt_5: -232578390085763651
+      Tilled Dirt_6: -478216492487881114
+      Tilled Dirt_7: 2083032423554285727
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
