@@ -22,9 +22,14 @@ public abstract class InventoryCostInteractable : MonoBehaviour, IInteractable
     public ItemDefinition RequiredItem => requiredItem;
     public int RequiredCount => requiredCount;
     public bool HasBeenUsed => hasBeenUsed;
+    public bool IsInteractableNow(GameObject interactor) => CanInteractNow(interactor);
+    protected virtual bool CanInteractNow(GameObject interactor) => true;
 
     public void Interact(GameObject interactor)
     {
+        if (!CanInteractNow(interactor))
+            return;
+
         if (oneTimeUse && hasBeenUsed)
             return;
 
@@ -63,7 +68,7 @@ public abstract class InventoryCostInteractable : MonoBehaviour, IInteractable
 
         OnPaymentSucceeded(interactor);
         onSuccess?.Invoke();
-        
+
         if (oneTimeUse && moveToInteractedLayerOnUse)
         {
             MoveHierarchyToLayer(interactedLayerName);

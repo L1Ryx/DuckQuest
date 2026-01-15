@@ -167,9 +167,10 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
     private void Show(bool inRange)
     {
         bool canAfford = CanAfford();
-        bool isActive = inRange && canAfford;
+        bool canInteractNow = costInteractable.IsInteractableNow(null);
 
-        // Symbol state
+        bool isActive = inRange && canAfford && canInteractNow;
+
         if (view.symbolImage != null)
             view.symbolImage.sprite = isActive ? symbolActive : symbolInactive;
 
@@ -189,6 +190,7 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
             .Join(view.panelTransform.DOScale(1f, showDuration).SetEase(showEase))
             .SetUpdate(true);
     }
+
 
     private void Hide()
     {
