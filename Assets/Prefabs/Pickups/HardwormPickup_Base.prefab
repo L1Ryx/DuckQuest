@@ -212,9 +212,9 @@ MonoBehaviour:
   overrideOuterRadius: 1
   outerRadius: 5
   overrideColor: 1
-  lightColor: {r: 0.9150943, g: 0.90214485, b: 0.90214485, a: 1}
+  lightColor: {r: 0.9607843, g: 0.68890756, b: 0.39607844, a: 1}
   overrideIntensity: 1
-  intensity: 0.1
+  intensity: 0.5
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.025
