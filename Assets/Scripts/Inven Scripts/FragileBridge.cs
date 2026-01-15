@@ -26,9 +26,12 @@ public class FragileBridge : InventoryCostInteractable
 
     private bool isRepaired;
     private bool playerWasOnBridge;
+    private InventoryCostInteractableHoverPanel hoverPanel;
 
     private void Awake()
     {
+        hoverPanel = GetComponent<InventoryCostInteractableHoverPanel>();
+        
         if (targetRenderer == null)
             targetRenderer = GetComponent<SpriteRenderer>();
 
@@ -91,6 +94,8 @@ public class FragileBridge : InventoryCostInteractable
         isRepaired = true;
         playerWasOnBridge = false;
 
+        hoverPanel?.ForceHide();
+
         if (targetRenderer != null && repairedSprite != null)
             targetRenderer.sprite = repairedSprite;
 
@@ -108,6 +113,8 @@ public class FragileBridge : InventoryCostInteractable
     {
         isRepaired = false;
         playerWasOnBridge = false;
+
+        hoverPanel?.Refresh();
 
         if (targetRenderer != null && brokenSprite != null)
             targetRenderer.sprite = brokenSprite;

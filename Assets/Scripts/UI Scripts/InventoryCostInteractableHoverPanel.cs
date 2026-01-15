@@ -33,6 +33,8 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
     private InventoryCostHoverPanelView view;
     private Tween activeTween;
     private bool isVisible;
+    private bool lastHovered;
+    private bool lastInRange;
 
     private InventoryCostInteractable costInteractable;
 
@@ -145,9 +147,21 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
     {
         if (!enabled) return;
 
+        lastHovered = isHovered;
+        lastInRange = inRange;
+
+        // If the object is temporarily non-interactable (e.g., repaired bridge),
+        // do not show the panel at all.
+        if (isHovered && costInteractable != null && !costInteractable.IsInteractableNow(null))
+        {
+            ForceHide();
+            return;
+        }
+
         if (isHovered) Show(inRange);
         else Hide();
     }
+
 
     private bool CanAfford()
     {
@@ -204,4 +218,34 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
             .Join(view.panelTransform.DOScale(hiddenScale, hideDuration).SetEase(hideEase))
             .SetUpdate(true);
     }
+    
+    public void Refresh()
+    {
+        if (!enabled) return;
+
+        // Update requirement row in case requiredCount/item ever changes (safe + cheap)
+        ApplyRequirementUI();
+
+        // If the interactable is not currently interactable (e.g. repaired bridge),
+        // hide the panel immediately if it's visible.
+        if (costInteractable != null && !costInteractable.IsInteractableNow(null))
+        {
+            ForceHide();
+            return;
+        }
+
+        // If currently hovered, recompute active/inactive visuals immediately.
+        if (lastHovered)
+            Show(lastInRange);
+    }
+
+    public void ForceHide()
+    {
+        if (!enabled) return;
+
+        lastHovered = false;
+        lastInRange = false;
+        Hide();
+    }
+
 }
