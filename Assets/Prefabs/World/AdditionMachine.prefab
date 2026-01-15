@@ -645,8 +645,8 @@ MonoBehaviour:
   hideEase: 8
   activeAlpha: 0.95
   inactiveAlpha: 0.7
-  missingInputsText: Need both inputs
-  invalidResultText: Result must be > 0
+  missingInputsText: INCOMPLETE
+  invalidResultText: NONE LEFT
 --- !u!114 &6855987287929742195
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5029,8 +5029,8 @@ MonoBehaviour:
   hiddenScale: 0.88
   showEase: 27
   hideEase: 8
-  activeAlpha: 1
-  inactiveAlpha: 0.45
+  activeAlpha: 0.95
+  inactiveAlpha: 0.7
 --- !u!1 &7004389028707415006
 GameObject:
   m_ObjectHideFlags: 0

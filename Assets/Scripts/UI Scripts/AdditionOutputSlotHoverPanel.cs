@@ -33,8 +33,8 @@ public class AdditionOutputSlotHoverPanel : MonoBehaviour, IHoverInfoUI
     [SerializeField] private float inactiveAlpha = 0.45f;
     
     [Header("Unavailable Copy")]
-    [SerializeField] private string missingInputsText = "Need both inputs";
-    [SerializeField] private string invalidResultText = "Result must be > 0";
+    [SerializeField] private string missingInputsText = "INCOMPLETE";
+    [SerializeField] private string invalidResultText = "NONE LEFT";
 
     
 
