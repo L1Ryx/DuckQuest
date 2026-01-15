@@ -223,21 +223,22 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
     {
         if (!enabled) return;
 
-        // Update requirement row in case requiredCount/item ever changes (safe + cheap)
+        // NEW: panel not spawned yet (Awake order), nothing to refresh.
+        if (view == null)
+            return;
+
         ApplyRequirementUI();
 
-        // If the interactable is not currently interactable (e.g. repaired bridge),
-        // hide the panel immediately if it's visible.
         if (costInteractable != null && !costInteractable.IsInteractableNow(null))
         {
             ForceHide();
             return;
         }
 
-        // If currently hovered, recompute active/inactive visuals immediately.
         if (lastHovered)
             Show(lastInRange);
     }
+
 
     public void ForceHide()
     {
@@ -245,7 +246,13 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
 
         lastHovered = false;
         lastInRange = false;
+
+        // NEW: if view not ready, just reset state—Hide() would NRE.
+        if (view == null)
+            return;
+
         Hide();
     }
+
 
 }
