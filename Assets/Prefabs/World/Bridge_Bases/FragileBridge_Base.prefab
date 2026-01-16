@@ -5006,6 +5006,8 @@ MonoBehaviour:
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  buildCue: {fileID: 11400000, guid: 7f807320c6b3040c19cc7632bc0c08b2, type: 2}
+  breakCue: {fileID: 0}
 --- !u!114 &2636752247054031976
 MonoBehaviour:
   m_ObjectHideFlags: 0

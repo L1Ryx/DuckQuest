@@ -24,6 +24,11 @@ public class FragileBridge : InventoryCostInteractable
     [Header("Detector Query")]
     [SerializeField] private LayerMask playerLayerMask; // set this to Player layer in inspector
 
+    [Header("Audio")] 
+    [SerializeField] private AudioCue buildCue;
+
+    [SerializeField] private AudioCue breakCue;
+
     private bool isRepaired;
     private bool playerWasOnBridge;
     private InventoryCostInteractableHoverPanel hoverPanel;
@@ -94,6 +99,7 @@ public class FragileBridge : InventoryCostInteractable
         isRepaired = true;
         playerWasOnBridge = false;
 
+        Game.Ctx.Audio.PlayCueGlobal(buildCue);
         hoverPanel?.ForceHide();
 
         if (targetRenderer != null && repairedSprite != null)
