@@ -17,10 +17,10 @@
   <li><strong>Move:</strong> WASD&nbsp;</li>
   <li><strong>Interact:</strong>&nbsp;Mouse | Left Click</li><li><strong>Cycle Item:</strong> TAB</li></ul>
 <p>
-  Use the ancient machines to <strong>Combine&nbsp;</strong>and <strong>Thin</strong>&nbsp;hardworms until the final count is exact. If the portion is even slightly off, the duck won’t come.
+  Use the ancient machines to <strong>Combine&nbsp;</strong>and <strong>Reduce</strong> hardworms until the final count is exact. If the portion is even slightly off, the duck won’t come.
 </p>
 <p>
-  <strong>Note:</strong> This is a short 2-minute demo of the game. More to come soon!</p>
+  <strong>Note:</strong> This is a 10-minute demo of the game. More to come soon!</p>
 
 - [Playable Demo](https://l1ryx.itch.io/ducks-afar) <img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=white" />
 
