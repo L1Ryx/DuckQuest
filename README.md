@@ -1,4 +1,4 @@
-# Ducks Afar v0.26.1.10
+# Ducks Afar v0.26.1.16
 
 <h2>Description</h2>
 <blockquote>
@@ -23,3 +23,9 @@
   <strong>Note:</strong> This is a short 2-minute demo of the game. More to come soon!</p>
 
 - [Playable Demo](https://l1ryx.itch.io/ducks-afar) <img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=white" />
+
+# v0.26.1.16
+Changelog TBA.
+
+# v0.26.1.10
+Changelog TBA.
