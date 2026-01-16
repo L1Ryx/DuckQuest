@@ -10073,6 +10073,8 @@ MonoBehaviour:
   outerRadius: 3
   overrideColor: 0
   lightColor: {r: 1, g: 1, b: 1, a: 1}
+  overrideIntensity: 0
+  intensity: 1
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.05
@@ -10464,6 +10466,8 @@ MonoBehaviour:
   outerRadius: 3
   overrideColor: 0
   lightColor: {r: 1, g: 1, b: 1, a: 1}
+  overrideIntensity: 0
+  intensity: 1
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.05
@@ -10737,6 +10741,8 @@ MonoBehaviour:
   outerRadius: 3
   overrideColor: 0
   lightColor: {r: 1, g: 1, b: 1, a: 1}
+  overrideIntensity: 0
+  intensity: 1
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.05
@@ -15763,9 +15769,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesCountRtpc: {fileID: 11400000, guid: 96774fe904200440395ea58f24838390, type: 2}
-  cueA_Dm9: {fileID: 11400000, guid: c710893c394674686a92bd4df4de10de, type: 2}
+  cueA_Dm9: {fileID: 11400000, guid: 1335ce6b6c9ef47f5b3128ed280aef8a, type: 2}
   cueB_G9: {fileID: 11400000, guid: ed3a3c9d32fd146319c90cf6c16a0192, type: 2}
-  cueC_C9: {fileID: 11400000, guid: 3e043b1984339453585803b649f1012e, type: 2}
+  cueC_C9: {fileID: 11400000, guid: 15dd37277fb5d4eb8836806c3a3be88b, type: 2}
 --- !u!1 &7739041916555665889
 GameObject:
   m_ObjectHideFlags: 0

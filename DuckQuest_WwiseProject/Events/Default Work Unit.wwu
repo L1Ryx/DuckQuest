@@ -54,7 +54,7 @@
 								<Action Name="" ID="{F7137E2A-7663-4098-815D-CCBEDB66621F}" ShortID="596976683">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="A_Blend" ID="{807E3085-C4D1-4780-937D-89038DA838C1}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+											<ObjectRef Name="Add_A_Blend" ID="{807E3085-C4D1-4780-937D-89038DA838C1}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -65,7 +65,7 @@
 								<Action Name="" ID="{82125CDB-6C20-40D0-A621-F28DB4FA9240}" ShortID="813508639">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="B_Blend" ID="{5BD29899-F1D3-415F-8549-80E1456FAFD5}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+											<ObjectRef Name="Add_B_Blend" ID="{5BD29899-F1D3-415F-8549-80E1456FAFD5}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -76,7 +76,7 @@
 								<Action Name="" ID="{3D75D7F7-7456-45D0-B14D-0005978F1D48}" ShortID="908019096">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="C_Blend" ID="{D738EFF3-7808-43E4-BE86-2155B05BCDC3}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+											<ObjectRef Name="Add_C_Blend" ID="{D738EFF3-7808-43E4-BE86-2155B05BCDC3}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -88,6 +88,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_WaterSplash_Blend" ID="{55379244-E138-4F89-9E1B-36B9B176ECFA}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SubCadenceA" ID="{FC39306B-D960-4169-94A7-51FA4DC2D5BB}">
+							<ChildrenList>
+								<Action Name="" ID="{3010A628-04FB-4C1A-9D1E-8D6D105DC07A}" ShortID="679741362">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sub_A_Blend" ID="{61A707D5-9E22-44D9-8105-A007F613D6EC}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SubCadenceC" ID="{848F8B4A-F251-41E2-8230-2E95E54A5B2C}">
+							<ChildrenList>
+								<Action Name="" ID="{EF078BA7-B83B-4D9A-84D7-7560F121B308}" ShortID="629454833">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sub_C_Blend" ID="{BA5DD5D9-38B8-47BB-A326-F2B473571765}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

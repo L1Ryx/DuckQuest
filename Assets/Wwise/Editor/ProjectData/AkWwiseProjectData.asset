@@ -179,7 +179,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584330791930183309
+    m_lastTime: -8584330764353699970
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -398,6 +398,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.5860888
       minDuration: 0.43907046
+    - name: Play_SubCadenceA
+      guid: 6b3039fc60d9694194a751fa4dc2d5bb
+      id: 1545776886
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_SubCadenceA
+        ObjectType: 3
+        guid: 6b3039fc60d9694194a751fa4dc2d5bb
+      Path: Events/Default Work Unit/WORLD/Play_SubCadenceA
+      maxAttenuation: 0
+      maxDuration: 4
+      minDuration: 4
+    - name: Play_SubCadenceC
+      guid: 4a8b8f8451f2e24182302e95e54a5b2c
+      id: 1545776884
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_SubCadenceC
+        ObjectType: 3
+        guid: 4a8b8f8451f2e24182302e95e54a5b2c
+      Path: Events/Default Work Unit/WORLD/Play_SubCadenceC
+      maxAttenuation: 0
+      maxDuration: 6
+      minDuration: 6
     - name: Play_TypewriterClack
       guid: 527adedbbc4a4f4cac48294ddbdaae1a
       id: 928013289

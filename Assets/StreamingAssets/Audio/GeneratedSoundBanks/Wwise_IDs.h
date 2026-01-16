@@ -23,6 +23,8 @@ namespace AK
         static const AkUniqueID PLAY_PHONETAP = 625749573U;
         static const AkUniqueID PLAY_PICKUP = 3860455926U;
         static const AkUniqueID PLAY_ROCKBREAK = 1119824134U;
+        static const AkUniqueID PLAY_SUBCADENCEA = 1545776886U;
+        static const AkUniqueID PLAY_SUBCADENCEC = 1545776884U;
         static const AkUniqueID PLAY_TYPEWRITERCLACK = 928013289U;
         static const AkUniqueID STOP_BEACHAMBIENCE = 1285050629U;
     } // namespace EVENTS
