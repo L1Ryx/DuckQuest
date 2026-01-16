@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{B6D238BD-D100-DCE4-DAEA-FE33451D4444}",
+    "Hash": "{B0584448-9F01-E350-C7C5-76C12E269136}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -224,6 +224,14 @@
       "CachePath": "3A/{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem"
      },
      {
+      "Id": "966557403",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bridge-Splash.wav",
+      "CachePath": "C4/{C44425A2-7B28-E0E6-0024-307E9B7D4115}.wem"
+     },
+     {
       "Id": "995171218",
       "Language": "SFX",
       "Streaming": "false",
@@ -328,6 +336,20 @@
       "MediaRefs": [
        {
         "Id": "798440518"
+       }
+      ]
+     },
+     {
+      "Id": "573339928",
+      "Name": "Play_BridgeSplash",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_BridgeSplash",
+      "GUID": "{2A2E1010-F664-44B9-938F-614402D9C632}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.6278014",
+      "DurationMax": "3.716272",
+      "MediaRefs": [
+       {
+        "Id": "966557403"
        }
       ]
      },
@@ -508,6 +530,6 @@
     ]
    }
   ],
-  "FileHash": "{8EAA503D-6FB0-C4B5-447F-A3C5CF632B82}"
+  "FileHash": "{9B9A4D76-A890-EE99-8543-281C956F3632}"
  }
 }

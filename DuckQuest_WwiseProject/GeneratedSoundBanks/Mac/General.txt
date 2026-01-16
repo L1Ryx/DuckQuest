@@ -1,5 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	283495111	Play_BeachAmbience			\Default Work Unit\AMBIENCE\Play_BeachAmbience	
+	573339928	Play_BridgeSplash			\Default Work Unit\WORLD\Play_BridgeSplash	
 	625749573	Play_PhoneTap			\Default Work Unit\UI\Play_PhoneTap	
 	654680740	Play_PetBowlComplete			\Default Work Unit\WORLD\Play_PetBowlComplete	
 	928013289	Play_TypewriterClack			\Default Work Unit\UI\Play_TypewriterClack	
@@ -41,6 +42,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	914958189	Rock Break	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\48\{4808D398-A2D1-803F-E561-29482B58EBD8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_RockBreak_Blend\Rock Break		97492
 	923534012	Add-C-1	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\89\{8914576E-20D3-B2A5-456C-F69B0650DD4D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\C_Blend\Add-C-1		1152144
 	939932267	Bell Hit	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\3A\{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_BellHit_Blend\Bell Hit		720048
+	966557403	Bridge-Splash	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\C4\{C44425A2-7B28-E0E6-0024-307E9B7D4115}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_WaterSplash_Blend\Bridge-Splash		600096
 	995171218	Add-A-3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\1A\{1A198B2E-A1AC-869C-5468-149F8E2B2C2F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\A_Blend\Add-A-3		768160
 	1017960476	Typewriter 4	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\F1\{F1989F5B-7EBB-3E3A-D026-3F6EF9B0A4FD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_TypewriterClack_Random\Typewriter 4		134826
 

@@ -119,7 +119,7 @@ public class FragileBridge : InventoryCostInteractable
     {
         isRepaired = false;
         playerWasOnBridge = false;
-
+        
         hoverPanel?.Refresh();
 
         if (targetRenderer != null && brokenSprite != null)
@@ -150,7 +150,8 @@ public class FragileBridge : InventoryCostInteractable
         if (!IsPlayerCollider(other)) return;
 
         if (!playerWasOnBridge) return;
-
+        
+        Game.Ctx.Audio.PlayCueGlobal(breakCue);
         SetBrokenState();
     }
 

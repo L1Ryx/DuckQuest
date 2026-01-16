@@ -5007,7 +5007,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   buildCue: {fileID: 11400000, guid: 7f807320c6b3040c19cc7632bc0c08b2, type: 2}
-  breakCue: {fileID: 0}
+  breakCue: {fileID: 11400000, guid: 904fa83c180a34c678058507c3ccb5a6, type: 2}
 --- !u!114 &2636752247054031976
 MonoBehaviour:
   m_ObjectHideFlags: 0

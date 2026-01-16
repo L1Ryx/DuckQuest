@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID PLAY_ADDCADENCEB = 1331068478U;
         static const AkUniqueID PLAY_ADDCADENCEC = 1331068479U;
         static const AkUniqueID PLAY_BEACHAMBIENCE = 283495111U;
+        static const AkUniqueID PLAY_BRIDGESPLASH = 573339928U;
         static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
         static const AkUniqueID PLAY_PHONETAP = 625749573U;
