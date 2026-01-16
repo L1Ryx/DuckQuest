@@ -34,6 +34,14 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/clearInven", "Clears Inventory", ClearInventory);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ReloadSameScene();
+        }
+    }
+
     public void DebugAddHardwormOne()
     {
         Game.Ctx.Inventory.TryAdd("001", 1);
