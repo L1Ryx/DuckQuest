@@ -17,6 +17,7 @@
   <li><strong>Move:</strong> WASD&nbsp;</li>
   <li><strong>Interact:</strong>&nbsp;Mouse | Left Click</li><li><strong>Cycle Item:</strong> TAB</li>
   <li><strong>Restart From Checkpoint:</strong> R</li>
+
 <p>
   Use the ancient machines to <strong>Combine&nbsp;</strong>and <strong>Reduce</strong> hardworms until the final count is exact. If the portion is even slightly off, the duck won’t come.
 </p>
