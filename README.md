@@ -36,5 +36,9 @@ Demo Level: Twin Isles
 [![Night.png](https://i.postimg.cc/26mrtKvz/Night.png)](https://postimg.cc/yJfMgnv5)
 Demo Level: Lost Archipelago
 
+Known Issues:
+- 16:10 screens not yet supported in Lost Archipelago.
+- Pixel tear on animated water textures in all levels for some screens.
+
 # v0.26.1.10
 Initial demo release with a single demo level, Southern Shoals.
