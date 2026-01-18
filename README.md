@@ -1,4 +1,4 @@
-# Ducks Afar v0.26.1.16
+# Ducks Afar v0.26.1.18
 
 <h2>Description</h2>
 <blockquote>
@@ -23,6 +23,10 @@
   <strong>Note:</strong> This is a short 2-minute demo of the game. More to come soon!</p>
 
 - [Playable Demo](https://l1ryx.itch.io/ducks-afar) <img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=white" />
+
+# v0.26.1.18
+- Fixed graphics issues for common resolutions
+- Minor UI tweaks
 
 # v0.26.1.16
 - Added demo levels Twin Isles and Lost Archipelago, featuring the fragile bridge and subtraction machine mechanics.
