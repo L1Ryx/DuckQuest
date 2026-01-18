@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7532291164583974168}
   - component: {fileID: 2993494121862926432}
   - component: {fileID: 174330322490991169}
+  - component: {fileID: 488950579164995091}
   m_Layer: 5
   m_Name: Next Indicator
   m_TagString: Untagged
@@ -75,6 +76,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &488950579164995091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37188808200201756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe7a2e6b02794707aa16675a45c41c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatDistance: 12
+  floatDuration: 1.2
+  floatEase: 4
+  scaleAmount: 0.02
+  scaleDuration: 1.9
+  scaleEase: 4
+  randomizeDelay: 1
+  maxDelaySeconds: 0.35
+  randomizePhase: 1
+  maxPhaseNormalized: 1
 --- !u!1 &394495296212682921
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +842,7 @@ MonoBehaviour:
   dialogueText: {fileID: 452810778896275635}
   nextIndicator: {fileID: 174330322490991169}
   canvasGroup: {fileID: 8125001449852397574}
-  charactersPerSecond: 40
+  charactersPerSecond: 30
   OnDialogueStarted:
     m_PersistentCalls:
       m_Calls:
@@ -874,6 +897,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enablePunctuationPauses: 1
+  commaPause: 0.25
+  sentencePause: 0.4
 --- !u!225 &8125001449852397574
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -18,8 +18,17 @@ public sealed class DialogueRunner : MonoBehaviour
     
     [Header("Dialogue Events")]
     [SerializeField] private UnityEvent OnDialogueStarted;
+
     [SerializeField] private UnityEvent OnDialogueFinished;
+        
+    [Header("Typing – Punctuation Pauses")]
+    [SerializeField] private bool enablePunctuationPauses = true;
+
+    [SerializeField] private float commaPause = 0.05f;
+    [SerializeField] private float sentencePause = 0.15f;
+
     private bool currentLineCompleted;
+    private bool suppressAdvanceUntilMouseUp;
 
     
     
@@ -52,6 +61,8 @@ public sealed class DialogueRunner : MonoBehaviour
 
         SetVisible(true);
         OnDialogueStarted?.Invoke();
+        
+        suppressAdvanceUntilMouseUp = true;
 
         ShowLine(currentEncounter.lines[currentLineIndex]);
     }
@@ -75,7 +86,15 @@ public sealed class DialogueRunner : MonoBehaviour
         if (!IsRunning)
             return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (suppressAdvanceUntilMouseUp)
+        {
+            if (!Input.GetMouseButton(0))
+                suppressAdvanceUntilMouseUp = false;
+
+            return;
+        }
+        
+        if (Input.GetMouseButtonDown(0)) // CHANGE LATER TO NEW INPUT SYSTEM !!!
             Advance();
     }
 
@@ -138,15 +157,23 @@ public sealed class DialogueRunner : MonoBehaviour
     {
         isTyping = true;
 
-        float delay = 1f / charactersPerSecond;
+        float baseDelay = 1f / charactersPerSecond;
         string text = line.text;
 
         for (int i = 0; i < text.Length; i++)
         {
-            dialogueText.text += text[i];
+            char c = text[i];
+            dialogueText.text += c;
 
+            // Per-character audio
             if (line.speaker != null && line.speaker.typingCue != null)
                 Game.Ctx.Audio.PlayCueGlobal(line.speaker.typingCue);
+
+            // Base typing delay
+            float delay = baseDelay;
+
+            // Add punctuation pause
+            delay += GetPunctuationDelay(c);
 
             yield return new WaitForSeconds(delay);
         }
@@ -155,10 +182,31 @@ public sealed class DialogueRunner : MonoBehaviour
         nextIndicator.gameObject.SetActive(true);
 
         MarkLineCompleted(line);
-
         typingRoutine = null;
     }
 
+
+    private float GetPunctuationDelay(char c)
+    {
+        if (!enablePunctuationPauses)
+            return 0f;
+
+        switch (c)
+        {
+            case ',':
+            case ';':
+            case ':':
+                return commaPause;
+
+            case '.':
+            case '!':
+            case '?':
+                return sentencePause;
+
+            default:
+                return 0f;
+        }
+    }
     
     private void MarkLineCompleted(DialogueEncounter.Line line)
     {
