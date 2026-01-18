@@ -47,6 +47,15 @@ public class DebugDummy : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.T))
             Game.Ctx.Dialogue.StartDialogue(encounter);
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
     }
 
     public void DebugAddHardwormOne()
