@@ -2,6 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class TitleCardLine
+{
+    public TMP_Text text;
+
+    [Tooltip("Optional event invoked when this line finishes typing (before delay).")]
+    public UnityEvent onLineCompleted;
+    
+    [Tooltip("If >= 0, overrides the default delay after this line finishes typing.")]
+    [Min(-1f)]
+    public float delayAfterLineOverride = -1f;
+}
+
 
 /// <summary>
 /// Sequentially reveals a set of TMP_Text lines with a typing effect, then fades them out together.
@@ -14,7 +29,7 @@ public class TitleCardSequencer : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
 
     [Tooltip("Optional explicit order. If empty, all TMP_Text children will be used in hierarchy order.")]
-    [SerializeField] private List<TMP_Text> lines = new List<TMP_Text>();
+    [SerializeField] private List<TitleCardLine> lines = new List<TitleCardLine>();
 
     [Header("Timing")]
     [Tooltip("Seconds to wait after a line finishes typing before starting the next line.")]
@@ -29,6 +44,8 @@ public class TitleCardSequencer : MonoBehaviour
     [Header("Fade Out")]
     [Tooltip("Fade-out speed in alpha per second. (e.g., 2 = fade out in ~0.5s)")]
     [Min(0.01f)][SerializeField] private float fadeOutRate = 2f;
+    [Tooltip("If true, fades the text/panel out at the end of the sequence.")]
+    [SerializeField] private bool fadeOutAtEnd = true;
 
     [Header("Options")]
     [Tooltip("Use unscaled time (ignores Time.timeScale), useful for title cards.")]
@@ -115,20 +132,22 @@ public class TitleCardSequencer : MonoBehaviour
     private void CacheLinesAndTexts()
     {
         if (lines == null)
-            lines = new List<TMP_Text>();
+            lines = new List<TitleCardLine>();
 
         if (lines.Count == 0)
         {
-            // Hierarchy order by default. Include inactive children so you can keep the panel disabled initially.
             var found = GetComponentsInChildren<TMP_Text>(includeInactive: true);
-            lines.AddRange(found);
+            foreach (var t in found)
+            {
+                lines.Add(new TitleCardLine { text = t, delayAfterLineOverride = -1f });
+            }
         }
 
         _fullTexts.Clear();
-        foreach (var t in lines)
+        foreach (var line in lines)
         {
-            if (t == null) continue;
-            _fullTexts[t] = t.text ?? string.Empty;
+            if (line.text == null) continue;
+            _fullTexts[line.text] = line.text.text ?? string.Empty;
         }
     }
 
@@ -165,17 +184,15 @@ public class TitleCardSequencer : MonoBehaviour
         // Type each line sequentially
         for (int i = 0; i < lines.Count; i++)
         {
-            var t = lines[i];
+            var line = lines[i];
+            var t = line.text;
             if (t == null) continue;
 
-            // Restore full text and hide it initially
             t.text = _fullTexts.TryGetValue(t, out var full) ? full : (t.text ?? string.Empty);
             t.ForceMeshUpdate();
             t.maxVisibleCharacters = 0;
 
             int totalChars = t.textInfo.characterCount;
-
-            // If TMP hasn't populated yet (rare), force again after a frame
             if (totalChars == 0 && t.text.Length > 0)
             {
                 yield return null;
@@ -184,17 +201,24 @@ public class TitleCardSequencer : MonoBehaviour
             }
 
             yield return TypeTextRoutine(t, totalChars);
-
-            // Wait after this line (use last-line delay if last)
-            if (i == lines.Count - 1)
-                yield return StartCoroutine(WaitRoutine(delayAfterLastLine));
-            else
-                yield return StartCoroutine(WaitRoutine(delayAfterLine));
             
+            line.onLineCompleted?.Invoke();
+
+            bool isLastLine = (i == lines.Count - 1);
+
+            float delay =
+                isLastLine
+                    ? delayAfterLastLine
+                    : (line.delayAfterLineOverride >= 0f
+                        ? line.delayAfterLineOverride
+                        : delayAfterLine);
+
+            yield return StartCoroutine(WaitRoutine(delay));
+
         }
 
-        // Fade out everything at once (via CanvasGroup)
-        yield return FadeOutRoutine();
+        if (fadeOutAtEnd)
+            yield return FadeOutRoutine();
 
         if (disableOnFinish)
             gameObject.SetActive(false);

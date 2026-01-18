@@ -26,6 +26,10 @@
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_BridgeSplash" ID="{2A2E1010-F664-44B9-938F-614402D9C632}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Stop_BeachAmbience" ID="{9C7CA0C5-8775-4E88-B40D-01568C42AC25}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="1" Y="2"/>
 						</Module>
@@ -46,14 +50,22 @@
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_SubCadenceA" ID="{FC39306B-D960-4169-94A7-51FA4DC2D5BB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SubCadenceC" ID="{848F8B4A-F251-41E2-8230-2E95E54A5B2C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="4" Y="3"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="HW_PianoNotesCount" ID="{10C73AD9-28AA-4E2F-85B8-2856D5431666}"/>
-							<Value>1</Value>
+							<Value>2.77</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>

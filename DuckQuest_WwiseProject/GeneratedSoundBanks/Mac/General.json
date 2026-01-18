@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{B6D238BD-D100-DCE4-DAEA-FE33451D4444}",
+    "Hash": "{AAD115BC-54CE-00DF-6454-3B89E17E30F2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -38,6 +38,22 @@
       "Location": "Memory",
       "ShortName": "Typewriter 2.wav",
       "CachePath": "F8/{F8E8F71E-9CAB-1CDB-7ADB-B048587DDC83}.wem"
+     },
+     {
+      "Id": "95388393",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-C-1.wav",
+      "CachePath": "1D/{1D9F1AD8-B4FA-CE99-D896-AA49B5E35136}.wem"
+     },
+     {
+      "Id": "109308094",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-C-2.wav",
+      "CachePath": "80/{8097B04F-B6D5-25D7-9EC7-894D3671A97E}.wem"
      },
      {
       "Id": "123039379",
@@ -88,6 +104,14 @@
       "CachePath": "D5/{D5DBAC54-0580-72F1-0EA7-832165E29566}.wem"
      },
      {
+      "Id": "393017442",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-C-3.wav",
+      "CachePath": "40/{40A830E3-A98E-D289-65F5-6B31F2B5C540}.wem"
+     },
+     {
       "Id": "402495002",
       "Language": "SFX",
       "Streaming": "false",
@@ -96,12 +120,52 @@
       "CachePath": "22/{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem"
      },
      {
+      "Id": "504985255",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-C-5.wav",
+      "CachePath": "5A/{5A36CFCA-A047-45C6-FCD8-210B895F28B7}.wem"
+     },
+     {
+      "Id": "523787390",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-C-4.wav",
+      "CachePath": "9E/{9E22334B-F30B-0208-1EB3-B1664A51E742}.wem"
+     },
+     {
+      "Id": "606799659",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-A-3.wav",
+      "CachePath": "0A/{0A2231B0-9D3D-EBF6-00D1-C8B963421712}.wem"
+     },
+     {
+      "Id": "609305418",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-A-4.wav",
+      "CachePath": "D7/{D739EB4B-9433-B579-6234-64C1078604D3}.wem"
+     },
+     {
       "Id": "624210698",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Add-C-2.wav",
       "CachePath": "80/{80FD37FB-F6E0-1E7E-6E2A-19C785C149F1}.wem"
+     },
+     {
+      "Id": "627713583",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-A-2.wav",
+      "CachePath": "7B/{7B3B3255-04F3-D8B4-9520-FA150A51ED7B}.wem"
      },
      {
       "Id": "672181511",
@@ -176,6 +240,14 @@
       "CachePath": "48/{486DD6BA-72A6-A864-BF26-5FD55A01A34C}.wem"
      },
      {
+      "Id": "842882810",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-A-1.wav",
+      "CachePath": "48/{488C4879-8034-4458-18EB-A4A14EC92BE0}.wem"
+     },
+     {
       "Id": "855146624",
       "Language": "SFX",
       "Streaming": "false",
@@ -216,12 +288,28 @@
       "CachePath": "89/{8914576E-20D3-B2A5-456C-F69B0650DD4D}.wem"
      },
      {
+      "Id": "928791628",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sub-A-5.wav",
+      "CachePath": "1A/{1AD20E91-9A2F-2B09-B15B-794DAF0156FB}.wem"
+     },
+     {
       "Id": "939932267",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Bell Hit.wav",
       "CachePath": "3A/{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem"
+     },
+     {
+      "Id": "966557403",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bridge-Splash.wav",
+      "CachePath": "C4/{C44425A2-7B28-E0E6-0024-307E9B7D4115}.wem"
      },
      {
       "Id": "995171218",
@@ -328,6 +416,20 @@
       "MediaRefs": [
        {
         "Id": "798440518"
+       }
+      ]
+     },
+     {
+      "Id": "573339928",
+      "Name": "Play_BridgeSplash",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_BridgeSplash",
+      "GUID": "{2A2E1010-F664-44B9-938F-614402D9C632}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.6278014",
+      "DurationMax": "3.716272",
+      "MediaRefs": [
+       {
+        "Id": "966557403"
        }
       ]
      },
@@ -457,6 +559,58 @@
       ]
      },
      {
+      "Id": "1545776886",
+      "Name": "Play_SubCadenceA",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_SubCadenceA",
+      "GUID": "{FC39306B-D960-4169-94A7-51FA4DC2D5BB}",
+      "DurationType": "OneShot",
+      "DurationMin": "4",
+      "DurationMax": "4",
+      "MediaRefs": [
+       {
+        "Id": "606799659"
+       },
+       {
+        "Id": "609305418"
+       },
+       {
+        "Id": "627713583"
+       },
+       {
+        "Id": "842882810"
+       },
+       {
+        "Id": "928791628"
+       }
+      ]
+     },
+     {
+      "Id": "1545776884",
+      "Name": "Play_SubCadenceC",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_SubCadenceC",
+      "GUID": "{848F8B4A-F251-41E2-8230-2E95E54A5B2C}",
+      "DurationType": "OneShot",
+      "DurationMin": "6",
+      "DurationMax": "6",
+      "MediaRefs": [
+       {
+        "Id": "95388393"
+       },
+       {
+        "Id": "109308094"
+       },
+       {
+        "Id": "393017442"
+       },
+       {
+        "Id": "504985255"
+       },
+       {
+        "Id": "523787390"
+       }
+      ]
+     },
+     {
       "Id": "928013289",
       "Name": "Play_TypewriterClack",
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_TypewriterClack",
@@ -508,6 +662,6 @@
     ]
    }
   ],
-  "FileHash": "{8EAA503D-6FB0-C4B5-447F-A3C5CF632B82}"
+  "FileHash": "{E2CC945A-86E8-96D7-F371-EF51300B906A}"
  }
 }

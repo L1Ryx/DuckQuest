@@ -33,6 +33,8 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
     private InventoryCostHoverPanelView view;
     private Tween activeTween;
     private bool isVisible;
+    private bool lastHovered;
+    private bool lastInRange;
 
     private InventoryCostInteractable costInteractable;
 
@@ -145,9 +147,21 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
     {
         if (!enabled) return;
 
+        lastHovered = isHovered;
+        lastInRange = inRange;
+
+        // If the object is temporarily non-interactable (e.g., repaired bridge),
+        // do not show the panel at all.
+        if (isHovered && costInteractable != null && !costInteractable.IsInteractableNow(null))
+        {
+            ForceHide();
+            return;
+        }
+
         if (isHovered) Show(inRange);
         else Hide();
     }
+
 
     private bool CanAfford()
     {
@@ -167,9 +181,10 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
     private void Show(bool inRange)
     {
         bool canAfford = CanAfford();
-        bool isActive = inRange && canAfford;
+        bool canInteractNow = costInteractable.IsInteractableNow(null);
 
-        // Symbol state
+        bool isActive = inRange && canAfford && canInteractNow;
+
         if (view.symbolImage != null)
             view.symbolImage.sprite = isActive ? symbolActive : symbolInactive;
 
@@ -190,6 +205,7 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
             .SetUpdate(true);
     }
 
+
     private void Hide()
     {
         if (!isVisible) return;
@@ -202,4 +218,41 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
             .Join(view.panelTransform.DOScale(hiddenScale, hideDuration).SetEase(hideEase))
             .SetUpdate(true);
     }
+    
+    public void Refresh()
+    {
+        if (!enabled) return;
+
+        // NEW: panel not spawned yet (Awake order), nothing to refresh.
+        if (view == null)
+            return;
+
+        ApplyRequirementUI();
+
+        if (costInteractable != null && !costInteractable.IsInteractableNow(null))
+        {
+            ForceHide();
+            return;
+        }
+
+        if (lastHovered)
+            Show(lastInRange);
+    }
+
+
+    public void ForceHide()
+    {
+        if (!enabled) return;
+
+        lastHovered = false;
+        lastInRange = false;
+
+        // NEW: if view not ready, just reset state—Hide() would NRE.
+        if (view == null)
+            return;
+
+        Hide();
+    }
+
+
 }

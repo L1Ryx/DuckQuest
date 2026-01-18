@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Interactable
   - Interacted
-  - 
+  - Player
   - 
   - 
   - 
@@ -56,6 +56,9 @@ TagManager:
     locked: 0
   - name: Patches
     uniqueID: 1238092013
+    locked: 0
+  - name: Bridge
+    uniqueID: 2772819461
     locked: 0
   - name: Items
     uniqueID: 3890755365

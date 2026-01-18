@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1811832145532550314}
   - component: {fileID: 1938683262874462543}
   - component: {fileID: 5608874862861480045}
+  - component: {fileID: 6423532759102247682}
   m_Layer: 6
   m_Name: HardwormPickup_Base
   m_TagString: Untagged
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -404211931
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -836567240, guid: 9cb409a9433954d0f9f2a47c671caaf5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -155,7 +156,6 @@ MonoBehaviour:
   packsGranted: 1
   onPickedUp: {fileID: 11400000, guid: 58f1ad35b191d4c4588cb3358c75c601, type: 2}
   onPickedUpGenericItem: {fileID: 11400000, guid: 26e8e2b9da95941618740b2abd454f56, type: 2}
-  pickupCue: {fileID: 11400000, guid: 92b972cba3cbf4ba286a6338c6547500, type: 2}
 --- !u!114 &1938683262874462543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +195,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useGameContext: 1
+--- !u!114 &6423532759102247682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147483194781078891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac435f721e4dd4bd3bf9cf7b6e899770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightLightPrefab: {fileID: 1486021082201966384, guid: 32a90f4b090244ef794ee05c6d8d7e6b, type: 3}
+  night: 0
+  overrideOuterRadius: 1
+  outerRadius: 5
+  overrideColor: 1
+  lightColor: {r: 0.9607843, g: 0.68890756, b: 0.39607844, a: 1}
+  overrideIntensity: 1
+  intensity: 0.5
+  shouldFlicker: 0
+  radiusFlickerAmount: 0.05
+  intensityFlickerAmount: 0.025
+  flickerStepDurationRange: {x: 0.05, y: 0.12}
+  flickerAffectsColor: 0
+  colorValueFlickerAmount: 0.03
+  localOffset: {x: 0, y: 0, z: 0}
+  followRotation: 1
 --- !u!1 &4501905580893571560
 GameObject:
   m_ObjectHideFlags: 0
