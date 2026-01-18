@@ -12,6 +12,10 @@ public class GameContext : MonoBehaviour
     public InteractionLockModel InteractionLock { get; private set; }
     public AudioStateModel Audio { get; private set; }
     public HardwormPickupSfx HardwormPickupSfx { get; private set; }
+    public DialogueRunner Dialogue { get; private set; }
+    
+    [Header("View Refs")]
+    [SerializeField] private DialogueRunner dialogueRunner;
 
     [Header("Databases")] [SerializeField] private ItemDatabase itemDatabase;
 
@@ -45,5 +49,9 @@ public class GameContext : MonoBehaviour
         {
             Debug.LogWarning("HardwormPickupSfx is null");
         }
+        
+        Dialogue = dialogueRunner;
+        if (Dialogue == null)
+            Debug.LogError("GameContext: DialogueRunner reference is missing. Assign it in the inspector.");
     }
 }

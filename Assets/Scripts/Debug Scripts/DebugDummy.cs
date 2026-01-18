@@ -12,11 +12,15 @@ public class DebugDummy : MonoBehaviour
     [SerializeField] private UnityEvent OnToggleDebugView;
     [SerializeField] private UnityEvent OnToggleHyperspeed;
 
+    [SerializeField] private DialogueEncounter encounter;
+    
+
     [Header("Settings")] [SerializeField] private string nextScene = "Demo Reset";
 
     private void Awake()
     {
         RegisterConsoleCommands();
+        
     }
 
     void RegisterConsoleCommands()
@@ -40,6 +44,9 @@ public class DebugDummy : MonoBehaviour
         {
             ReloadSameScene();
         }
+        
+        if (Input.GetKeyDown(KeyCode.T))
+            Game.Ctx.Dialogue.StartDialogue(encounter);
     }
 
     public void DebugAddHardwormOne()
