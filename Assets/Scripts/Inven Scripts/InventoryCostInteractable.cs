@@ -25,7 +25,7 @@ public abstract class InventoryCostInteractable : MonoBehaviour, IInteractable
     public bool IsInteractableNow(GameObject interactor) => CanInteractNow(interactor);
     protected virtual bool CanInteractNow(GameObject interactor) => true;
 
-    public void Interact(GameObject interactor)
+    public virtual void Interact(GameObject interactor)
     {
         if (!CanInteractNow(interactor))
             return;

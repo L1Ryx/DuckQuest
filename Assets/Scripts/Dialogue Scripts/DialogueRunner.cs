@@ -19,6 +19,8 @@ public sealed class DialogueRunner : MonoBehaviour
     [Header("Dialogue Events")]
     [SerializeField] private UnityEvent OnDialogueStarted;
     [SerializeField] private UnityEvent OnDialogueFinished;
+    private bool currentLineCompleted;
+
     
     
 
@@ -67,6 +69,15 @@ public sealed class DialogueRunner : MonoBehaviour
         if (currentEncounter.nextEncounter != null)
             StartDialogue(currentEncounter.nextEncounter);
     }
+    
+    private void Update()
+    {
+        if (!IsRunning)
+            return;
+
+        if (Input.GetMouseButtonDown(0))
+            Advance();
+    }
 
 
 
@@ -84,10 +95,30 @@ public sealed class DialogueRunner : MonoBehaviour
         AdvanceToNextLine();
     }
 
+    private void FinishTypingInstantly()
+    {
+        if (typingRoutine != null)
+        {
+            StopCoroutine(typingRoutine);
+            typingRoutine = null;
+        }
+
+        var line = currentEncounter.lines[currentLineIndex];
+        dialogueText.text = line.text;
+
+        isTyping = false;
+        nextIndicator.gameObject.SetActive(true);
+
+        // Raise after-line event once
+        line.afterLineEvent?.Raise();
+    }
+
     // ===== Internal flow =====
 
     private void ShowLine(DialogueEncounter.Line line)
     {
+        currentLineCompleted = false;
+        
         // UI setup
         portraitImage.sprite = line.speaker.portrait;
         nameText.text = line.speaker.displayName;
@@ -114,8 +145,7 @@ public sealed class DialogueRunner : MonoBehaviour
         {
             dialogueText.text += text[i];
 
-            // Per-character audio
-            if (line.speaker.typingCue != null)
+            if (line.speaker != null && line.speaker.typingCue != null)
                 Game.Ctx.Audio.PlayCueGlobal(line.speaker.typingCue);
 
             yield return new WaitForSeconds(delay);
@@ -124,19 +154,18 @@ public sealed class DialogueRunner : MonoBehaviour
         isTyping = false;
         nextIndicator.gameObject.SetActive(true);
 
-        // Raise after-line event
-        line.afterLineEvent?.Raise();
+        MarkLineCompleted(line);
+
+        typingRoutine = null;
     }
 
-    private void FinishTypingInstantly()
+    
+    private void MarkLineCompleted(DialogueEncounter.Line line)
     {
-        StopCoroutine(typingRoutine);
+        if (currentLineCompleted)
+            return;
 
-        var line = currentEncounter.lines[currentLineIndex];
-        dialogueText.text = line.text;
-        isTyping = false;
-
-        nextIndicator.gameObject.SetActive(true);
+        currentLineCompleted = true;
         line.afterLineEvent?.Raise();
     }
 
